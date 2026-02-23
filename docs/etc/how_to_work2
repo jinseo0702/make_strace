@@ -1,0 +1,201 @@
+~/ft_strace » strace -f strace ls                                                                                                                                                       jinseo@c1r5s6
+execve("/usr/bin/strace", ["strace", "ls"], 0x7ffd8e41d090 /* 52 vars */) = 0
+brk(NULL)                               = 0x5e5430dca000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffce8944630) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73f20c48a000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=88668, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 88668, PROT_READ, MAP_PRIVATE, 3, 0) = 0x73f20c474000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind-ptrace.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=18840, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20840, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73f20c46e000
+mmap(0x73f20c46f000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x73f20c46f000
+mmap(0x73f20c471000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x73f20c471000
+mmap(0x73f20c472000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x73f20c472000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind-x86_64.so.8", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=71920, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 117200, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73f20c451000
+mprotect(0x73f20c453000, 61440, PROT_NONE) = 0
+mmap(0x73f20c453000, 49152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x73f20c453000
+mmap(0x73f20c45f000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x73f20c45f000
+mmap(0x73f20c462000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x73f20c462000
+mmap(0x73f20c464000, 39376, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73f20c464000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\\{\241H\256\312\201f\200\221\367\30\4px"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73f20c200000
+mprotect(0x73f20c228000, 2023424, PROT_NONE) = 0
+mmap(0x73f20c228000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x73f20c228000
+mmap(0x73f20c3bd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x73f20c3bd000
+mmap(0x73f20c416000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x73f20c416000
+mmap(0x73f20c41c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73f20c41c000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=170456, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 172296, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73f20c1d5000
+mmap(0x73f20c1d8000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x73f20c1d8000
+mmap(0x73f20c1f3000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x73f20c1f3000
+mmap(0x73f20c1fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x73f20c1fe000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind.so.8", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=63744, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 109264, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73f20c436000
+mmap(0x73f20c438000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x73f20c438000
+mmap(0x73f20c442000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x73f20c442000
+mmap(0x73f20c445000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x73f20c445000
+mmap(0x73f20c447000, 39632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73f20c447000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73f20c434000
+arch_prctl(ARCH_SET_FS, 0x73f20c435240) = 0
+set_tid_address(0x73f20c435510)         = 13783
+set_robust_list(0x73f20c435520, 24)     = 0
+rseq(0x73f20c435be0, 0x20, 0, 0x53053053) = 0
+mprotect(0x73f20c416000, 16384, PROT_READ) = 0
+mprotect(0x73f20c1fe000, 4096, PROT_READ) = 0
+mprotect(0x73f20c445000, 4096, PROT_READ) = 0
+mprotect(0x73f20c462000, 4096, PROT_READ) = 0
+mprotect(0x73f20c472000, 4096, PROT_READ) = 0
+mprotect(0x5e53feaa5000, 393216, PROT_READ) = 0
+mprotect(0x73f20c4c4000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x73f20c474000, 88668)           = 0
+getrandom("\xf0\xa7\xf6\x70\xa3\xeb\x07\xa8", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5e5430dca000
+brk(0x5e5430deb000)                     = 0x5e5430deb000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5475184, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 5475184, PROT_READ, MAP_PRIVATE, 3, 0) = 0x73f20bc00000
+close(3)                                = 0
+getpid()                                = 13783
+uname({sysname="Linux", nodename="c1r5s6.42gyeongsan.kr", ...}) = 0
+openat(AT_FDCWD, "/proc/sys/kernel/pid_max", O_RDONLY) = 3
+read(3, "4194304\n", 23)                = 8
+close(3)                                = 0
+rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+getuid()                                = 101471
+getgid()                                = 4223
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x73f20c435510) = 13784
+ptrace(PTRACE_SEIZE, 13784, NULL, 0strace: Process 13784 attached
+)    = -1 EPERM (Operation not permitted)
+[pid 13783] kill(13784, SIGKILL)        = 0
+[pid 13783] wait4(13784,  <unfinished ...>
+[pid 13784] +++ killed by SIGKILL +++
+<... wait4 resumed>[{WIFSIGNALED(s) && WTERMSIG(s) == SIGKILL}], 0, NULL) = 13784
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=13784, si_uid=101471, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x73f20c435510) = 13785
+strace: Process 13785 attached
+[pid 13783] wait4(13785,  <unfinished ...>
+[pid 13785] set_robust_list(0x73f20c435520, 24) = 0
+[pid 13785] getpid()                    = 13785
+[pid 13785] ptrace(PTRACE_TRACEME)      = -1 EPERM (Operation not permitted)
+[pid 13785] openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+[pid 13785] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2996, ...}, AT_EMPTY_PATH) = 0
+[pid 13785] read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
+[pid 13785] read(3, "", 4096)           = 0
+[pid 13785] close(3)                    = 0
+[pid 13785] openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 13785] openat(AT_FDCWD, "/usr/share/locale-langpack/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 13785] write(2, "strace: test_ptrace_get_syscall_"..., 78strace: test_ptrace_get_syscall_info: PTRACE_TRACEME: Operation not permitted
+) = 78
+[pid 13785] getpid()                    = 13785
+[pid 13785] exit_group(1)               = ?
+[pid 13785] +++ exited with 1 +++
+<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 1}], 0, NULL) = 13785
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=13785, si_uid=101471, si_status=1, si_utime=0, si_stime=0} ---
+pipe2([3, 4], 0)                        = 0
+close(4)                                = 0
+fcntl(3, F_GETFD)                       = 0
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/home/jinseo/.local/bin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/jinseo/.local/bin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/jinseo/bin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/ls", 0x7ffce8943250, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/ls", {st_mode=S_IFREG|0755, st_size=138208, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/bin/ls", {st_mode=S_IFREG|0755, st_size=138208, ...}, 0) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x73f20c435510) = 13786
+strace: Process 13786 attached
+[pid 13783] close(0 <unfinished ...>
+[pid 13786] set_robust_list(0x73f20c435520, 24 <unfinished ...>
+[pid 13783] <... close resumed>)        = 0
+[pid 13786] <... set_robust_list resumed>) = 0
+[pid 13783] pipe2([0, 3], 0)            = 0
+[pid 13783] close(3 <unfinished ...>
+[pid 13786] ptrace(PTRACE_TRACEME <unfinished ...>
+[pid 13783] <... close resumed>)        = 0
+[pid 13786] <... ptrace resumed>)       = -1 EPERM (Operation not permitted)
+[pid 13783] fcntl(0, F_GETFD)           = 0
+[pid 13783] fcntl(0, F_SETFD, FD_CLOEXEC) = 0
+[pid 13783] close(1)                    = 0
+[pid 13783] pipe2([1, 3], 0)            = 0
+[pid 13783] close(3)                    = 0
+[pid 13783] fcntl(1, F_GETFD <unfinished ...>
+[pid 13786] openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid 13783] <... fcntl resumed>)        = 0
+[pid 13786] <... openat resumed>)       = 3
+[pid 13783] fcntl(1, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid 13786] newfstatat(3, "",  <unfinished ...>
+[pid 13783] <... fcntl resumed>)        = 0
+[pid 13786] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2996, ...}, AT_EMPTY_PATH) = 0
+[pid 13783] rt_sigaction(SIGTTOU, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] read(3,  <unfinished ...>
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13786] <... read resumed>"# Locale name alias data base.\n#"..., 4096) = 2996
+[pid 13783] rt_sigaction(SIGTTIN, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520}, NULL, 8) = 0
+[pid 13783] rt_sigaction(SIGHUP, {sa_handler=0x5e53fe9acf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520}, NULL, 8) = 0
+[pid 13786] read(3,  <unfinished ...>
+[pid 13783] rt_sigaction(SIGINT, {sa_handler=0x5e53fe9acf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] <... read resumed>"", 4096) = 0
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13786] close(3 <unfinished ...>
+[pid 13783] rt_sigaction(SIGQUIT, {sa_handler=0x5e53fe9acf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] <... close resumed>)        = 0
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13783] rt_sigaction(SIGPIPE, {sa_handler=0x5e53fe9acf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/libc.mo", O_RDONLY <unfinished ...>
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13783] rt_sigaction(SIGTERM, {sa_handler=0x5e53fe9acf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] <... openat resumed>)       = -1 ENOENT (No such file or directory)
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13786] openat(AT_FDCWD, "/usr/share/locale-langpack/en/LC_MESSAGES/libc.mo", O_RDONLY <unfinished ...>
+[pid 13783] rt_sigprocmask(SIG_BLOCK, [ALRM],  <unfinished ...>
+[pid 13786] <... openat resumed>)       = -1 ENOENT (No such file or directory)
+[pid 13783] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 13786] newfstatat(2, "",  <unfinished ...>
+[pid 13783] rt_sigaction(SIGALRM, {sa_handler=0x5e53fe9b8470, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x73f20c242520},  <unfinished ...>
+[pid 13786] <... newfstatat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+[pid 13783] <... rt_sigaction resumed>NULL, 8) = 0
+[pid 13786] write(2, "strace: ptrace(PTRACE_TRACEME, ."..., 61 <unfinished ...>
+strace: ptrace(PTRACE_TRACEME, ...): Operation not permitted
+[pid 13783] wait4(-1,  <unfinished ...>
+[pid 13786] <... write resumed>)        = 61
+[pid 13786] getpid()                    = 13786
+[pid 13786] exit_group(1)               = ?
+[pid 13786] +++ exited with 1 +++
+<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 1}], __WALL, NULL) = 13786
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=13786, si_uid=101471, si_status=1, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7ffce894454c, WNOHANG|__WALL, NULL) = -1 ECHILD (No child processes)
+ptrace(PTRACE_SETOPTIONS, 13786, NULL, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEEXEC|PTRACE_O_TRACEEXIT) = -1 ESRCH (No such process)
+newfstatat(2, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+write(2, "+++ exited with 1 +++\n", 22+++ exited with 1 +++
+) = 22
+wait4(-1, 0x7ffce894454c, __WALL, NULL) = -1 ECHILD (No child processes)
+exit_group(1)                           = ?
++++ exited with 1 +++
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+~/ft_strace »                                                                                                                                                                                    1 ↵ jinseo@c1r5s6
+

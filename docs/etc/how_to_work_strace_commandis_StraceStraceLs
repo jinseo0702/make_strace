@@ -1,0 +1,1276 @@
+; ~/ft_strace » strace strace ls                                                                                                                                                                       jinseo@c1r5s6
+execve("/usr/bin/strace", ["strace", "ls"], 0x7ffc421d4e78 /* 52 vars */) = 0
+brk(NULL)                               = 0x5ef699bac000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7fffcd723040) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x70fd3a0cc000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=88668, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 88668, PROT_READ, MAP_PRIVATE, 3, 0) = 0x70fd3a0b6000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind-ptrace.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=18840, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20840, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x70fd3a0b0000
+mmap(0x70fd3a0b1000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x70fd3a0b1000
+mmap(0x70fd3a0b3000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x70fd3a0b3000
+mmap(0x70fd3a0b4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x70fd3a0b4000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind-x86_64.so.8", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=71920, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 117200, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x70fd3a093000
+mprotect(0x70fd3a095000, 61440, PROT_NONE) = 0
+mmap(0x70fd3a095000, 49152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x70fd3a095000
+mmap(0x70fd3a0a1000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x70fd3a0a1000
+mmap(0x70fd3a0a4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x70fd3a0a4000
+mmap(0x70fd3a0a6000, 39376, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x70fd3a0a6000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\\{\241H\256\312\201f\200\221\367\30\4px"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x70fd39e00000
+mprotect(0x70fd39e28000, 2023424, PROT_NONE) = 0
+mmap(0x70fd39e28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x70fd39e28000
+mmap(0x70fd39fbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x70fd39fbd000
+mmap(0x70fd3a016000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x70fd3a016000
+mmap(0x70fd3a01c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x70fd3a01c000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=170456, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 172296, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x70fd3a068000
+mmap(0x70fd3a06b000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x70fd3a06b000
+mmap(0x70fd3a086000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x70fd3a086000
+mmap(0x70fd3a091000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x70fd3a091000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind.so.8", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=63744, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 109264, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x70fd3a04d000
+mmap(0x70fd3a04f000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x70fd3a04f000
+mmap(0x70fd3a059000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x70fd3a059000
+mmap(0x70fd3a05c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x70fd3a05c000
+mmap(0x70fd3a05e000, 39632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x70fd3a05e000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x70fd3a04b000
+arch_prctl(ARCH_SET_FS, 0x70fd3a04c240) = 0
+set_tid_address(0x70fd3a04c510)         = 12795
+set_robust_list(0x70fd3a04c520, 24)     = 0
+rseq(0x70fd3a04cbe0, 0x20, 0, 0x53053053) = 0
+mprotect(0x70fd3a016000, 16384, PROT_READ) = 0
+mprotect(0x70fd3a091000, 4096, PROT_READ) = 0
+mprotect(0x70fd3a05c000, 4096, PROT_READ) = 0
+mprotect(0x70fd3a0a4000, 4096, PROT_READ) = 0
+mprotect(0x70fd3a0b4000, 4096, PROT_READ) = 0
+mprotect(0x5ef68f495000, 393216, PROT_READ) = 0
+mprotect(0x70fd3a106000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x70fd3a0b6000, 88668)           = 0
+getrandom("\xc4\xd4\x40\x12\xb9\x82\x6b\x9c", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5ef699bac000
+brk(0x5ef699bcd000)                     = 0x5ef699bcd000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5475184, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 5475184, PROT_READ, MAP_PRIVATE, 3, 0) = 0x70fd39800000
+close(3)                                = 0
+getpid()                                = 12795
+uname({sysname="Linux", nodename="c1r5s6.42gyeongsan.kr", ...}) = 0
+openat(AT_FDCWD, "/proc/sys/kernel/pid_max", O_RDONLY) = 3
+read(3, "4194304\n", 23)                = 8
+close(3)                                = 0
+rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+getuid()                                = 101471
+getgid()                                = 4223
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x70fd3a04c510) = 12796
+ptrace(PTRACE_SEIZE, 12796, NULL, 0)    = 0
+kill(12796, SIGKILL)                    = 0
+wait4(12796, [{WIFSIGNALED(s) && WTERMSIG(s) == SIGKILL}], 0, NULL) = 12796
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=12796, si_uid=101471, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x70fd3a04c510) = 12797
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGSTOP}], 0, NULL) = 12797
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGSTOP, si_utime=0, si_stime=0} ---
+ptrace(PTRACE_SETOPTIONS, 12797, NULL, PTRACE_O_TRACESYSGOOD) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_NONE, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39e4275b, stack_pointer=0x7fffcd722d38}) = 24
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], 0, NULL) = 12797
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39f1e90d, stack_pointer=0x7fffcd722d28, entry={nr=__NR_chdir, args=[0x5ef68f478376, 0xbad1fed1, 0xbad2fed2, 0xbad3fed3, 0xbad4fed4, 0xbad5fed5]}}) = 80
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], 0, NULL) = 12797
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39f1e90d, stack_pointer=0x7fffcd722d28, exit={rval=-ENOENT, is_error=1}}) = 33
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], 0, NULL) = 12797
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39f1e90d, stack_pointer=0x7fffcd722d28, entry={nr=__NR_gettid, args=[0xcaf0bea0, 0xcaf1bea1, 0xcaf2bea2, 0xcaf3bea3, 0xcaf4bea4, 0xcaf5bea5]}}) = 80
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], 0, NULL) = 12797
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39f1e90d, stack_pointer=0x7fffcd722d28, exit={rval=12797, is_error=0}}) = 33
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12797, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(12797, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], 0, NULL) = 12797
+ptrace(PTRACE_GET_SYSCALL_INFO, 12797, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39f1e90d, stack_pointer=0x7fffcd722d28, entry={nr=__NR_exit_group, args=[0, 0xfac1c0d1, 0xfac2c0d2, 0xfac3c0d3, 0xfac4c0d4, 0xfac5c0d5]}}) = 80
+ptrace(PTRACE_SYSCALL, 12797, NULL, 0)  = 0
+wait4(12797, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 12797
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=12797, si_uid=101471, si_status=0, si_utime=0, si_stime=0} ---
+pipe2([3, 4], 0)                        = 0
+close(4)                                = 0
+fcntl(3, F_GETFD)                       = 0
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/home/jinseo/.local/bin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/jinseo/.local/bin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/jinseo/bin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/ls", 0x7fffcd721c60, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/ls", {st_mode=S_IFREG|0755, st_size=138208, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/bin/ls", {st_mode=S_IFREG|0755, st_size=138208, ...}, 0) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x70fd3a04c510) = 12798
+wait4(12798, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGSTOP}], WSTOPPED, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_STOPPED, si_pid=12798, si_uid=101471, si_status=SIGSTOP, si_utime=0, si_stime=0} ---
+ptrace(PTRACE_SEIZE, 12798, NULL, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEEXEC|PTRACE_O_TRACEEXIT) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_STOPPED, si_pid=12798, si_uid=101471, si_status=0, si_utime=0, si_stime=0} ---
+ptrace(PTRACE_INTERRUPT, 12798)         = 0
+kill(12798, SIGCONT)                    = 0
+close(0)                                = 0
+pipe2([0, 3], 0)                        = 0
+close(3)                                = 0
+fcntl(0, F_GETFD)                       = 0
+fcntl(0, F_SETFD, FD_CLOEXEC)           = 0
+close(1)                                = 0
+pipe2([1, 3], 0)                        = 0
+close(3)                                = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(1, F_SETFD, FD_CLOEXEC)           = 0
+rt_sigaction(SIGTTOU, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGTTIN, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGHUP, {sa_handler=0x5ef68f39cf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x5ef68f39cf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=0x5ef68f39cf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGPIPE, {sa_handler=0x5ef68f39cf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=0x5ef68f39cf00, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [ALRM], NULL, 8) = 0
+rt_sigaction(SIGALRM, {sa_handler=0x5ef68f3a8470, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x70fd39e42520}, NULL, 8) = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGSTOP} | PTRACE_EVENT_STOP << 16], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_LISTEN, 12798)            = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_CONTINUED, si_pid=12798, si_uid=101471, si_status=SIGCONT, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP} | PTRACE_EVENT_STOP << 16], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGCONT, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGCONT}], __WALL, NULL) = 12798
+ptrace(PTRACE_GETSIGINFO, 12798, NULL, {si_signo=SIGCONT, si_code=SI_USER, si_pid=12795, si_uid=101471}) = 0
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_SYSCALL, 12798, NULL, SIGCONT) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x70fd39eeb08b, stack_pointer=0x7fffcd721be8, entry={nr=__NR_execve, args=[0x7fffcd721cf0, 0x7fffcd723210, 0x7fffcd723220, 0x70fd3a1090c8, 0, 0x70fd3a04c240]}}) = 80
+newfstatat(2, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fffcd721000, iov_len=4096}], 1, 0) = 4096
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\267\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fffcd723000, iov_len=4096}], 1, 0) = 4096
+write(2, "execve(\"/usr/bin/ls\", [\"ls\"], 0x"..., 58execve("/usr/bin/ls", ["ls"], 0x7fffcd723220 /* 52 vars */) = 58
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP} | PTRACE_EVENT_EXEC << 16], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+ptrace(PTRACE_GETEVENTMSG, 12798, NULL, [12798]) = 0
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd013290, stack_pointer=0x7fff35c211f0, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd018a8b, stack_pointer=0x7fff35c21088, entry={nr=__NR_brk, args=[0, 0x7fff35c2107c, 0, 0x23, 0, 0]}}) = 80
+write(2, "brk(NULL", 8brk(NULL)                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd018a8b, stack_pointer=0x7fff35c21088, exit={rval=111019007270912, is_error=0}}) = 33
+write(2, ")                               "..., 49)                               = 0x64f8a07de000
+) = 49
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00ccb4, stack_pointer=0x7fff35c20f80, entry={nr=__NR_arch_prctl, args=[0x3001, 0x7fff35c21030, 0x7710dd0123c0, 0x1, 0x3, 0x800]}}) = 80
+write(2, "arch_prctl(0x3001 /* ARCH_??? */"..., 48arch_prctl(0x3001 /* ARCH_??? */, 0x7fff35c21030) = 48
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00ccb4, stack_pointer=0x7fff35c20f80, exit={rval=-EINVAL, is_error=1}}) = 33
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2996, ...}, AT_EMPTY_PATH) = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale-langpack/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+write(2, ") = -1 EINVAL (Invalid argument)"..., 33) = -1 EINVAL (Invalid argument)
+) = 33
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20d28, entry={nr=__NR_mmap, args=[0, 0x2000, 0x3, 0x22, 0xffffffff, 0]}}) = 80
+write(2, "mmap(NULL, 8192, PROT_READ|PROT_"..., 71mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 71
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20d28, exit={rval=130914310885376, is_error=0}}) = 33
+write(2, ") = 0x7710dcff1000\n", 19) = 0x7710dcff1000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199ab, stack_pointer=0x7fff35c20db8, entry={nr=__NR_access, args=[0x7710dd022d90, 0x4, 0x64f86981cae8, 0x22, 0, 0]}}) = 80
+process_vm_readv(12798, [{iov_base="DEBUG_OUTPUT\0/\0..\0!__OPEN_NEEDS_"..., iov_len=4096}], 1, [{iov_base=0x7710dd022000, iov_len=4096}], 1, 0) = 4096
+write(2, "access(\"/etc/ld.so.preload\", R_O"..., 33access("/etc/ld.so.preload", R_OK) = 33
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199ab, stack_pointer=0x7fff35c20db8, exit={rval=-ENOENT, is_error=1}}) = 33
+write(2, ")      = -1 ENOENT (No such file"..., 47)      = -1 ENOENT (No such file or directory)
+) = 47
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c20178, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dd02121b, 0x80000, 0, 0x80000, 0x7710dd02121b]}}) = 80
+process_vm_readv(12798, [{iov_base="< imap->l_scope_max\0imap->l_need"..., iov_len=4096}], 1, [{iov_base=0x7710dd021000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/etc/ld.so.cac"..., 55openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 55
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c20178, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20178, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dd021ee9, 0x7fff35c20180, 0x1000, 0x80000, 0x7710dd02121b]}}) = 80
+process_vm_readv(12798, [{iov_base="< imap->l_scope_max\0imap->l_need"..., iov_len=4096}], 1, [{iov_base=0x7710dd021000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20178, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0644, st_size=8"..., 63{st_mode=S_IFREG|0644, st_size=88668, ...}, AT_EMPTY_PATH) = 0
+) = 63
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20178, entry={nr=__NR_mmap, args=[0, 0x15a5c, 0x1, 0x2, 0x3, 0]}}) = 80
+write(2, "mmap(NULL, 88668, PROT_READ, MAP"..., 46mmap(NULL, 88668, PROT_READ, MAP_PRIVATE, 3, 0) = 46
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20178, exit={rval=130914310795264, is_error=0}}) = 33
+write(2, ") = 0x7710dcfdb000\n", 19) = 0x7710dcfdb000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c20178, entry={nr=__NR_close, args=[0x3, 0x15a5c, 0x1, 0x2, 0x3, 0]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c20178, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c202d8, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dcff1140, 0x80000, 0, 0x80000, 0x7710dcff1140]}}) = 80
+process_vm_readv(12798, [{iov_base="P\20\377\334\20w\0\0m\r\2\335\20w\0\0\0\0\0\0\0\0\0\0@\360\1\335\20w\0\0"..., iov_len=4096}], 1, [{iov_base=0x7710dcff1000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/lib/x86_64-li"..., 76openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 76
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c202d8, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c202d8, entry={nr=__NR_read, args=[0x3, 0x7fff35c203b8, 0x340, 0, 0x80000, 0x7710dcff1140]}}) = 80
+write(2, "read(3, ", 8read(3, )                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c202d8, exit={rval=832, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\177ELF\\2\\1\\1\\0\\0\\0\\0\\0\\0\\0\\0\\0"..., 80"\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+) = 80
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c201a8, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dd021ee9, 0x7fff35c20250, 0x1000, 0x7710dcff1140, 0x7710dd02e2e0]}}) = 80
+process_vm_readv(12798, [{iov_base="< imap->l_scope_max\0imap->l_need"..., iov_len=4096}], 1, [{iov_base=0x7710dd021000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c201a8, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0644, st_size=1"..., 64{st_mode=S_IFREG|0644, st_size=166280, ...}, AT_EMPTY_PATH) = 0
+) = 64
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mmap, args=[0, 0x2b608, 0x1, 0x802, 0x3, 0]}}) = 80
+write(2, "mmap(NULL, 177672, PROT_READ, MA"..., 61mmap(NULL, 177672, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 61
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, exit={rval=130914310615040, is_error=0}}) = 33
+write(2, ") = 0x7710dcfaf000\n", 19) = 0x7710dcfaf000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mprotect, args=[0x7710dcfb5000, 0x22000, 0, 0x802, 0x3, 0]}}) = 80
+write(2, "mprotect(0x7710dcfb5000, 139264,"..., 42mprotect(0x7710dcfb5000, 139264, PROT_NONE) = 42
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c1ff08, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mmap, args=[0x7710dcfb5000, 0x1a000, 0x5, 0x812, 0x3, 0x6000]}}) = 80
+write(2, "mmap(0x7710dcfb5000, 106496, PRO"..., 96mmap(0x7710dcfb5000, 106496, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 96
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, exit={rval=130914310639616, is_error=0}}) = 33
+write(2, ") = 0x7710dcfb5000\n", 19) = 0x7710dcfb5000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mmap, args=[0x7710dcfcf000, 0x7000, 0x1, 0x812, 0x3, 0x20000]}}) = 80
+write(2, "mmap(0x7710dcfcf000, 28672, PROT"..., 86mmap(0x7710dcfcf000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 86
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, exit={rval=130914310746112, is_error=0}}) = 33
+write(2, ") = 0x7710dcfcf000\n", 19) = 0x7710dcfcf000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mmap, args=[0x7710dcfd7000, 0x2000, 0x3, 0x812, 0x3, 0x27000]}}) = 80
+write(2, "mmap(0x7710dcfd7000, 8192, PROT_"..., 96mmap(0x7710dcfd7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 96
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, exit={rval=130914310778880, is_error=0}}) = 33
+write(2, ") = 0x7710dcfd7000\n", 19) = 0x7710dcfd7000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_mmap, args=[0x7710dcfd9000, 0x1608, 0x3, 0x32, 0xffffffff, 0]}}) = 80
+write(2, "mmap(0x7710dcfd9000, 5640, PROT_"..., 91mmap(0x7710dcfd9000, 5640, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 91
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1ff08, exit={rval=130914310787072, is_error=0}}) = 33
+write(2, ") = 0x7710dcfd9000\n", 19) = 0x7710dcfd9000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c201a8, entry={nr=__NR_close, args=[0x3, 0, 0x7710dcfaf300, 0xffff88ef23050d2c, 0xc0000002, 0x20]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c201a8, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c202b8, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dcff1660, 0x80000, 0, 0x80000, 0x7710dcff1660]}}) = 80
+process_vm_readv(12798, [{iov_base="P\20\377\334\20w\0\0m\r\2\335\20w\0\0\0\0\0\0\0\0\0\0@\360\1\335\20w\0\0"..., iov_len=4096}], 1, [{iov_base=0x7710dcff1000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/lib/x86_64-li"..., 70openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 70
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c202b8, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c202b8, entry={nr=__NR_read, args=[0x3, 0x7fff35c20398, 0x340, 0, 0x80000, 0x7710dcff1660]}}) = 80
+write(2, "read(3, ", 8read(3, )                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c202b8, exit={rval=832, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0"..., 81"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+) = 81
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff98, entry={nr=__NR_pread64, args=[0x3, 0x7fff35c1ffa0, 0x310, 0x40, 0x7fff35c1ffa0, 0x7710dcff1660]}}) = 80
+write(2, "pread64(3, ", 11pread64(3, )             = 11
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff98, exit={rval=784, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c1f000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0"..., 83"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+) = 83
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff58, entry={nr=__NR_pread64, args=[0x3, 0x7fff35c1ff60, 0x30, 0x350, 0x7fff35c1ffa0, 0]}}) = 80
+write(2, "pread64(3, ", 11pread64(3, )             = 11
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff58, exit={rval=48, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c1f000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\4\\0\\0\\0 \\0\\0\\0\\5\\0\\0\\0GNU\\0\\2\\"..., 83"\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+) = 83
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff08, entry={nr=__NR_pread64, args=[0x3, 0x7fff35c1ff10, 0x44, 0x380, 0x7fff35c1ffa0, 0]}}) = 80
+write(2, "pread64(3, ", 11pread64(3, )             = 11
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1ff08, exit={rval=68, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c1f000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\4\\0\\0\\0\\24\\0\\0\\0\\3\\0\\0\\0GNU\\0\\"..., 93"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\\{\241H\256\312\201f\200\221\367\30\4px"..., 68, 896) = 68
+) = 93
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20188, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dd021ee9, 0x7fff35c20230, 0x1000, 0x7710dcff1660, 0x7710dd02e2e0]}}) = 80
+process_vm_readv(12798, [{iov_base="< imap->l_scope_max\0imap->l_need"..., iov_len=4096}], 1, [{iov_base=0x7710dd021000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20188, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0755, st_size=2"..., 65{st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+) = 65
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1fe68, entry={nr=__NR_pread64, args=[0x3, 0x7fff35c1fe70, 0x310, 0x40, 0xc0ff, 0x7710dcff1b08]}}) = 80
+write(2, "pread64(3, ", 11pread64(3, )             = 11
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b9e, stack_pointer=0x7fff35c1fe68, exit={rval=784, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c1f000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0"..., 83"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+) = 83
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mmap, args=[0, 0x228e50, 0x1, 0x802, 0x3, 0]}}) = 80
+write(2, "mmap(NULL, 2264656, PROT_READ, M"..., 62mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 62
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, exit={rval=130914306752512, is_error=0}}) = 33
+write(2, ") = 0x7710dcc00000\n", 19) = 0x7710dcc00000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mprotect, args=[0x7710dcc28000, 0x1ee000, 0, 0x802, 0x3, 0]}}) = 80
+write(2, "mprotect(0x7710dcc28000, 2023424"..., 43mprotect(0x7710dcc28000, 2023424, PROT_NONE) = 43
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c1fb58, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mmap, args=[0x7710dcc28000, 0x195000, 0x5, 0x812, 0x3, 0x28000]}}) = 80
+write(2, "mmap(0x7710dcc28000, 1658880, PR"..., 98mmap(0x7710dcc28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 98
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, exit={rval=130914306916352, is_error=0}}) = 33
+write(2, ") = 0x7710dcc28000\n", 19) = 0x7710dcc28000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mmap, args=[0x7710dcdbd000, 0x58000, 0x1, 0x812, 0x3, 0x1bd000]}}) = 80
+write(2, "mmap(0x7710dcdbd000, 360448, PRO"..., 88mmap(0x7710dcdbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 88
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, exit={rval=130914308575232, is_error=0}}) = 33
+write(2, ") = 0x7710dcdbd000\n", 19) = 0x7710dcdbd000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mmap, args=[0x7710dce16000, 0x6000, 0x3, 0x812, 0x3, 0x215000]}}) = 80
+write(2, "mmap(0x7710dce16000, 24576, PROT"..., 98mmap(0x7710dce16000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 98
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, exit={rval=130914308939776, is_error=0}}) = 33
+write(2, ") = 0x7710dce16000\n", 19) = 0x7710dce16000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, entry={nr=__NR_mmap, args=[0x7710dce1c000, 0xce50, 0x3, 0x32, 0xffffffff, 0]}}) = 80
+write(2, "mmap(0x7710dce1c000, 52816, PROT"..., 92mmap(0x7710dce1c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 92
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fb58, exit={rval=130914308964352, is_error=0}}) = 33
+write(2, ") = 0x7710dce1c000\n", 19) = 0x7710dce1c000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c1fe68, entry={nr=__NR_close, args=[0x3, 0x4, 0x7710dcc00380, 0xffff88ef233ffcbc, 0xc0008002, 0x30]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c1fe68, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c20298, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dcff1b60, 0x80000, 0, 0x80000, 0x7710dcff1b60]}}) = 80
+process_vm_readv(12798, [{iov_base="P\20\377\334\20w\0\0m\r\2\335\20w\0\0\0\0\0\0\0\0\0\0@\360\1\335\20w\0\0"..., iov_len=4096}], 1, [{iov_base=0x7710dcff1000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/lib/x86_64-li"..., 76openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 76
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b18, stack_pointer=0x7fff35c20298, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c20298, entry={nr=__NR_read, args=[0x3, 0x7fff35c20378, 0x340, 0, 0x80000, 0x7710dcff1b60]}}) = 80
+write(2, "read(3, ", 8read(3, )                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019b68, stack_pointer=0x7fff35c20298, exit={rval=832, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\177ELF\\2\\1\\1\\0\\0\\0\\0\\0\\0\\0\\0\\0"..., 80"\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+) = 80
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20168, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dd021ee9, 0x7fff35c20210, 0x1000, 0x7710dcff1b60, 0x7710dcff1170]}}) = 80
+process_vm_readv(12798, [{iov_base="< imap->l_scope_max\0imap->l_need"..., iov_len=4096}], 1, [{iov_base=0x7710dd021000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0198de, stack_pointer=0x7fff35c20168, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0644, st_size=6"..., 64{st_mode=S_IFREG|0644, st_size=613064, ...}, AT_EMPTY_PATH) = 0
+) = 64
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, entry={nr=__NR_mmap, args=[0, 0x96310, 0x1, 0x802, 0x3, 0]}}) = 80
+write(2, "mmap(NULL, 615184, PROT_READ, MA"..., 61mmap(NULL, 615184, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 61
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, exit={rval=130914309996544, is_error=0}}) = 33
+write(2, ") = 0x7710dcf18000\n", 19) = 0x7710dcf18000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, entry={nr=__NR_mmap, args=[0x7710dcf1a000, 0x6b000, 0x5, 0x812, 0x3, 0x2000]}}) = 80
+write(2, "mmap(0x7710dcf1a000, 438272, PRO"..., 96mmap(0x7710dcf1a000, 438272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 96
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, exit={rval=130914310004736, is_error=0}}) = 33
+write(2, ") = 0x7710dcf1a000\n", 19) = 0x7710dcf1a000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, entry={nr=__NR_mmap, args=[0x7710dcf85000, 0x28000, 0x1, 0x812, 0x3, 0x6d000]}}) = 80
+write(2, "mmap(0x7710dcf85000, 163840, PRO"..., 87mmap(0x7710dcf85000, 163840, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6d000) = 87
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, exit={rval=130914310443008, is_error=0}}) = 33
+write(2, ") = 0x7710dcf85000\n", 19) = 0x7710dcf85000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, entry={nr=__NR_mmap, args=[0x7710dcfad000, 0x2000, 0x3, 0x812, 0x3, 0x94000]}}) = 80
+write(2, "mmap(0x7710dcfad000, 8192, PROT_"..., 96mmap(0x7710dcfad000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x94000) = 96
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c1fef8, exit={rval=130914310606848, is_error=0}}) = 33
+write(2, ") = 0x7710dcfad000\n", 19) = 0x7710dcfad000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c20168, entry={nr=__NR_close, args=[0x3, 0, 0x7710dcf182c8, 0xffff88ef230e7d64, 0xc0000002, 0x20]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0199db, stack_pointer=0x7fff35c20168, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20d58, entry={nr=__NR_mmap, args=[0, 0x3000, 0x3, 0x22, 0xffffffff, 0]}}) = 80
+write(2, "mmap(NULL, 12288, PROT_READ|PROT"..., 72mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 72
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cb7, stack_pointer=0x7fff35c20d58, exit={rval=130914309984256, is_error=0}}) = 33
+write(2, ") = 0x7710dcf15000\n", 19) = 0x7710dcf15000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd013dff, stack_pointer=0x7fff35c20da0, entry={nr=__NR_arch_prctl, args=[0x1002, 0x7710dcf15800, 0xffff88ef230e9df0, 0x22, 0xffffffff, 0]}}) = 80
+write(2, "arch_prctl(ARCH_SET_FS, 0x7710dc"..., 38arch_prctl(ARCH_SET_FS, 0x7710dcf15800) = 38
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd013dff, stack_pointer=0x7fff35c20da0, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00813e, stack_pointer=0x7fff35c20d80, entry={nr=__NR_set_tid_address, args=[0x7710dcf15ad0, 0x7710dcf15800, 0x7710dd02e0d8, 0x22, 0xffffffff, 0]}}) = 80
+write(2, "set_tid_address(0x7710dcf15ad0", 30set_tid_address(0x7710dcf15ad0) = 30
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00813e, stack_pointer=0x7fff35c20d80, exit={rval=12798, is_error=0}}) = 33
+write(2, ")         = 12798\n", 18)         = 12798
+)     = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00819a, stack_pointer=0x7fff35c20d80, entry={nr=__NR_set_robust_list, args=[0x7710dcf15ae0, 0x18, 0x7710dd02e0d8, 0x22, 0xffffffff, 0]}}) = 80
+write(2, "set_robust_list(0x7710dcf15ae0, "..., 34set_robust_list(0x7710dcf15ae0, 24) = 34
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd00819a, stack_pointer=0x7fff35c20d80, exit={rval=0, is_error=0}}) = 33
+write(2, ")     = 0\n", 10)     = 0
+)             = 10
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0081d1, stack_pointer=0x7fff35c20d80, entry={nr=__NR_rseq, args=[0x7710dcf161a0, 0x20, 0, 0x53053053, 0, 0]}}) = 80
+write(2, "rseq(0x7710dcf161a0, 0x20, 0, 0x"..., 40rseq(0x7710dcf161a0, 0x20, 0, 0x53053053) = 40
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd0081d1, stack_pointer=0x7fff35c20d80, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_mprotect, args=[0x7710dce16000, 0x4000, 0x1, 0x7710dcc00000, 0x7710dcc06e58, 0]}}) = 80
+write(2, "mprotect(0x7710dce16000, 16384, "..., 41mprotect(0x7710dce16000, 16384, PROT_READ) = 41
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_mprotect, args=[0x7710dcfad000, 0x1000, 0x1, 0x7710dcf18000, 0x7710dcc05fb8, 0x7710dcc459a0]}}) = 80
+write(2, "mprotect(0x7710dcfad000, 4096, P"..., 40mprotect(0x7710dcfad000, 4096, PROT_READ) = 40
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_mprotect, args=[0x7710dcfd7000, 0x1000, 0x1, 0x7710dcfaf000, 0x7710dcc09c30, 0x7710dcd27bb0]}}) = 80
+write(2, "mprotect(0x7710dcfd7000, 4096, P"..., 40mprotect(0x7710dcfd7000, 4096, PROT_READ) = 40
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_mprotect, args=[0x64f86981c000, 0x1000, 0x1, 0x64f8697fb000, 0x7710dcc11a90, 0x7710dcd34a00]}}) = 80
+write(2, "mprotect(0x64f86981c000, 4096, P"..., 40mprotect(0x64f86981c000, 4096, PROT_READ) = 40
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_mprotect, args=[0x7710dd02b000, 0x2000, 0x1, 0x7710dcff3000, 0x7710dcc07e60, 0]}}) = 80
+write(2, "mprotect(0x7710dd02b000, 8192, P"..., 40mprotect(0x7710dd02b000, 8192, PROT_READ) = 40
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019d2b, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, ") = 0\n", 6) = 0
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a364, stack_pointer=0x7fff35c20d88, entry={nr=__NR_prlimit64, args=[0, 0x3, 0, 0x7fff35c20d90, 0, 0xf]}}) = 80
+write(2, "prlimit64(0, RLIMIT_STACK, NULL,"..., 33prlimit64(0, RLIMIT_STACK, NULL, ) = 33
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a364, stack_pointer=0x7fff35c20d88, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{rlim_cur=8192*1024, rlim_max=RL"..., 52{rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+) = 52
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cfb, stack_pointer=0x7fff35c20da8, entry={nr=__NR_munmap, args=[0x7710dcfdb000, 0x15a5c, 0x7710dcc90c10, 0x7710dcff3860, 0, 0xf]}}) = 80
+write(2, "munmap(0x7710dcfdb000, 88668", 28munmap(0x7710dcfdb000, 88668) = 28
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dd019cfb, stack_pointer=0x7fff35c20da8, exit={rval=0, is_error=0}}) = 33
+write(2, ")           = 0\n", 16)           = 0
+)       = 16
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1418b, stack_pointer=0x7fff35c20ff8, entry={nr=__NR_statfs, args=[0x7710dcfcf2a0, 0x7fff35c21070, 0, 0x7710dcff3860, 0, 0xf]}}) = 80
+process_vm_readv(12798, [{iov_base="%u entries, %u matches made\n\0%ms"..., iov_len=4096}], 1, [{iov_base=0x7710dcfcf000, iov_len=4096}], 1, 0) = 4096
+write(2, "statfs(\"/sys/fs/selinux\", ", 26statfs("/sys/fs/selinux", ) = 26
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1418b, stack_pointer=0x7fff35c20ff8, exit={rval=-ENOENT, is_error=1}}) = 33
+write(2, "0x7fff35c21070) = -1 ENOENT (No "..., 560x7fff35c21070) = -1 ENOENT (No such file or directory)
+) = 56
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1418b, stack_pointer=0x7fff35c20ff8, entry={nr=__NR_statfs, args=[0x7710dcfcf2a7, 0x7fff35c21070, 0xfffffffffffffe98, 0x7710dcff3860, 0, 0xf]}}) = 80
+process_vm_readv(12798, [{iov_base="%u entries, %u matches made\n\0%ms"..., iov_len=4096}], 1, [{iov_base=0x7710dcfcf000, iov_len=4096}], 1, 0) = 4096
+write(2, "statfs(\"/selinux\", ", 19statfs("/selinux", )   = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1418b, stack_pointer=0x7fff35c20ff8, exit={rval=-ENOENT, is_error=1}}) = 33
+write(2, "0x7fff35c21070)      = -1 ENOENT"..., 610x7fff35c21070)      = -1 ENOENT (No such file or directory)
+) = 61
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcc46c87, stack_pointer=0x7fff35c21018, entry={nr=__NR_getrandom, args=[0x7710dce214d8, 0x8, 0x1, 0x7710dcff3860, 0, 0xf]}}) = 80
+write(2, "getrandom(", 10getrandom()              = 10
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcc46c87, stack_pointer=0x7fff35c21018, exit={rval=8, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7710dce21000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"\\xbf\\x5d\\x9c\\x0e\\xa7\\x7c\\x6f\\x7"..., 58"\xbf\x5d\x9c\x0e\xa7\x7c\x6f\x74", 8, GRND_NONBLOCK) = 8
+) = 58
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a8ab, stack_pointer=0x7fff35c20ec8, entry={nr=__NR_brk, args=[0, 0x7710dce1ac80, 0, 0x7710dce1ace0, 0x2, 0xf]}}) = 80
+write(2, "brk(NULL", 8brk(NULL)                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a8ab, stack_pointer=0x7fff35c20ec8, exit={rval=111019007270912, is_error=0}}) = 33
+write(2, ")                               "..., 49)                               = 0x64f8a07de000
+) = 49
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a8ab, stack_pointer=0x7fff35c20ec8, entry={nr=__NR_brk, args=[0x64f8a07ff000, 0x7710dce1ac80, 0x7710dce22218, 0x7710dce1ace0, 0x2, 0xf]}}) = 80
+write(2, "brk(0x64f8a07ff000", 18brk(0x64f8a07ff000)      = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a8ab, stack_pointer=0x7fff35c20ec8, exit={rval=111019007406080, is_error=0}}) = 33
+write(2, ")                     = 0x64f8a0"..., 39)                     = 0x64f8a07ff000
+) = 39
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd145bb, stack_pointer=0x7fff35c20f80, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dcfcf284, 0x80000, 0, 0x8, 0x1]}}) = 80
+process_vm_readv(12798, [{iov_base="%u entries, %u matches made\n\0%ms"..., iov_len=4096}], 1, [{iov_base=0x7710dcfcf000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/proc/filesyst"..., 56openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 56
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd145bb, stack_pointer=0x7fff35c20f80, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20f28, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dcdd844f, 0x7fff35c20f30, 0x1000, 0, 0x64f8a07de480]}}) = 80
+process_vm_readv(12798, [{iov_base="v_db.c\0step->__end_fct == NULL\0g"..., iov_len=4096}], 1, [{iov_base=0x7710dcdd8000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20f28, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0444, st_size=0"..., 59{st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+) = 59
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14862, stack_pointer=0x7fff35c21008, entry={nr=__NR_read, args=[0x3, 0x64f8a07de500, 0x400, 0x77, 0x3, 0x64f8a07de500]}}) = 80
+write(2, "read(3, ", 8read(3, )                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14862, stack_pointer=0x7fff35c21008, exit={rval=468, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\221\2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x64f8a07de000, iov_len=4096}], 1, 0) = 4096
+write(2, "\"nodev\\tsysfs\\nnodev\\ttmpfs\\nnod"..., 56"nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 468
+) = 56
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14862, stack_pointer=0x7fff35c21008, entry={nr=__NR_read, args=[0x3, 0x64f8a07de500, 0x400, 0x77, 0x3, 0x64f8a07de500]}}) = 80
+write(2, "read(3, ", 8read(3, )                 = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14862, stack_pointer=0x7fff35c21008, exit={rval=0, is_error=0}}) = 33
+write(2, "\"\", 1024)                       "..., 36"", 1024)                       = 0
+) = 36
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c21078, entry={nr=__NR_close, args=[0x3, 0xfbada418, 0x7710dce16a00, 0x77, 0x64f8a07de480, 0x64f8a07de500]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c21078, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd149cb, stack_pointer=0x7fff35c21108, entry={nr=__NR_access, args=[0x7710dcfcf2c8, 0, 0x64f8a07de, 0x77, 0x64f8a07de2a0, 0x64f8a07de500]}}) = 80
+process_vm_readv(12798, [{iov_base="%u entries, %u matches made\n\0%ms"..., iov_len=4096}], 1, [{iov_base=0x7710dcfcf000, iov_len=4096}], 1, 0) = 4096
+write(2, "access(\"/etc/selinux/config\", F_"..., 34access("/etc/selinux/config", F_OK) = 34
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd149cb, stack_pointer=0x7fff35c21108, exit={rval=-ENOENT, is_error=1}}) = 33
+write(2, ")     = -1 ENOENT (No such file "..., 46)     = -1 ENOENT (No such file or directory)
+) = 46
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19a9c, stack_pointer=0x7fff35c20c70, entry={nr=__NR_openat, args=[0xffffff9c, 0x7710dcde1550, 0x80000, 0, 0x80000, 0x7710dcde1550]}}) = 80
+process_vm_readv(12798, [{iov_base="auth_unix.c: Fatal marshalling p"..., iov_len=4096}], 1, [{iov_base=0x7710dcde1000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \"/usr/lib/local"..., 69openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 69
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19a9c, stack_pointer=0x7fff35c20c70, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20cc8, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dcdd844f, 0x7710dce1bb80, 0x1000, 0x80000, 0x7710dcde1550]}}) = 80
+process_vm_readv(12798, [{iov_base="v_db.c\0step->__end_fct == NULL\0g"..., iov_len=4096}], 1, [{iov_base=0x7710dcdd8000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20cc8, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\360\257\341\334\20w\0\0\360\257\341\334\20w\0\0\0\260\341\334\20w\0\0\0\260\341\334\20w\0\0"..., iov_len=4096}], 1, [{iov_base=0x7710dce1b000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFREG|0644, st_size=5"..., 65{st_mode=S_IFREG|0644, st_size=5475184, ...}, AT_EMPTY_PATH) = 0
+) = 65
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1eaa7, stack_pointer=0x7fff35c20cc8, entry={nr=__NR_mmap, args=[0, 0x538b70, 0x1, 0x2, 0x3, 0]}}) = 80
+write(2, "mmap(NULL, 5475184, PROT_READ, M"..., 48mmap(NULL, 5475184, PROT_READ, MAP_PRIVATE, 3, 0) = 48
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1eaa7, stack_pointer=0x7fff35c20cc8, exit={rval=130914300461056, is_error=0}}) = 33
+write(2, ") = 0x7710dc600000\n", 19) = 0x7710dc600000
+)    = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20cc8, entry={nr=__NR_close, args=[0x3, 0x538b70, 0x2af3, 0, 0x3, 0]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20cc8, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19fca, stack_pointer=0x7fff35c20fa0, entry={nr=__NR_ioctl, args=[0x1, 0x5401, 0x7fff35c20fa0, 0x64f8a07de930, 0x7fff35c20fe0, 0]}}) = 80
+write(2, "ioctl(1, TCGETS", 15ioctl(1, TCGETS)         = 15
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19fca, stack_pointer=0x7fff35c20fa0, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, ", {B38400 opost isig icanon echo"..., 43, {B38400 opost isig icanon echo ...}) = 0
+) = 43
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a9cf, stack_pointer=0x7fff35c20fe0, entry={nr=__NR_ioctl, args=[0x1, 0x5413, 0x7fff35c21090, 0x64f8a07de930, 0x7fff35c20fe0, 0]}}) = 80
+write(2, "ioctl(1, TIOCGWINSZ", 19ioctl(1, TIOCGWINSZ)     = 19
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd1a9cf, stack_pointer=0x7fff35c20fe0, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\26\0\0\0\0\0\0\0\370\21\3025\377\177\0\0\220\20\3025\377\177\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c21000, iov_len=4096}], 1, 0) = 4096
+write(2, ", {ws_row=55, ws_col=211, ws_xpi"..., 57, {ws_row=55, ws_col=211, ws_xpixel=0, ws_ypixel=0}) = 0
+) = 57
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19a9c, stack_pointer=0x7fff35c20bd0, entry={nr=__NR_openat, args=[0xffffff9c, 0x64f8a07e49a0, 0x90800, 0, 0x90800, 0x64f8a07e49a0]}}) = 80
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x64f8a07e4000, iov_len=4096}], 1, 0) = 4096
+write(2, "openat(AT_FDCWD, \".\", O_RDONLY|O"..., 63openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 63
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd19a9c, stack_pointer=0x7fff35c20bd0, exit={rval=3, is_error=0}}) = 33
+write(2, ") = 3\n", 6) = 3
+)                  = 6
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20c28, entry={nr=__NR_newfstatat, args=[0x3, 0x7710dcdd844f, 0x7fff35c20c30, 0x1000, 0x90800, 0x64f8a07e49a0]}}) = 80
+process_vm_readv(12798, [{iov_base="v_db.c\0step->__end_fct == NULL\0g"..., iov_len=4096}], 1, [{iov_base=0x7710dcdd8000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(3, \"\", ", 18newfstatat(3, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c20c28, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0P\3\0\0\0\0\0\0000\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c20000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFDIR|0755, st_size=1"..., 61{st_mode=S_IFDIR|0755, st_size=141, ...}, AT_EMPTY_PATH) = 0
+) = 61
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcce6647, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_getdents64, args=[0x3, 0x64f8a07e49f0, 0x8000, 0x78, 0x90800, 0x64f8a07e49c0]}}) = 80
+write(2, "getdents64(3, ", 14getdents64(3, )          = 14
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcce6647, stack_pointer=0x7fff35c20ca8, exit={rval=256, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x64f8a07e4000, iov_len=4096}], 1, 0) = 4096
+write(2, "0x64f8a07e49f0 /* 7 entries */, "..., 450x64f8a07e49f0 /* 7 entries */, 32768) = 256
+) = 45
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcce6647, stack_pointer=0x7fff35c20ca8, entry={nr=__NR_getdents64, args=[0x3, 0x64f8a07e49f0, 0x8000, 0x2, 0xa07e4a00, 0x64f8a07eca80]}}) = 80
+write(2, "getdents64(3, ", 14getdents64(3, )          = 14
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcce6647, stack_pointer=0x7fff35c20ca8, exit={rval=0, is_error=0}}) = 33
+write(2, "0x64f8a07e49f0 /* 0 entries */, "..., 430x64f8a07e49f0 /* 0 entries */, 32768) = 0
+) = 43
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ce8, entry={nr=__NR_close, args=[0x3, 0, 0x7710dce1ace0, 0x2, 0xa07e4a00, 0x64f8a07eca80]}}) = 80
+write(2, "close(3", 7close(3)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ce8, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c1ea98, entry={nr=__NR_newfstatat, args=[0x1, 0x7710dcdd844f, 0x7fff35c1eaa0, 0x1000, 0, 0]}}) = 80
+process_vm_readv(12798, [{iov_base="v_db.c\0step->__end_fct == NULL\0g"..., iov_len=4096}], 1, [{iov_base=0x7710dcdd8000, iov_len=4096}], 1, 0) = 4096
+write(2, "newfstatat(1, \"\", ", 18newfstatat(1, "", )    = 18
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd13dbe, stack_pointer=0x7fff35c1ea98, exit={rval=0, is_error=0}}) = 33
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x7fff35c1e000, iov_len=4096}], 1, 0) = 4096
+write(2, "{st_mode=S_IFCHR|0620, st_rdev=m"..., 74{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+) = 74
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14907, stack_pointer=0x7fff35c20f48, entry={nr=__NR_write, args=[0x1, 0x64f8a07de500, 0x68, 0x10, 0, 0]}}) = 80
+process_vm_readv(12798, [{iov_base="\0\0\0\0\0\0\0\0\221\2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., iov_len=4096}], 1, [{iov_base=0x64f8a07de000, iov_len=4096}], 1, 0) = 4096
+write(2, "write(1, \"how_to_work_strace_com"..., 51write(1, "how_to_work_strace_commandis_Str"..., 104) = 51
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0how_to_work_strace_commandis_StraceStraceLs  man_ptrace  man_ptrace_kr.md  man_strace  man_strace_kr.md
+)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd14907, stack_pointer=0x7fff35c20f48, exit={rval=104, is_error=0}}) = 33
+write(2, ") = 104\n", 8) = 104
+)                = 8
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ff8, entry={nr=__NR_close, args=[0x1, 0x64f8a07de500, 0x7710dce16a00, 0x10, 0, 0]}}) = 80
+write(2, "close(1", 7close(1)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ff8, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ff8, entry={nr=__NR_close, args=[0x2, 0xfbad2006, 0x7710dce16a00, 0x10, 0, 0]}}) = 80
+write(2, "close(2", 7close(2)                  = 7
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_EXIT, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcd198eb, stack_pointer=0x7fff35c20ff8, exit={rval=0, is_error=0}}) = 33
+write(2, ")                               "..., 37)                                = 0
+) = 37
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP | 0x80}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+ptrace(PTRACE_GET_SYSCALL_INFO, 12798, 88, {op=PTRACE_SYSCALL_INFO_ENTRY, arch=AUDIT_ARCH_X86_64, instruction_pointer=0x7710dcceac31, stack_pointer=0x7fff35c21078, entry={nr=__NR_exit_group, args=[0, 0xe7, 0x3c, 0, 0xfffffffffffffe98, 0x30]}}) = 80
+write(2, "exit_group(0", 12exit_group(0)            = 12
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=12798, si_uid=101471, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFSTOPPED(s) && WSTOPSIG(s) == SIGTRAP} | PTRACE_EVENT_EXIT << 16], __WALL, NULL) = 12798
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = 0
+write(2, ")                           = ?\n", 32)                           = ?
+) = 32
+ptrace(PTRACE_SYSCALL, 12798, NULL, 0)  = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], __WALL, NULL) = 12798
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=12798, si_uid=101471, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7fffcd722f5c, WNOHANG|__WALL, NULL) = -1 ECHILD (No child processes)
+write(2, "+++ exited with 0 +++\n", 22+++ exited with 0 +++
+) = 22
+wait4(-1, 0x7fffcd722f5c, __WALL, NULL) = -1 ECHILD (No child processes)
+exit_group(0)                           = ?
++++ exited with 0 +++
