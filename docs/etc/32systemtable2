@@ -1,0 +1,426 @@
+0    |  0x0    |  restart_syscall          |  void                                                                                                                                      |  0
+1    |  0x1    |  exit                     |  int error_code                                                                                                                            |  1
+2    |  0x2    |  fork                     |  void                                                                                                                                      |  0
+3    |  0x3    |  read                     |  unsigned int fd, char *buf, size_t count                                                                                                  |  3
+4    |  0x4    |  write                    |  unsigned int fd, const char *buf, size_t count                                                                                            |  3
+5    |  0x5    |  open                     |  const char *filename, int flags, umode_t mode                                                                                             |  3
+6    |  0x6    |  close                    |  unsigned int fd                                                                                                                           |  1
+7    |  0x7    |  waitpid                  |  pid_t pid, int *stat_addr, int options                                                                                                    |  3
+8    |  0x8    |  creat                    |  const char *pathname, umode_t mode                                                                                                        |  2
+9    |  0x9    |  link                     |  const char *oldname, const char *newname                                                                                                  |  2
+10   |  0xa    |  unlink                   |  const char *pathname                                                                                                                      |  1
+11   |  0xb    |  execve                   |  const char *filename, const char *const *argv, const char *const *envp                                                                    |  3
+12   |  0xc    |  chdir                    |  const char *filename                                                                                                                      |  1
+13   |  0xd    |  time                     |  old_time32_t *tloc                                                                                                                        |  1
+14   |  0xe    |  mknod                    |  const char *filename, umode_t mode, unsigned dev                                                                                          |  3
+15   |  0xf    |  chmod                    |  const char *filename, umode_t mode                                                                                                        |  2
+16   |  0x10   |  lchown16                 |  const char *filename, old_uid_t user, old_gid_t group                                                                                     |  3
+18   |  0x12   |  stat                     |  const char *filename, struct __old_kernel_stat *statbuf                                                                                   |  2
+19   |  0x13   |  lseek                    |  unsigned int fd, off_t offset, unsigned int whence                                                                                        |  3
+20   |  0x14   |  getpid                   |  void                                                                                                                                      |  0
+21   |  0x15   |  mount                    |  char *dev_name, char *dir_name, char *type, unsigned long flags, void *data                                                               |  5
+22   |  0x16   |  oldumount                |  char *name                                                                                                                                |  1
+23   |  0x17   |  setuid16                 |  old_uid_t uid                                                                                                                             |  1
+24   |  0x18   |  getuid16                 |  void                                                                                                                                      |  0
+25   |  0x19   |  stime                    |  old_time32_t *tptr                                                                                                                        |  1
+26   |  0x1a   |  ptrace                   |  long request, long pid, unsigned long addr, unsigned long data                                                                            |  4
+27   |  0x1b   |  alarm                    |  unsigned int seconds                                                                                                                      |  1
+28   |  0x1c   |  fstat                    |  unsigned int fd, struct __old_kernel_stat *statbuf                                                                                        |  2
+29   |  0x1d   |  pause                    |  void                                                                                                                                      |  0
+30   |  0x1e   |  utime                    |  const char *filename, struct old_utimbuf32 *t                                                                                             |  2
+33   |  0x21   |  access                   |  const char *filename, int mode                                                                                                            |  2
+34   |  0x22   |  nice                     |  int increment                                                                                                                             |  1
+36   |  0x24   |  sync                     |  void                                                                                                                                      |  0
+37   |  0x25   |  kill                     |  pid_t pid, int sig                                                                                                                        |  2
+38   |  0x26   |  rename                   |  const char *oldname, const char *newname                                                                                                  |  2
+39   |  0x27   |  mkdir                    |  const char *pathname, umode_t mode                                                                                                        |  2
+40   |  0x28   |  rmdir                    |  const char *pathname                                                                                                                      |  1
+41   |  0x29   |  dup                      |  unsigned int fildes                                                                                                                       |  1
+42   |  0x2a   |  pipe                     |  int *fildes                                                                                                                               |  1
+43   |  0x2b   |  times                    |  struct tms *tbuf                                                                                                                          |  1
+45   |  0x2d   |  brk                      |  unsigned long brk                                                                                                                         |  1
+46   |  0x2e   |  setgid16                 |  old_gid_t gid                                                                                                                             |  1
+47   |  0x2f   |  getgid16                 |  void                                                                                                                                      |  0
+48   |  0x30   |  signal                   |  int sig, __sighandler_t handler                                                                                                           |  2
+49   |  0x31   |  geteuid16                |  void                                                                                                                                      |  0
+50   |  0x32   |  getegid16                |  void                                                                                                                                      |  0
+51   |  0x33   |  acct                     |  const char *name                                                                                                                          |  1
+52   |  0x34   |  umount                   |  char *name, int flags                                                                                                                     |  2
+54   |  0x36   |  ioctl                    |  unsigned int fd, unsigned int cmd, unsigned long arg                                                                                      |  3
+55   |  0x37   |  fcntl                    |  unsigned int fd, unsigned int cmd, unsigned long arg                                                                                      |  3
+57   |  0x39   |  setpgid                  |  pid_t pid, pid_t pgid                                                                                                                     |  2
+59   |  0x3b   |  olduname                 |  struct oldold_utsname *name                                                                                                               |  1
+60   |  0x3c   |  umask                    |  int mask                                                                                                                                  |  1
+61   |  0x3d   |  chroot                   |  const char *filename                                                                                                                      |  1
+62   |  0x3e   |  ustat                    |  unsigned dev, struct ustat *ubuf                                                                                                          |  2
+63   |  0x3f   |  dup2                     |  unsigned int oldfd, unsigned int newfd                                                                                                    |  2
+64   |  0x40   |  getppid                  |  void                                                                                                                                      |  0
+65   |  0x41   |  getpgrp                  |  void                                                                                                                                      |  0
+66   |  0x42   |  setsid                   |  void                                                                                                                                      |  0
+67   |  0x43   |  sigaction                |  int sig, const struct old_sigaction *act, struct old_sigaction *oact                                                                      |  3
+68   |  0x44   |  sgetmask                 |  void                                                                                                                                      |  0
+69   |  0x45   |  ssetmask                 |  int newmask                                                                                                                               |  1
+70   |  0x46   |  setreuid16               |  old_uid_t ruid, old_uid_t euid                                                                                                            |  2
+71   |  0x47   |  setregid16               |  old_gid_t rgid, old_gid_t egid                                                                                                            |  2
+72   |  0x48   |  sigsuspend               |  int unused1, int unused2, old_sigset_t mask                                                                                               |  3
+73   |  0x49   |  sigpending               |  old_sigset_t *uset                                                                                                                        |  1
+74   |  0x4a   |  sethostname              |  char *name, int len                                                                                                                       |  2
+75   |  0x4b   |  setrlimit                |  unsigned int resource, struct rlimit *rlim                                                                                                |  2
+76   |  0x4c   |  getrlimit                |  unsigned int resource, struct rlimit *rlim                                                                                                |  2
+77   |  0x4d   |  getrusage                |  int who, struct rusage *ru                                                                                                                |  2
+78   |  0x4e   |  gettimeofday             |  struct __kernel_old_timeval *tv, struct timezone *tz                                                                                      |  2
+79   |  0x4f   |  settimeofday             |  struct __kernel_old_timeval *tv, struct timezone *tz                                                                                      |  2
+80   |  0x50   |  getgroups16              |  int gidsetsize, old_gid_t *grouplist                                                                                                      |  2
+81   |  0x51   |  setgroups16              |  int gidsetsize, old_gid_t *grouplist                                                                                                      |  2
+82   |  0x52   |  select                   |  struct sel_arg_struct *arg                                                                                                                |  1
+83   |  0x53   |  symlink                  |  const char *oldname, const char *newname                                                                                                  |  2
+84   |  0x54   |  lstat                    |  const char *filename, struct __old_kernel_stat *statbuf                                                                                   |  2
+85   |  0x55   |  readlink                 |  const char *path, char *buf, int bufsiz                                                                                                   |  3
+87   |  0x57   |  swapon                   |  const char *specialfile, int swap_flags                                                                                                   |  2
+88   |  0x58   |  reboot                   |  int magic1, int magic2, unsigned int cmd, void *arg                                                                                       |  4
+89   |  0x59   |  readdir                  |  unsigned int fd, struct old_linux_dirent *dirent, unsigned int count                                                                      |  3
+90   |  0x5a   |  mmap                     |  struct mmap_arg_struct *arg                                                                                                               |  1
+91   |  0x5b   |  munmap                   |  unsigned long addr, size_t len                                                                                                            |  2
+92   |  0x5c   |  truncate                 |  const char *path, long length                                                                                                             |  2
+93   |  0x5d   |  ftruncate                |  unsigned int fd, off_t length                                                                                                             |  2
+94   |  0x5e   |  fchmod                   |  unsigned int fd, umode_t mode                                                                                                             |  2
+95   |  0x5f   |  fchown16                 |  unsigned int fd, old_uid_t user, old_gid_t group                                                                                          |  3
+96   |  0x60   |  getpriority              |  int which, int who                                                                                                                        |  2
+97   |  0x61   |  setpriority              |  int which, int who, int niceval                                                                                                           |  3
+99   |  0x63   |  statfs                   |  const char *pathname, struct statfs *buf                                                                                                  |  2
+100  |  0x64   |  fstatfs                  |  unsigned int fd, struct statfs *buf                                                                                                       |  2
+101  |  0x65   |  ioperm                   |  unsigned long from, unsigned long num, int turn_on                                                                                        |  3
+102  |  0x66   |  socketcall               |  int call, unsigned long *args                                                                                                             |  2
+103  |  0x67   |  syslog                   |  int type, char *buf, int len                                                                                                              |  3
+104  |  0x68   |  setitimer                |  int which, struct __kernel_old_itimerval *value, struct __kernel_old_itimerval *ovalue                                                    |  3
+105  |  0x69   |  getitimer                |  int which, struct __kernel_old_itimerval *value                                                                                           |  2
+106  |  0x6a   |  newstat                  |  const char *filename, struct stat *statbuf                                                                                                |  2
+107  |  0x6b   |  newlstat                 |  const char *filename, struct stat *statbuf                                                                                                |  2
+108  |  0x6c   |  newfstat                 |  unsigned int fd, struct stat *statbuf                                                                                                     |  2
+109  |  0x6d   |  uname                    |  struct old_utsname *name                                                                                                                  |  1
+110  |  0x6e   |  iopl                     |  unsigned int level                                                                                                                        |  1
+111  |  0x6f   |  vhangup                  |  void                                                                                                                                      |  0
+113  |  0x71   |  vm86old                  |  struct vm86_struct *user_vm86                                                                                                             |  1
+114  |  0x72   |  wait4                    |  pid_t upid, int *stat_addr, int options, struct rusage *ru                                                                                |  4
+115  |  0x73   |  swapoff                  |  const char *specialfile                                                                                                                   |  1
+116  |  0x74   |  sysinfo                  |  struct sysinfo *info                                                                                                                      |  1
+117  |  0x75   |  ipc                      |  unsigned int call, int first, unsigned long second, unsigned long third, void *ptr, long fifth                                            |  6
+118  |  0x76   |  fsync                    |  unsigned int fd                                                                                                                           |  1
+119  |  0x77   |  sigreturn                |  void                                                                                                                                      |  0
+120  |  0x78   |  clone                    |  unsigned long clone_flags, unsigned long newsp, int *parent_tidptr, unsigned long tls, int *child_tidptr                                  |  5
+121  |  0x79   |  setdomainname            |  char *name, int len                                                                                                                       |  2
+122  |  0x7a   |  newuname                 |  struct new_utsname *name                                                                                                                  |  1
+123  |  0x7b   |  modify_ldt               |  int func, void *ptr, unsigned long bytecount                                                                                              |  3
+124  |  0x7c   |  adjtimex                 |  struct old_timex32 *utp                                                                                                                   |  1
+125  |  0x7d   |  mprotect                 |  unsigned long start, size_t len, unsigned long prot                                                                                       |  3
+126  |  0x7e   |  sigprocmask              |  int how, old_sigset_t *nset, old_sigset_t *oset                                                                                           |  3
+128  |  0x80   |  init_module              |  void *umod, unsigned long len, const char *uargs                                                                                          |  3
+129  |  0x81   |  delete_module            |  const char *name_user, unsigned int flags                                                                                                 |  2
+131  |  0x83   |  quotactl                 |  unsigned int cmd, const char *special, qid_t id, void *addr                                                                               |  4
+132  |  0x84   |  getpgid                  |  pid_t pid                                                                                                                                 |  1
+133  |  0x85   |  fchdir                   |  unsigned int fd                                                                                                                           |  1
+135  |  0x87   |  sysfs                    |  int option, unsigned long arg1, unsigned long arg2                                                                                        |  3
+136  |  0x88   |  personality              |  unsigned int personality                                                                                                                  |  1
+138  |  0x8a   |  setfsuid16               |  old_uid_t uid                                                                                                                             |  1
+139  |  0x8b   |  setfsgid16               |  old_gid_t gid                                                                                                                             |  1
+140  |  0x8c   |  llseek                   |  unsigned int fd, unsigned long offset_high, unsigned long offset_low, loff_t *result, unsigned int whence                                 |  5
+141  |  0x8d   |  getdents                 |  unsigned int fd, struct linux_dirent *dirent, unsigned int count                                                                          |  3
+142  |  0x8e   |  select                   |  int n, fd_set *inp, fd_set *outp, fd_set *exp, struct __kernel_old_timeval *tvp                                                           |  5
+143  |  0x8f   |  flock                    |  unsigned int fd, unsigned int cmd                                                                                                         |  2
+144  |  0x90   |  msync                    |  unsigned long start, size_t len, int flags                                                                                                |  3
+145  |  0x91   |  readv                    |  unsigned long fd, const struct iovec *vec, unsigned long vlen                                                                             |  3
+146  |  0x92   |  writev                   |  unsigned long fd, const struct iovec *vec, unsigned long vlen                                                                             |  3
+147  |  0x93   |  getsid                   |  pid_t pid                                                                                                                                 |  1
+148  |  0x94   |  fdatasync                |  unsigned int fd                                                                                                                           |  1
+150  |  0x96   |  mlock                    |  unsigned long start, size_t len                                                                                                           |  2
+151  |  0x97   |  munlock                  |  unsigned long start, size_t len                                                                                                           |  2
+152  |  0x98   |  mlockall                 |  int flags                                                                                                                                 |  1
+153  |  0x99   |  munlockall               |  void                                                                                                                                      |  0
+154  |  0x9a   |  sched_setparam           |  pid_t pid, struct sched_param *param                                                                                                      |  2
+155  |  0x9b   |  sched_getparam           |  pid_t pid, struct sched_param *param                                                                                                      |  2
+156  |  0x9c   |  sched_setscheduler       |  pid_t pid, int policy, struct sched_param *param                                                                                          |  3
+157  |  0x9d   |  sched_getscheduler       |  pid_t pid                                                                                                                                 |  1
+158  |  0x9e   |  sched_yield              |  void                                                                                                                                      |  0
+159  |  0x9f   |  sched_get_priority_max   |  int policy                                                                                                                                |  1
+160  |  0xa0   |  sched_get_priority_min   |  int policy                                                                                                                                |  1
+161  |  0xa1   |  sched_rr_get_interval    |  pid_t pid, struct old_timespec32 *interval                                                                                                |  2
+162  |  0xa2   |  nanosleep                |  struct old_timespec32 *rqtp, struct old_timespec32 *rmtp                                                                                  |  2
+163  |  0xa3   |  mremap                   |  unsigned long addr, unsigned long old_len, unsigned long new_len, unsigned long flags, unsigned long new_addr                             |  5
+164  |  0xa4   |  setresuid16              |  old_uid_t ruid, old_uid_t euid, old_uid_t suid                                                                                            |  3
+165  |  0xa5   |  getresuid16              |  old_uid_t *ruidp, old_uid_t *euidp, old_uid_t *suidp                                                                                      |  3
+166  |  0xa6   |  vm86                     |  unsigned long cmd, unsigned long arg                                                                                                      |  2
+168  |  0xa8   |  poll                     |  struct pollfd *ufds, unsigned int nfds, int timeout_msecs                                                                                 |  3
+170  |  0xaa   |  setresgid16              |  old_gid_t rgid, old_gid_t egid, old_gid_t sgid                                                                                            |  3
+171  |  0xab   |  getresgid16              |  old_gid_t *rgidp, old_gid_t *egidp, old_gid_t *sgidp                                                                                      |  3
+172  |  0xac   |  prctl                    |  int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5                                                |  5
+173  |  0xad   |  rt_sigreturn             |  void                                                                                                                                      |  0
+174  |  0xae   |  rt_sigaction             |  int sig, const struct sigaction *act, struct sigaction *oact, size_t sigsetsize                                                           |  4
+175  |  0xaf   |  rt_sigprocmask           |  int how, sigset_t *nset, sigset_t *oset, size_t sigsetsize                                                                                |  4
+176  |  0xb0   |  rt_sigpending            |  sigset_t *uset, size_t sigsetsize                                                                                                         |  2
+177  |  0xb1   |  rt_sigtimedwait          |  const sigset_t *uthese, siginfo_t *uinfo, const struct old_timespec32 *uts, size_t sigsetsize                                             |  4
+178  |  0xb2   |  rt_sigqueueinfo          |  pid_t pid, int sig, siginfo_t *uinfo                                                                                                      |  3
+179  |  0xb3   |  rt_sigsuspend            |  sigset_t *unewset, size_t sigsetsize                                                                                                      |  2
+180  |  0xb4   |  pread64                  |  unsigned int fd, char *ubuf, u32 count, u32 poslo, u32 poshi                                                                              |  5
+181  |  0xb5   |  pwrite64                 |  unsigned int fd, const char *ubuf, u32 count, u32 poslo, u32 poshi                                                                        |  5
+182  |  0xb6   |  chown16                  |  const char *filename, old_uid_t user, old_gid_t group                                                                                     |  3
+183  |  0xb7   |  getcwd                   |  char *buf, unsigned long size                                                                                                             |  2
+184  |  0xb8   |  capget                   |  cap_user_header_t header, cap_user_data_t dataptr                                                                                         |  2
+185  |  0xb9   |  capset                   |  cap_user_header_t header, const cap_user_data_t data                                                                                      |  2
+186  |  0xba   |  sigaltstack              |  const stack_t *uss, stack_t *uoss                                                                                                         |  2
+187  |  0xbb   |  sendfile                 |  int out_fd, int in_fd, off_t *offset, size_t count                                                                                        |  4
+190  |  0xbe   |  vfork                    |  void                                                                                                                                      |  0
+191  |  0xbf   |  getrlimit                |  unsigned int resource, struct rlimit *rlim                                                                                                |  2
+192  |  0xc0   |  mmap_pgoff               |  unsigned long addr, unsigned long len, unsigned long prot, unsigned long flags, unsigned long fd, unsigned long pgoff                     |  6
+193  |  0xc1   |  truncate64               |  const char *filename, unsigned long offset_low, unsigned long offset_high                                                                 |  3
+194  |  0xc2   |  ftruncate64              |  unsigned int fd, unsigned long offset_low, unsigned long offset_high                                                                      |  3
+195  |  0xc3   |  stat64                   |  const char *filename, struct stat64 *statbuf                                                                                              |  2
+196  |  0xc4   |  lstat64                  |  const char *filename, struct stat64 *statbuf                                                                                              |  2
+197  |  0xc5   |  fstat64                  |  unsigned long fd, struct stat64 *statbuf                                                                                                  |  2
+198  |  0xc6   |  lchown                   |  const char *filename, uid_t user, gid_t group                                                                                             |  3
+199  |  0xc7   |  getuid                   |  void                                                                                                                                      |  0
+200  |  0xc8   |  getgid                   |  void                                                                                                                                      |  0
+201  |  0xc9   |  geteuid                  |  void                                                                                                                                      |  0
+202  |  0xca   |  getegid                  |  void                                                                                                                                      |  0
+203  |  0xcb   |  setreuid                 |  uid_t ruid, uid_t euid                                                                                                                    |  2
+204  |  0xcc   |  setregid                 |  gid_t rgid, gid_t egid                                                                                                                    |  2
+205  |  0xcd   |  getgroups                |  int gidsetsize, gid_t *grouplist                                                                                                          |  2
+206  |  0xce   |  setgroups                |  int gidsetsize, gid_t *grouplist                                                                                                          |  2
+207  |  0xcf   |  fchown                   |  unsigned int fd, uid_t user, gid_t group                                                                                                  |  3
+208  |  0xd0   |  setresuid                |  uid_t ruid, uid_t euid, uid_t suid                                                                                                        |  3
+209  |  0xd1   |  getresuid                |  uid_t *ruidp, uid_t *euidp, uid_t *suidp                                                                                                  |  3
+210  |  0xd2   |  setresgid                |  gid_t rgid, gid_t egid, gid_t sgid                                                                                                        |  3
+211  |  0xd3   |  getresgid                |  gid_t *rgidp, gid_t *egidp, gid_t *sgidp                                                                                                  |  3
+212  |  0xd4   |  chown                    |  const char *filename, uid_t user, gid_t group                                                                                             |  3
+213  |  0xd5   |  setuid                   |  uid_t uid                                                                                                                                 |  1
+214  |  0xd6   |  setgid                   |  gid_t gid                                                                                                                                 |  1
+215  |  0xd7   |  setfsuid                 |  uid_t uid                                                                                                                                 |  1
+216  |  0xd8   |  setfsgid                 |  gid_t gid                                                                                                                                 |  1
+217  |  0xd9   |  pivot_root               |  const char *new_root, const char *put_old                                                                                                 |  2
+218  |  0xda   |  mincore                  |  unsigned long start, size_t len, unsigned char *vec                                                                                       |  3
+219  |  0xdb   |  madvise                  |  unsigned long start, size_t len_in, int behavior                                                                                          |  3
+220  |  0xdc   |  getdents64               |  unsigned int fd, struct linux_dirent64 *dirent, unsigned int count                                                                        |  3
+221  |  0xdd   |  fcntl64                  |  unsigned int fd, unsigned int cmd, unsigned long arg                                                                                      |  3
+224  |  0xe0   |  gettid                   |  void                                                                                                                                      |  0
+225  |  0xe1   |  readahead                |  int fd, unsigned int off_lo, unsigned int off_hi, size_t count                                                                            |  4
+226  |  0xe2   |  setxattr                 |  const char *pathname, const char *name, const void *value, size_t size, int flags                                                         |  5
+227  |  0xe3   |  lsetxattr                |  const char *pathname, const char *name, const void *value, size_t size, int flags                                                         |  5
+228  |  0xe4   |  fsetxattr                |  int fd, const char *name, const void *value, size_t size, int flags                                                                       |  5
+229  |  0xe5   |  getxattr                 |  const char *pathname, const char *name, void *value, size_t size                                                                          |  4
+230  |  0xe6   |  lgetxattr                |  const char *pathname, const char *name, void *value, size_t size                                                                          |  4
+231  |  0xe7   |  fgetxattr                |  int fd, const char *name, void *value, size_t size                                                                                        |  4
+232  |  0xe8   |  listxattr                |  const char *pathname, char *list, size_t size                                                                                             |  3
+233  |  0xe9   |  llistxattr               |  const char *pathname, char *list, size_t size                                                                                             |  3
+234  |  0xea   |  flistxattr               |  int fd, char *list, size_t size                                                                                                           |  3
+235  |  0xeb   |  removexattr              |  const char *pathname, const char *name                                                                                                    |  2
+236  |  0xec   |  lremovexattr             |  const char *pathname, const char *name                                                                                                    |  2
+237  |  0xed   |  fremovexattr             |  int fd, const char *name                                                                                                                  |  2
+238  |  0xee   |  tkill                    |  pid_t pid, int sig                                                                                                                        |  2
+239  |  0xef   |  sendfile64               |  int out_fd, int in_fd, loff_t *offset, size_t count                                                                                       |  4
+240  |  0xf0   |  futex                    |  u32 *uaddr, int op, u32 val, const struct old_timespec32 *utime, u32 *uaddr2, u32 val3                                                    |  6
+241  |  0xf1   |  sched_setaffinity        |  pid_t pid, unsigned int len, unsigned long *user_mask_ptr                                                                                 |  3
+242  |  0xf2   |  sched_getaffinity        |  pid_t pid, unsigned int len, unsigned long *user_mask_ptr                                                                                 |  3
+243  |  0xf3   |  set_thread_area          |  struct user_desc *u_info                                                                                                                  |  1
+244  |  0xf4   |  get_thread_area          |  struct user_desc *u_info                                                                                                                  |  1
+245  |  0xf5   |  io_setup                 |  unsigned nr_events, aio_context_t *ctxp                                                                                                   |  2
+246  |  0xf6   |  io_destroy               |  aio_context_t ctx                                                                                                                         |  1
+247  |  0xf7   |  io_getevents             |  __u32 ctx_id, __s32 min_nr, __s32 nr, struct io_event *events, struct old_timespec32 *timeout                                             |  5
+248  |  0xf8   |  io_submit                |  aio_context_t ctx_id, long nr, struct iocb **iocbpp                                                                                       |  3
+249  |  0xf9   |  io_cancel                |  aio_context_t ctx_id, struct iocb *iocb, struct io_event *result                                                                          |  3
+250  |  0xfa   |  fadvise64                |  int fd, unsigned int offset_lo, unsigned int offset_hi, size_t len, int advice                                                            |  5
+252  |  0xfc   |  exit_group               |  int error_code                                                                                                                            |  1
+254  |  0xfe   |  epoll_create             |  int size                                                                                                                                  |  1
+255  |  0xff   |  epoll_ctl                |  int epfd, int op, int fd, struct epoll_event *event                                                                                       |  4
+256  |  0x100  |  epoll_wait               |  int epfd, struct epoll_event *events, int maxevents, int timeout                                                                          |  4
+257  |  0x101  |  remap_file_pages         |  unsigned long start, unsigned long size, unsigned long prot, unsigned long pgoff, unsigned long flags                                     |  5
+258  |  0x102  |  set_tid_address          |  int *tidptr                                                                                                                               |  1
+259  |  0x103  |  timer_create             |  const clockid_t which_clock, struct sigevent *timer_event_spec, timer_t *created_timer_id                                                 |  3
+260  |  0x104  |  timer_settime            |  timer_t timer_id, int flags, struct old_itimerspec32 *new, struct old_itimerspec32 *old                                                   |  4
+261  |  0x105  |  timer_gettime            |  timer_t timer_id, struct old_itimerspec32 *setting                                                                                        |  2
+262  |  0x106  |  timer_getoverrun         |  timer_t timer_id                                                                                                                          |  1
+263  |  0x107  |  timer_delete             |  timer_t timer_id                                                                                                                          |  1
+264  |  0x108  |  clock_settime            |  clockid_t which_clock, struct old_timespec32 *tp                                                                                          |  2
+265  |  0x109  |  clock_gettime            |  clockid_t which_clock, struct old_timespec32 *tp                                                                                          |  2
+266  |  0x10a  |  clock_getres             |  clockid_t which_clock, struct old_timespec32 *tp                                                                                          |  2
+267  |  0x10b  |  clock_nanosleep          |  clockid_t which_clock, int flags, struct old_timespec32 *rqtp, struct old_timespec32 *rmtp                                                |  4
+268  |  0x10c  |  statfs64                 |  const char *pathname, size_t sz, struct statfs64 *buf                                                                                     |  3
+269  |  0x10d  |  fstatfs64                |  unsigned int fd, size_t sz, struct statfs64 *buf                                                                                          |  3
+270  |  0x10e  |  tgkill                   |  pid_t tgid, pid_t pid, int sig                                                                                                            |  3
+271  |  0x10f  |  utimes                   |  const char *filename, struct old_timeval32 *t                                                                                             |  2
+272  |  0x110  |  fadvise64_64             |  int fd, __u32 offset_low, __u32 offset_high, __u32 len_low, __u32 len_high, int advice                                                    |  6
+277  |  0x115  |  mq_open                  |  const char *u_name, int oflag, umode_t mode, struct mq_attr *u_attr                                                                       |  4
+278  |  0x116  |  mq_unlink                |  const char *u_name                                                                                                                        |  1
+279  |  0x117  |  mq_timedsend             |  mqd_t mqdes, const char *u_msg_ptr, unsigned int msg_len, unsigned int msg_prio, const struct old_timespec32 *u_abs_timeout               |  5
+280  |  0x118  |  mq_timedreceive          |  mqd_t mqdes, char *u_msg_ptr, unsigned int msg_len, unsigned int *u_msg_prio, const struct old_timespec32 *u_abs_timeout                  |  5
+281  |  0x119  |  mq_notify                |  mqd_t mqdes, const struct sigevent *u_notification                                                                                        |  2
+282  |  0x11a  |  mq_getsetattr            |  mqd_t mqdes, const struct mq_attr *u_mqstat, struct mq_attr *u_omqstat                                                                    |  3
+283  |  0x11b  |  kexec_load               |  unsigned long entry, unsigned long nr_segments, struct kexec_segment *segments, unsigned long flags                                       |  4
+284  |  0x11c  |  waitid                   |  int which, pid_t upid, struct siginfo *infop, int options, struct rusage *ru                                                              |  5
+286  |  0x11e  |  add_key                  |  const char *_type, const char *_description, const void *_payload, size_t plen, key_serial_t ringid                                       |  5
+287  |  0x11f  |  request_key              |  const char *_type, const char *_description, const char *_callout_info, key_serial_t destringid                                           |  4
+288  |  0x120  |  keyctl                   |  int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5                                                |  5
+289  |  0x121  |  ioprio_set               |  int which, int who, int ioprio                                                                                                            |  3
+290  |  0x122  |  ioprio_get               |  int which, int who                                                                                                                        |  2
+291  |  0x123  |  inotify_init             |  void                                                                                                                                      |  0
+292  |  0x124  |  inotify_add_watch        |  int fd, const char *pathname, u32 mask                                                                                                    |  3
+293  |  0x125  |  inotify_rm_watch         |  int fd, __s32 wd                                                                                                                          |  2
+295  |  0x127  |  openat                   |  int dfd, const char *filename, int flags, umode_t mode                                                                                    |  4
+296  |  0x128  |  mkdirat                  |  int dfd, const char *pathname, umode_t mode                                                                                               |  3
+297  |  0x129  |  mknodat                  |  int dfd, const char *filename, umode_t mode, unsigned int dev                                                                             |  4
+298  |  0x12a  |  fchownat                 |  int dfd, const char *filename, uid_t user, gid_t group, int flag                                                                          |  5
+299  |  0x12b  |  futimesat                |  unsigned int dfd, const char *filename, struct old_timeval32 *t                                                                           |  3
+300  |  0x12c  |  fstatat64                |  int dfd, const char *filename, struct stat64 *statbuf, int flag                                                                           |  4
+301  |  0x12d  |  unlinkat                 |  int dfd, const char *pathname, int flag                                                                                                   |  3
+302  |  0x12e  |  renameat                 |  int olddfd, const char *oldname, int newdfd, const char *newname                                                                          |  4
+303  |  0x12f  |  linkat                   |  int olddfd, const char *oldname, int newdfd, const char *newname, int flags                                                               |  5
+304  |  0x130  |  symlinkat                |  const char *oldname, int newdfd, const char *newname                                                                                      |  3
+305  |  0x131  |  readlinkat               |  int dfd, const char *pathname, char *buf, int bufsiz                                                                                      |  4
+306  |  0x132  |  fchmodat                 |  int dfd, const char *filename, umode_t mode                                                                                               |  3
+307  |  0x133  |  faccessat                |  int dfd, const char *filename, int mode                                                                                                   |  3
+308  |  0x134  |  pselect6                 |  int n, fd_set *inp, fd_set *outp, fd_set *exp, struct old_timespec32 *tsp, void *sig                                                      |  6
+309  |  0x135  |  ppoll                    |  struct pollfd *ufds, unsigned int nfds, struct old_timespec32 *tsp, const sigset_t *sigmask, size_t sigsetsize                            |  5
+310  |  0x136  |  unshare                  |  unsigned long unshare_flags                                                                                                               |  1
+311  |  0x137  |  set_robust_list          |  struct robust_list_head *head, size_t len                                                                                                 |  2
+312  |  0x138  |  get_robust_list          |  int pid, struct robust_list_head **head_ptr, size_t *len_ptr                                                                              |  3
+313  |  0x139  |  splice                   |  int fd_in, loff_t *off_in, int fd_out, loff_t *off_out, size_t len, unsigned int flags                                                    |  6
+314  |  0x13a  |  sync_file_range          |  int fd, unsigned int off_low, unsigned int off_hi, unsigned int n_low, unsigned int n_hi, int flags                                       |  6
+315  |  0x13b  |  tee                      |  int fdin, int fdout, size_t len, unsigned int flags                                                                                       |  4
+316  |  0x13c  |  vmsplice                 |  int fd, const struct iovec *uiov, unsigned long nr_segs, unsigned int flags                                                               |  4
+318  |  0x13e  |  getcpu                   |  unsigned *cpup, unsigned *nodep, struct getcpu_cache *unused                                                                              |  3
+319  |  0x13f  |  epoll_pwait              |  int epfd, struct epoll_event *events, int maxevents, int timeout, const sigset_t *sigmask, size_t sigsetsize                              |  6
+320  |  0x140  |  utimensat                |  unsigned int dfd, const char *filename, struct old_timespec32 *t, int flags                                                               |  4
+321  |  0x141  |  signalfd                 |  int ufd, sigset_t *user_mask, size_t sizemask                                                                                             |  3
+322  |  0x142  |  timerfd_create           |  int clockid, int flags                                                                                                                    |  2
+323  |  0x143  |  eventfd                  |  unsigned int count                                                                                                                        |  1
+324  |  0x144  |  fallocate                |  int fd, int mode, unsigned int offset_lo, unsigned int offset_hi, unsigned int len_lo, unsigned int len_hi                                |  6
+325  |  0x145  |  timerfd_settime          |  int ufd, int flags, const struct old_itimerspec32 *utmr, struct old_itimerspec32 *otmr                                                    |  4
+326  |  0x146  |  timerfd_gettime          |  int ufd, struct old_itimerspec32 *otmr                                                                                                    |  2
+327  |  0x147  |  signalfd4                |  int ufd, sigset_t *user_mask, size_t sizemask, int flags                                                                                  |  4
+328  |  0x148  |  eventfd2                 |  unsigned int count, int flags                                                                                                             |  2
+329  |  0x149  |  epoll_create1            |  int flags                                                                                                                                 |  1
+330  |  0x14a  |  dup3                     |  unsigned int oldfd, unsigned int newfd, int flags                                                                                         |  3
+331  |  0x14b  |  pipe2                    |  int *fildes, int flags                                                                                                                    |  2
+332  |  0x14c  |  inotify_init1            |  int flags                                                                                                                                 |  1
+333  |  0x14d  |  preadv                   |  unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h                                   |  5
+334  |  0x14e  |  pwritev                  |  unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h                                   |  5
+335  |  0x14f  |  rt_tgsigqueueinfo        |  pid_t tgid, pid_t pid, int sig, siginfo_t *uinfo                                                                                          |  4
+336  |  0x150  |  perf_event_open          |  struct perf_event_attr *attr_uptr, pid_t pid, int cpu, int group_fd, unsigned long flags                                                  |  5
+337  |  0x151  |  recvmmsg                 |  int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags, struct old_timespec32 *timeout                                       |  5
+338  |  0x152  |  fanotify_init            |  unsigned int flags, unsigned int event_f_flags                                                                                            |  2
+339  |  0x153  |  fanotify_mark            |  int fanotify_fd, unsigned int flags, u32 mask_lo, u32 mask_hi, int dfd, const char *pathname                                              |  6
+340  |  0x154  |  prlimit64                |  pid_t pid, unsigned int resource, const struct rlimit64 *new_rlim, struct rlimit64 *old_rlim                                              |  4
+341  |  0x155  |  name_to_handle_at        |  int dfd, const char *name, struct file_handle *handle, void *mnt_id, int flag                                                             |  5
+342  |  0x156  |  open_by_handle_at        |  int mountdirfd, struct file_handle *handle, int flags                                                                                     |  3
+343  |  0x157  |  clock_adjtime            |  clockid_t which_clock, struct old_timex32 *utp                                                                                            |  2
+344  |  0x158  |  syncfs                   |  int fd                                                                                                                                    |  1
+345  |  0x159  |  sendmmsg                 |  int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags                                                                       |  4
+346  |  0x15a  |  setns                    |  int fd, int flags                                                                                                                         |  2
+347  |  0x15b  |  process_vm_readv         |  pid_t pid, const struct iovec *lvec, unsigned long liovcnt, const struct iovec *rvec, unsigned long riovcnt, unsigned long flags          |  6
+348  |  0x15c  |  process_vm_writev        |  pid_t pid, const struct iovec *lvec, unsigned long liovcnt, const struct iovec *rvec, unsigned long riovcnt, unsigned long flags          |  6
+349  |  0x15d  |  kcmp                     |  pid_t pid1, pid_t pid2, int type, unsigned long idx1, unsigned long idx2                                                                  |  5
+350  |  0x15e  |  finit_module             |  int fd, const char *uargs, int flags                                                                                                      |  3
+351  |  0x15f  |  sched_setattr            |  pid_t pid, struct sched_attr *uattr, unsigned int flags                                                                                   |  3
+352  |  0x160  |  sched_getattr            |  pid_t pid, struct sched_attr *uattr, unsigned int usize, unsigned int flags                                                               |  4
+353  |  0x161  |  renameat2                |  int olddfd, const char *oldname, int newdfd, const char *newname, unsigned int flags                                                      |  5
+354  |  0x162  |  seccomp                  |  unsigned int op, unsigned int flags, void *uargs                                                                                          |  3
+355  |  0x163  |  getrandom                |  char *ubuf, size_t len, unsigned int flags                                                                                                |  3
+356  |  0x164  |  memfd_create             |  const char *uname, unsigned int flags                                                                                                     |  2
+357  |  0x165  |  bpf                      |  int cmd, union bpf_attr *uattr, unsigned int size                                                                                         |  3
+358  |  0x166  |  execveat                 |  int fd, const char *filename, const char *const *argv, const char *const *envp, int flags                                                 |  5
+359  |  0x167  |  socket                   |  int family, int type, int protocol                                                                                                        |  3
+360  |  0x168  |  socketpair               |  int family, int type, int protocol, int *usockvec                                                                                         |  4
+361  |  0x169  |  bind                     |  int fd, struct sockaddr *umyaddr, int addrlen                                                                                             |  3
+362  |  0x16a  |  connect                  |  int fd, struct sockaddr *uservaddr, int addrlen                                                                                           |  3
+363  |  0x16b  |  listen                   |  int fd, int backlog                                                                                                                       |  2
+364  |  0x16c  |  accept4                  |  int fd, struct sockaddr *upeer_sockaddr, int *upeer_addrlen, int flags                                                                    |  4
+365  |  0x16d  |  getsockopt               |  int fd, int level, int optname, char *optval, int *optlen                                                                                 |  5
+366  |  0x16e  |  setsockopt               |  int fd, int level, int optname, char *optval, int optlen                                                                                  |  5
+367  |  0x16f  |  getsockname              |  int fd, struct sockaddr *usockaddr, int *usockaddr_len                                                                                    |  3
+368  |  0x170  |  getpeername              |  int fd, struct sockaddr *usockaddr, int *usockaddr_len                                                                                    |  3
+369  |  0x171  |  sendto                   |  int fd, void *buff, size_t len, unsigned int flags, struct sockaddr *addr, int addr_len                                                   |  6
+370  |  0x172  |  sendmsg                  |  int fd, struct user_msghdr *msg, unsigned int flags                                                                                       |  3
+371  |  0x173  |  recvfrom                 |  int fd, void *ubuf, size_t size, unsigned int flags, struct sockaddr *addr, int *addr_len                                                 |  6
+372  |  0x174  |  recvmsg                  |  int fd, struct user_msghdr *msg, unsigned int flags                                                                                       |  3
+373  |  0x175  |  shutdown                 |  int fd, int how                                                                                                                           |  2
+374  |  0x176  |  userfaultfd              |  int flags                                                                                                                                 |  1
+375  |  0x177  |  membarrier               |  int cmd, unsigned int flags, int cpu_id                                                                                                   |  3
+376  |  0x178  |  mlock2                   |  unsigned long start, size_t len, int flags                                                                                                |  3
+377  |  0x179  |  copy_file_range          |  int fd_in, loff_t *off_in, int fd_out, loff_t *off_out, size_t len, unsigned int flags                                                    |  6
+378  |  0x17a  |  preadv2                  |  unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags                      |  6
+379  |  0x17b  |  pwritev2                 |  unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags                      |  6
+383  |  0x17f  |  statx                    |  int dfd, const char *filename, unsigned flags, unsigned int mask, struct statx *buffer                                                    |  5
+384  |  0x180  |  arch_prctl               |  int option, unsigned long arg2                                                                                                            |  2
+385  |  0x181  |  io_pgetevents            |  aio_context_t ctx_id, long min_nr, long nr, struct io_event *events, struct old_timespec32 *timeout, const struct __aio_sigset *usig      |  6
+386  |  0x182  |  rseq                     |  struct rseq *rseq, u32 rseq_len, int flags, u32 sig                                                                                       |  4
+393  |  0x189  |  semget                   |  key_t key, int nsems, int semflg                                                                                                          |  3
+394  |  0x18a  |  semctl                   |  int semid, int semnum, int cmd, unsigned long arg                                                                                         |  4
+395  |  0x18b  |  shmget                   |  key_t key, size_t size, int shmflg                                                                                                        |  3
+396  |  0x18c  |  shmctl                   |  int shmid, int cmd, struct shmid_ds *buf                                                                                                  |  3
+397  |  0x18d  |  shmat                    |  int shmid, char *shmaddr, int shmflg                                                                                                      |  3
+398  |  0x18e  |  shmdt                    |  char *shmaddr                                                                                                                             |  1
+399  |  0x18f  |  msgget                   |  key_t key, int msgflg                                                                                                                     |  2
+400  |  0x190  |  msgsnd                   |  int msqid, struct msgbuf *msgp, size_t msgsz, int msgflg                                                                                  |  4
+401  |  0x191  |  msgrcv                   |  int msqid, struct msgbuf *msgp, size_t msgsz, long msgtyp, int msgflg                                                                     |  5
+402  |  0x192  |  msgctl                   |  int msqid, int cmd, struct msqid_ds *buf                                                                                                  |  3
+403  |  0x193  |  clock_gettime            |  const clockid_t which_clock, struct __kernel_timespec *tp                                                                                 |  2
+404  |  0x194  |  clock_settime            |  const clockid_t which_clock, const struct __kernel_timespec *tp                                                                           |  2
+405  |  0x195  |  clock_adjtime            |  const clockid_t which_clock, struct __kernel_timex *utx                                                                                   |  2
+406  |  0x196  |  clock_getres             |  const clockid_t which_clock, struct __kernel_timespec *tp                                                                                 |  2
+407  |  0x197  |  clock_nanosleep          |  const clockid_t which_clock, int flags, const struct __kernel_timespec *rqtp, struct __kernel_timespec *rmtp                              |  4
+408  |  0x198  |  timer_gettime            |  timer_t timer_id, struct __kernel_itimerspec *setting                                                                                     |  2
+409  |  0x199  |  timer_settime            |  timer_t timer_id, int flags, const struct __kernel_itimerspec *new_setting, struct __kernel_itimerspec *old_setting                       |  4
+410  |  0x19a  |  timerfd_gettime          |  int ufd, struct __kernel_itimerspec *otmr                                                                                                 |  2
+411  |  0x19b  |  timerfd_settime          |  int ufd, int flags, const struct __kernel_itimerspec *utmr, struct __kernel_itimerspec *otmr                                              |  4
+412  |  0x19c  |  utimensat                |  int dfd, const char *filename, struct __kernel_timespec *utimes, int flags                                                                |  4
+413  |  0x19d  |  pselect6                 |  int n, fd_set *inp, fd_set *outp, fd_set *exp, struct __kernel_timespec *tsp, void *sig                                                   |  6
+414  |  0x19e  |  ppoll                    |  struct pollfd *ufds, unsigned int nfds, struct __kernel_timespec *tsp, const sigset_t *sigmask, size_t sigsetsize                         |  5
+416  |  0x1a0  |  io_pgetevents            |  aio_context_t ctx_id, long min_nr, long nr, struct io_event *events, struct __kernel_timespec *timeout, const struct __aio_sigset *usig   |  6
+417  |  0x1a1  |  recvmmsg                 |  int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags, struct __kernel_timespec *timeout                                    |  5
+418  |  0x1a2  |  mq_timedsend             |  mqd_t mqdes, const char *u_msg_ptr, size_t msg_len, unsigned int msg_prio, const struct __kernel_timespec *u_abs_timeout                  |  5
+419  |  0x1a3  |  mq_timedreceive          |  mqd_t mqdes, char *u_msg_ptr, size_t msg_len, unsigned int *u_msg_prio, const struct __kernel_timespec *u_abs_timeout                     |  5
+420  |  0x1a4  |  semtimedop               |  int semid, struct sembuf *tsops, unsigned int nsops, const struct __kernel_timespec *timeout                                              |  4
+421  |  0x1a5  |  rt_sigtimedwait          |  const sigset_t *uthese, siginfo_t *uinfo, const struct __kernel_timespec *uts, size_t sigsetsize                                          |  4
+422  |  0x1a6  |  futex                    |  u32 *uaddr, int op, u32 val, const struct __kernel_timespec *utime, u32 *uaddr2, u32 val3                                                 |  6
+423  |  0x1a7  |  sched_rr_get_interval    |  pid_t pid, struct __kernel_timespec *interval                                                                                             |  2
+424  |  0x1a8  |  pidfd_send_signal        |  int pidfd, int sig, siginfo_t *info, unsigned int flags                                                                                   |  4
+425  |  0x1a9  |  io_uring_setup           |  u32 entries, struct io_uring_params *params                                                                                               |  2
+426  |  0x1aa  |  io_uring_enter           |  unsigned int fd, u32 to_submit, u32 min_complete, u32 flags, const void *argp, size_t argsz                                               |  6
+427  |  0x1ab  |  io_uring_register        |  unsigned int fd, unsigned int opcode, void *arg, unsigned int nr_args                                                                     |  4
+428  |  0x1ac  |  open_tree                |  int dfd, const char *filename, unsigned flags                                                                                             |  3
+429  |  0x1ad  |  move_mount               |  int from_dfd, const char *from_pathname, int to_dfd, const char *to_pathname, unsigned int flags                                          |  5
+430  |  0x1ae  |  fsopen                   |  const char *_fs_name, unsigned int flags                                                                                                  |  2
+431  |  0x1af  |  fsconfig                 |  int fd, unsigned int cmd, const char *_key, const void *_value, int aux                                                                   |  5
+432  |  0x1b0  |  fsmount                  |  int fs_fd, unsigned int flags, unsigned int attr_flags                                                                                    |  3
+433  |  0x1b1  |  fspick                   |  int dfd, const char *path, unsigned int flags                                                                                             |  3
+434  |  0x1b2  |  pidfd_open               |  pid_t pid, unsigned int flags                                                                                                             |  2
+435  |  0x1b3  |  clone3                   |  struct clone_args *uargs, size_t size                                                                                                     |  2
+436  |  0x1b4  |  close_range              |  unsigned int fd, unsigned int max_fd, unsigned int flags                                                                                  |  3
+437  |  0x1b5  |  openat2                  |  int dfd, const char *filename, struct open_how *how, size_t usize                                                                         |  4
+438  |  0x1b6  |  pidfd_getfd              |  int pidfd, int fd, unsigned int flags                                                                                                     |  3
+439  |  0x1b7  |  faccessat2               |  int dfd, const char *filename, int mode, int flags                                                                                        |  4
+440  |  0x1b8  |  process_madvise          |  int pidfd, const struct iovec *vec, size_t vlen, int behavior, unsigned int flags                                                         |  5
+441  |  0x1b9  |  epoll_pwait2             |  int epfd, struct epoll_event *events, int maxevents, const struct __kernel_timespec *timeout, const sigset_t *sigmask, size_t sigsetsize  |  6
+442  |  0x1ba  |  mount_setattr            |  int dfd, const char *path, unsigned int flags, struct mount_attr *uattr, size_t usize                                                     |  5
+443  |  0x1bb  |  quotactl_fd              |  unsigned int fd, unsigned int cmd, qid_t id, void *addr                                                                                   |  4
+444  |  0x1bc  |  landlock_create_ruleset  |  const struct landlock_ruleset_attr *const attr, const size_t size, const __u32 flags                                                      |  3
+445  |  0x1bd  |  landlock_add_rule        |  const int ruleset_fd, const enum landlock_rule_type rule_type, const void *const rule_attr, const __u32 flags                             |  4
+446  |  0x1be  |  landlock_restrict_self   |  const int ruleset_fd, const __u32 flags                                                                                                   |  2
+447  |  0x1bf  |  memfd_secret             |  unsigned int flags                                                                                                                        |  1
+448  |  0x1c0  |  process_mrelease         |  int pidfd, unsigned int flags                                                                                                             |  2
+449  |  0x1c1  |  futex_waitv              |  struct futex_waitv *waiters, unsigned int nr_futexes, unsigned int flags, struct __kernel_timespec *timeout, clockid_t clockid            |  5
+451  |  0x1c3  |  cachestat                |  unsigned int fd, struct cachestat_range *cstat_range, struct cachestat *cstat, unsigned int flags                                         |  4
+452  |  0x1c4  |  fchmodat2                |  int dfd, const char *filename, umode_t mode, unsigned int flags                                                                           |  4
+454  |  0x1c6  |  futex_wake               |  void *uaddr, unsigned long mask, int nr, unsigned int flags                                                                               |  4
+455  |  0x1c7  |  futex_wait               |  void *uaddr, unsigned long val, unsigned long mask, unsigned int flags, struct __kernel_timespec *timeout, clockid_t clockid              |  6
+456  |  0x1c8  |  futex_requeue            |  struct futex_waitv *waiters, unsigned int flags, int nr_wake, int nr_requeue                                                              |  4
+457  |  0x1c9  |  statmount                |  const struct mnt_id_req *req, struct statmount *buf, size_t bufsize, unsigned int flags                                                   |  4
+458  |  0x1ca  |  listmount                |  const struct mnt_id_req *req, u64 *mnt_ids, size_t nr_mnt_ids, unsigned int flags                                                         |  4
+459  |  0x1cb  |  lsm_get_self_attr        |  unsigned int attr, struct lsm_ctx *ctx, u32 *size, u32 flags                                                                              |  4
+460  |  0x1cc  |  lsm_set_self_attr        |  unsigned int attr, struct lsm_ctx *ctx, u32 size, u32 flags                                                                               |  4
+461  |  0x1cd  |  lsm_list_modules         |  u64 *ids, u32 *size, u32 flags                                                                                                            |  3
+463  |  0x1cf  |  setxattrat               |  int dfd, const char *pathname, unsigned int at_flags, const char *name, const struct xattr_args *uargs, size_t usize                      |  6
+464  |  0x1d0  |  getxattrat               |  int dfd, const char *pathname, unsigned int at_flags, const char *name, struct xattr_args *uargs, size_t usize                            |  6
+465  |  0x1d1  |  listxattrat              |  int dfd, const char *pathname, unsigned int at_flags, char *list, size_t size                                                             |  5
+466  |  0x1d2  |  removexattrat            |  int dfd, const char *pathname, unsigned int at_flags, const char *name                                                                    |  4
+467  |  0x1d3  |  open_tree_attr           |  int dfd, const char *filename, unsigned flags, struct mount_attr *uattr, size_t usize                                                     |  5
+468  |  0x1d4  |  file_getattr             |  int dfd, const char *filename, struct file_attr *ufattr, size_t usize, unsigned int at_flags                                              |  5
+469  |  0x1d5  |  file_setattr             |  int dfd, const char *filename, struct file_attr *ufattr, size_t usize, unsigned int at_flags                                              |  5

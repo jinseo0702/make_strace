@@ -1,0 +1,426 @@
+0	0x0	restart_syscall	__ia32_sys_restart_syscall	kernel/signal.c:3175		void
+1	0x1	exit	__ia32_sys_exit	kernel/exit.c:1067		int error_code
+2	0x2	fork	__ia32_sys_fork	kernel/fork.c:2687	MMU	void
+3	0x3	read	__ia32_sys_read	fs/read_write.c:722		unsigned int fd, char *buf, size_t count
+4	0x4	write	__ia32_sys_write	fs/read_write.c:746		unsigned int fd, const char *buf, size_t count
+5	0x5	open	__ia32_sys_open	fs/open.c:1454		const char *filename, int flags, umode_t mode
+6	0x6	close	__ia32_sys_close	fs/open.c:1572		unsigned int fd
+7	0x7	waitpid	__ia32_sys_waitpid	kernel/exit.c:1908		pid_t pid, int *stat_addr, int options
+8	0x8	creat	__ia32_sys_creat	fs/open.c:1522		const char *pathname, umode_t mode
+9	0x9	link	__ia32_sys_link	fs/namei.c:4956		const char *oldname, const char *newname
+10	0xa	unlink	__ia32_sys_unlink	fs/namei.c:4694		const char *pathname
+11	0xb	execve	__ia32_sys_execve	fs/exec.c:2005		const char *filename, const char *const *argv, const char *const *envp
+12	0xc	chdir	__ia32_sys_chdir	fs/open.c:555		const char *filename
+13	0xd	time	__ia32_sys_time32	kernel/time/time.c:105		old_time32_t *tloc
+14	0xe	mknod	__ia32_sys_mknod	fs/namei.c:4316		const char *filename, umode_t mode, unsigned dev
+15	0xf	chmod	__ia32_sys_chmod	fs/open.c:719		const char *filename, umode_t mode
+16	0x10	lchown16	__ia32_sys_lchown16	kernel/uid16.c:28	UID16	const char *filename, old_uid_t user, old_gid_t group
+18	0x12	stat	__ia32_sys_stat	fs/stat.c:424		const char *filename, struct __old_kernel_stat *statbuf
+19	0x13	lseek	__ia32_sys_lseek	fs/read_write.c:410		unsigned int fd, off_t offset, unsigned int whence
+20	0x14	getpid	__ia32_sys_getpid	kernel/sys.c:999		void
+21	0x15	mount	__ia32_sys_mount	fs/namespace.c:4324		char *dev_name, char *dir_name, char *type, unsigned long flags, void *data
+22	0x16	oldumount	__ia32_sys_oldumount	fs/namespace.c:2128		char *name
+23	0x17	setuid16	__ia32_sys_setuid16	kernel/uid16.c:53	UID16	old_uid_t uid
+24	0x18	getuid16	__ia32_sys_getuid16	kernel/uid16.c:203	UID16	void
+25	0x19	stime	__ia32_sys_stime32	kernel/time/time.c:119		old_time32_t *tptr
+26	0x1a	ptrace	__ia32_sys_ptrace	kernel/ptrace.c:1387		long request, long pid, unsigned long addr, unsigned long data
+27	0x1b	alarm	__ia32_sys_alarm	kernel/time/itimer.c:326		unsigned int seconds
+28	0x1c	fstat	__ia32_sys_fstat	fs/stat.c:450		unsigned int fd, struct __old_kernel_stat *statbuf
+29	0x1d	pause	__ia32_sys_pause	kernel/signal.c:4822		void
+30	0x1e	utime	__ia32_sys_utime32	fs/utimes.c:231		const char *filename, struct old_utimbuf32 *t
+33	0x21	access	__ia32_sys_access	fs/open.c:550		const char *filename, int mode
+34	0x22	nice	__ia32_sys_nice	kernel/sched/syscalls.c:153		int increment
+36	0x24	sync	__ia32_sys_sync	fs/sync.c:111		void
+37	0x25	kill	__ia32_sys_kill	kernel/signal.c:3949		pid_t pid, int sig
+38	0x26	rename	__ia32_sys_rename	fs/namei.c:5323		const char *oldname, const char *newname
+39	0x27	mkdir	__ia32_sys_mkdir	fs/namei.c:4419		const char *pathname, umode_t mode
+40	0x28	rmdir	__ia32_sys_rmdir	fs/namei.c:4533		const char *pathname
+41	0x29	dup	__ia32_sys_dup	fs/file.c:1454		unsigned int fildes
+42	0x2a	pipe	__ia32_sys_pipe	fs/pipe.c:1057		int *fildes
+43	0x2b	times	__ia32_sys_times	kernel/sys.c:1064		struct tms *tbuf
+45	0x2d	brk	__ia32_sys_brk	mm/mmap.c:115		unsigned long brk
+46	0x2e	setgid16	__ia32_sys_setgid16	kernel/uid16.c:43	UID16	old_gid_t gid
+47	0x2f	getgid16	__ia32_sys_getgid16	kernel/uid16.c:213	UID16	void
+48	0x30	signal	__ia32_sys_signal	kernel/signal.c:4805		int sig, __sighandler_t handler
+49	0x31	geteuid16	__ia32_sys_geteuid16	kernel/uid16.c:208	UID16	void
+50	0x32	getegid16	__ia32_sys_getegid16	kernel/uid16.c:218	UID16	void
+51	0x33	acct	__ia32_sys_acct	kernel/acct.c:314	BSD_PROCESS_ACCT	const char *name
+52	0x34	umount	__ia32_sys_umount	fs/namespace.c:2118		char *name, int flags
+54	0x36	ioctl	__ia32_sys_ioctl	fs/ioctl.c:584		unsigned int fd, unsigned int cmd, unsigned long arg
+55	0x37	fcntl	__ia32_sys_fcntl	fs/fcntl.c:576		unsigned int fd, unsigned int cmd, unsigned long arg
+57	0x39	setpgid	__ia32_sys_setpgid	kernel/sys.c:1114		pid_t pid, pid_t pgid
+59	0x3b	olduname	__ia32_sys_olduname	kernel/sys.c:1392		struct oldold_utsname *name
+60	0x3c	umask	__ia32_sys_umask	kernel/sys.c:1942		int mask
+61	0x3d	chroot	__ia32_sys_chroot	fs/open.c:598		const char *filename
+62	0x3e	ustat	__ia32_sys_ustat	fs/statfs.c:246		unsigned dev, struct ustat *ubuf
+63	0x3f	dup2	__ia32_sys_dup2	fs/file.c:1435		unsigned int oldfd, unsigned int newfd
+64	0x40	getppid	__ia32_sys_getppid	kernel/sys.c:1016		void
+65	0x41	getpgrp	__ia32_sys_getpgrp	kernel/sys.c:1222		void
+66	0x42	setsid	__ia32_sys_setsid	kernel/sys.c:1303		void
+67	0x43	sigaction	__ia32_sys_sigaction	kernel/signal.c:4701		int sig, const struct old_sigaction *act, struct old_sigaction *oact
+68	0x44	sgetmask	__ia32_sys_sgetmask	kernel/signal.c:4783	SGETMASK_SYSCALL	void
+69	0x45	ssetmask	__ia32_sys_ssetmask	kernel/signal.c:4789	SGETMASK_SYSCALL	int newmask
+70	0x46	setreuid16	__ia32_sys_setreuid16	kernel/uid16.c:48	UID16	old_uid_t ruid, old_uid_t euid
+71	0x47	setregid16	__ia32_sys_setregid16	kernel/uid16.c:38	UID16	old_gid_t rgid, old_gid_t egid
+72	0x48	sigsuspend	__ia32_sys_sigsuspend	kernel/signal.c:4889		int unused1, int unused2, old_sigset_t mask
+73	0x49	sigpending	__ia32_sys_sigpending	kernel/signal.c:4542		old_sigset_t *uset
+74	0x4a	sethostname	__ia32_sys_sethostname	kernel/sys.c:1419		char *name, int len
+75	0x4b	setrlimit	__ia32_sys_setrlimit	kernel/sys.c:1776		unsigned int resource, struct rlimit *rlim
+76	0x4c	getrlimit	__ia32_sys_old_getrlimit	kernel/sys.c:1628		unsigned int resource, struct rlimit *rlim
+77	0x4d	getrusage	__ia32_sys_getrusage	kernel/sys.c:1916		int who, struct rusage *ru
+78	0x4e	gettimeofday	__ia32_sys_gettimeofday	kernel/time/time.c:140		struct __kernel_old_timeval *tv, struct timezone *tz
+79	0x4f	settimeofday	__ia32_sys_settimeofday	kernel/time/time.c:199		struct __kernel_old_timeval *tv, struct timezone *tz
+80	0x50	getgroups16	__ia32_sys_getgroups16	kernel/uid16.c:154	UID16	int gidsetsize, old_gid_t *grouplist
+81	0x51	setgroups16	__ia32_sys_setgroups16	kernel/uid16.c:177	UID16	int gidsetsize, old_gid_t *grouplist
+82	0x52	select	__ia32_sys_old_select	fs/select.c:828		struct sel_arg_struct *arg
+83	0x53	symlink	__ia32_sys_symlink	fs/namei.c:4775		const char *oldname, const char *newname
+84	0x54	lstat	__ia32_sys_lstat	fs/stat.c:437		const char *filename, struct __old_kernel_stat *statbuf
+85	0x55	readlink	__ia32_sys_readlink	fs/stat.c:610		const char *path, char *buf, int bufsiz
+87	0x57	swapon	__ia32_sys_swapon	mm/swapfile.c:3259	SWAP	const char *specialfile, int swap_flags
+88	0x58	reboot	__ia32_sys_reboot	kernel/reboot.c:728		int magic1, int magic2, unsigned int cmd, void *arg
+89	0x59	readdir	__ia32_sys_old_readdir	fs/readdir.c:218		unsigned int fd, struct old_linux_dirent *dirent, unsigned int count
+90	0x5a	mmap	__ia32_sys_old_mmap	mm/mmap.c:628		struct mmap_arg_struct *arg
+91	0x5b	munmap	__ia32_sys_munmap	mm/mmap.c:1077		unsigned long addr, size_t len
+92	0x5c	truncate	__ia32_sys_truncate	fs/open.c:151		const char *path, long length
+93	0x5d	ftruncate	__ia32_sys_ftruncate	fs/open.c:213		unsigned int fd, off_t length
+94	0x5e	fchmod	__ia32_sys_fchmod	fs/open.c:670		unsigned int fd, umode_t mode
+95	0x5f	fchown16	__ia32_sys_fchown16	kernel/uid16.c:33	UID16	unsigned int fd, old_uid_t user, old_gid_t group
+96	0x60	getpriority	__ia32_sys_getpriority	kernel/sys.c:329		int which, int who
+97	0x61	setpriority	__ia32_sys_setpriority	kernel/sys.c:259		int which, int who, int niceval
+99	0x63	statfs	__ia32_sys_statfs	fs/statfs.c:190		const char *pathname, struct statfs *buf
+100	0x64	fstatfs	__ia32_sys_fstatfs	fs/statfs.c:211		unsigned int fd, struct statfs *buf
+101	0x65	ioperm	__ia32_sys_ioperm	arch/x86/kernel/ioport.c:158	X86_IOPL_IOPERM	unsigned long from, unsigned long num, int turn_on
+102	0x66	socketcall	__ia32_sys_socketcall	net/socket.c:3103	NET	int call, unsigned long *args
+103	0x67	syslog	__ia32_sys_syslog	kernel/printk/printk.c:1875		int type, char *buf, int len
+104	0x68	setitimer	__ia32_sys_setitimer	kernel/time/itimer.c:352		int which, struct __kernel_old_itimerval *value, struct __kernel_old_itimerval *ovalue
+105	0x69	getitimer	__ia32_sys_getitimer	kernel/time/itimer.c:113		int which, struct __kernel_old_itimerval *value
+106	0x6a	newstat	__ia32_sys_newstat	fs/stat.c:509		const char *filename, struct stat *statbuf
+107	0x6b	newlstat	__ia32_sys_newlstat	fs/stat.c:522		const char *filename, struct stat *statbuf
+108	0x6c	newfstat	__ia32_sys_newfstat	fs/stat.c:550		unsigned int fd, struct stat *statbuf
+109	0x6d	uname	__ia32_sys_uname	kernel/sys.c:1372		struct old_utsname *name
+110	0x6e	iopl	__ia32_sys_iopl	arch/x86/kernel/ioport.c:179	X86_IOPL_IOPERM	unsigned int level
+111	0x6f	vhangup	__ia32_sys_vhangup	fs/open.c:1606		void
+113	0x71	vm86old	__ia32_sys_vm86old	arch/x86/kernel/vm86_32.c:170	X86_LEGACY_VM86	struct vm86_struct *user_vm86
+114	0x72	wait4	__ia32_sys_wait4	kernel/exit.c:1889		pid_t upid, int *stat_addr, int options, struct rusage *ru
+115	0x73	swapoff	__ia32_sys_swapoff	mm/swapfile.c:2674	SWAP	const char *specialfile
+116	0x74	sysinfo	__ia32_sys_sysinfo	kernel/sys.c:2896		struct sysinfo *info
+117	0x75	ipc	__ia32_sys_ipc	ipc/syscall.c:110	SYSVIPC	unsigned int call, int first, unsigned long second, unsigned long third, void *ptr, long fifth
+118	0x76	fsync	__ia32_sys_fsync	fs/sync.c:215		unsigned int fd
+119	0x77	sigreturn	__ia32_sys_sigreturn	arch/x86/kernel/signal_32.c:149		void
+120	0x78	clone	__ia32_sys_clone	kernel/fork.c:2716		unsigned long clone_flags, unsigned long newsp, int *parent_tidptr, unsigned long tls, int *child_tidptr
+121	0x79	setdomainname	__ia32_sys_setdomainname	kernel/sys.c:1473		char *name, int len
+122	0x7a	newuname	__ia32_sys_newuname	kernel/sys.c:1351		struct new_utsname *name
+123	0x7b	modify_ldt	__ia32_sys_modify_ldt	arch/x86/kernel/ldt.c:667	MODIFY_LDT_SYSCALL	int func, void *ptr, unsigned long bytecount
+124	0x7c	adjtimex	__ia32_sys_adjtimex_time32	kernel/time/time.c:349		struct old_timex32 *utp
+125	0x7d	mprotect	__ia32_sys_mprotect	mm/mprotect.c:1008	MMU	unsigned long start, size_t len, unsigned long prot
+126	0x7e	sigprocmask	__ia32_sys_sigprocmask	kernel/signal.c:4581		int how, old_sigset_t *nset, old_sigset_t *oset
+128	0x80	init_module	__ia32_sys_init_module	kernel/module/main.c:3569	MODULES	void *umod, unsigned long len, const char *uargs
+129	0x81	delete_module	__ia32_sys_delete_module	kernel/module/main.c:776	MODULE_UNLOAD	const char *name_user, unsigned int flags
+131	0x83	quotactl	__ia32_sys_quotactl	fs/quota/quota.c:917	QUOTACTL	unsigned int cmd, const char *special, qid_t id, void *addr
+132	0x84	getpgid	__ia32_sys_getpgid	kernel/sys.c:1215		pid_t pid
+133	0x85	fchdir	__ia32_sys_fchdir	fs/open.c:581		unsigned int fd
+135	0x87	sysfs	__ia32_sys_sysfs	fs/filesystems.c:195	SYSFS_SYSCALL	int option, unsigned long arg1, unsigned long arg2
+136	0x88	personality	__ia32_sys_personality	kernel/exec_domain.c:38		unsigned int personality
+138	0x8a	setfsuid16	__ia32_sys_setfsuid16	kernel/uid16.c:104	UID16	old_uid_t uid
+139	0x8b	setfsgid16	__ia32_sys_setfsgid16	kernel/uid16.c:109	UID16	old_gid_t gid
+140	0x8c	llseek	__ia32_sys_llseek	fs/read_write.c:424		unsigned int fd, unsigned long offset_high, unsigned long offset_low, loff_t *result, unsigned int whence
+141	0x8d	getdents	__ia32_sys_getdents	fs/readdir.c:312		unsigned int fd, struct linux_dirent *dirent, unsigned int count
+142	0x8e	select	__ia32_sys_select	fs/select.c:722		int n, fd_set *inp, fd_set *outp, fd_set *exp, struct __kernel_old_timeval *tvp
+143	0x8f	flock	__ia32_sys_flock	fs/locks.c:2135		unsigned int fd, unsigned int cmd
+144	0x90	msync	__ia32_sys_msync	mm/msync.c:32	MMU	unsigned long start, size_t len, int flags
+145	0x91	readv	__ia32_sys_readv	fs/read_write.c:1162		unsigned long fd, const struct iovec *vec, unsigned long vlen
+146	0x92	writev	__ia32_sys_writev	fs/read_write.c:1168		unsigned long fd, const struct iovec *vec, unsigned long vlen
+147	0x93	getsid	__ia32_sys_getsid	kernel/sys.c:1229		pid_t pid
+148	0x94	fdatasync	__ia32_sys_fdatasync	fs/sync.c:220		unsigned int fd
+150	0x96	mlock	__ia32_sys_mlock	mm/mlock.c:659	MMU	unsigned long start, size_t len
+151	0x97	munlock	__ia32_sys_munlock	mm/mlock.c:677	MMU	unsigned long start, size_t len
+152	0x98	mlockall	__ia32_sys_mlockall	mm/mlock.c:745	MMU	int flags
+153	0x99	munlockall	__ia32_sys_munlockall	mm/mlock.c:774	MMU	void
+154	0x9a	sched_setparam	__ia32_sys_sched_setparam	kernel/sched/syscalls.c:966		pid_t pid, struct sched_param *param
+155	0x9b	sched_getparam	__ia32_sys_sched_getparam	kernel/sched/syscalls.c:1042		pid_t pid, struct sched_param *param
+156	0x9c	sched_setscheduler	__ia32_sys_sched_setscheduler	kernel/sched/syscalls.c:951		pid_t pid, int policy, struct sched_param *param
+157	0x9d	sched_getscheduler	__ia32_sys_sched_getscheduler	kernel/sched/syscalls.c:1012		pid_t pid
+158	0x9e	sched_yield	__ia32_sys_sched_yield	kernel/sched/syscalls.c:1371		void
+159	0x9f	sched_get_priority_max	__ia32_sys_sched_get_priority_max	kernel/sched/syscalls.c:1479		int policy
+160	0xa0	sched_get_priority_min	__ia32_sys_sched_get_priority_min	kernel/sched/syscalls.c:1507		int policy
+161	0xa1	sched_rr_get_interval	__ia32_sys_sched_rr_get_interval_time32	kernel/sched/syscalls.c:1578		pid_t pid, struct old_timespec32 *interval
+162	0xa2	nanosleep	__ia32_sys_nanosleep_time32	kernel/time/hrtimer.c:2190		struct old_timespec32 *rqtp, struct old_timespec32 *rmtp
+163	0xa3	mremap	__ia32_sys_mremap	mm/mremap.c:1964		unsigned long addr, unsigned long old_len, unsigned long new_len, unsigned long flags, unsigned long new_addr
+164	0xa4	setresuid16	__ia32_sys_setresuid16	kernel/uid16.c:58	UID16	old_uid_t ruid, old_uid_t euid, old_uid_t suid
+165	0xa5	getresuid16	__ia32_sys_getresuid16	kernel/uid16.c:64	UID16	old_uid_t *ruidp, old_uid_t *euidp, old_uid_t *suidp
+166	0xa6	vm86	__ia32_sys_vm86	arch/x86/kernel/vm86_32.c:176	X86_LEGACY_VM86	unsigned long cmd, unsigned long arg
+168	0xa8	poll	__ia32_sys_poll	fs/select.c:1062		struct pollfd *ufds, unsigned int nfds, int timeout_msecs
+170	0xaa	setresgid16	__ia32_sys_setresgid16	kernel/uid16.c:81	UID16	old_gid_t rgid, old_gid_t egid, old_gid_t sgid
+171	0xab	getresgid16	__ia32_sys_getresgid16	kernel/uid16.c:87	UID16	old_gid_t *rgidp, old_gid_t *egidp, old_gid_t *sgidp
+172	0xac	prctl	__ia32_sys_prctl	kernel/sys.c:2455		int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5
+173	0xad	rt_sigreturn	__ia32_sys_rt_sigreturn	arch/x86/kernel/signal_32.c:174		void
+174	0xae	rt_sigaction	__ia32_sys_rt_sigaction	kernel/signal.c:4629		int sig, const struct sigaction *act, struct sigaction *oact, size_t sigsetsize
+175	0xaf	rt_sigprocmask	__ia32_sys_rt_sigprocmask	kernel/signal.c:3318		int how, sigset_t *nset, sigset_t *oset, size_t sigsetsize
+176	0xb0	rt_sigpending	__ia32_sys_rt_sigpending	kernel/signal.c:3390		sigset_t *uset, size_t sigsetsize
+177	0xb1	rt_sigtimedwait	__ia32_sys_rt_sigtimedwait_time32	kernel/signal.c:3837		const sigset_t *uthese, siginfo_t *uinfo, const struct old_timespec32 *uts, size_t sigsetsize
+178	0xb2	rt_sigqueueinfo	__ia32_sys_rt_sigqueueinfo	kernel/signal.c:4211		pid_t pid, int sig, siginfo_t *uinfo
+179	0xb3	rt_sigsuspend	__ia32_sys_rt_sigsuspend	kernel/signal.c:4852		sigset_t *unewset, size_t sigsetsize
+180	0xb4	pread64	__ia32_sys_ia32_pread64	arch/x86/kernel/sys_ia32.c:68		unsigned int fd, char *ubuf, u32 count, u32 poslo, u32 poshi
+181	0xb5	pwrite64	__ia32_sys_ia32_pwrite64	arch/x86/kernel/sys_ia32.c:75		unsigned int fd, const char *ubuf, u32 count, u32 poslo, u32 poshi
+182	0xb6	chown16	__ia32_sys_chown16	kernel/uid16.c:23	UID16	const char *filename, old_uid_t user, old_gid_t group
+183	0xb7	getcwd	__ia32_sys_getcwd	fs/d_path.c:412		char *buf, unsigned long size
+184	0xb8	capget	__ia32_sys_capget	kernel/capability.c:137	MULTIUSER	cap_user_header_t header, cap_user_data_t dataptr
+185	0xb9	capset	__ia32_sys_capset	kernel/capability.c:216	MULTIUSER	cap_user_header_t header, const cap_user_data_t data
+186	0xba	sigaltstack	__ia32_sys_sigaltstack	kernel/signal.c:4446		const stack_t *uss, stack_t *uoss
+187	0xbb	sendfile	__ia32_sys_sendfile	fs/read_write.c:1398		int out_fd, int in_fd, off_t *offset, size_t count
+190	0xbe	vfork	__ia32_sys_vfork	kernel/fork.c:2703		void
+191	0xbf	getrlimit	__ia32_sys_getrlimit	kernel/sys.c:1563		unsigned int resource, struct rlimit *rlim
+192	0xc0	mmap_pgoff	__ia32_sys_mmap_pgoff	mm/mmap.c:611		unsigned long addr, unsigned long len, unsigned long prot, unsigned long flags, unsigned long fd, unsigned long pgoff
+193	0xc1	truncate64	__ia32_sys_ia32_truncate64	arch/x86/kernel/sys_ia32.c:54		const char *filename, unsigned long offset_low, unsigned long offset_high
+194	0xc2	ftruncate64	__ia32_sys_ia32_ftruncate64	arch/x86/kernel/sys_ia32.c:61		unsigned int fd, unsigned long offset_low, unsigned long offset_high
+195	0xc3	stat64	__ia32_sys_stat64	fs/stat.c:659		const char *filename, struct stat64 *statbuf
+196	0xc4	lstat64	__ia32_sys_lstat64	fs/stat.c:671		const char *filename, struct stat64 *statbuf
+197	0xc5	fstat64	__ia32_sys_fstat64	fs/stat.c:683		unsigned long fd, struct stat64 *statbuf
+198	0xc6	lchown	__ia32_sys_lchown	fs/open.c:845		const char *filename, uid_t user, gid_t group
+199	0xc7	getuid	__ia32_sys_getuid	kernel/sys.c:1027		void
+200	0xc8	getgid	__ia32_sys_getgid	kernel/sys.c:1039		void
+201	0xc9	geteuid	__ia32_sys_geteuid	kernel/sys.c:1033		void
+202	0xca	getegid	__ia32_sys_getegid	kernel/sys.c:1045		void
+203	0xcb	setreuid	__ia32_sys_setreuid	kernel/sys.c:635	MULTIUSER	uid_t ruid, uid_t euid
+204	0xcc	setregid	__ia32_sys_setregid	kernel/sys.c:469	MULTIUSER	gid_t rgid, gid_t egid
+205	0xcd	getgroups	__ia32_sys_getgroups	kernel/groups.c:161	MULTIUSER	int gidsetsize, gid_t *grouplist
+206	0xce	setgroups	__ia32_sys_setgroups	kernel/groups.c:198	MULTIUSER	int gidsetsize, gid_t *grouplist
+207	0xcf	fchown	__ia32_sys_fchown	fs/open.c:874		unsigned int fd, uid_t user, gid_t group
+208	0xd0	setresuid	__ia32_sys_setresuid	kernel/sys.c:783	MULTIUSER	uid_t ruid, uid_t euid, uid_t suid
+209	0xd1	getresuid	__ia32_sys_getresuid	kernel/sys.c:788	MULTIUSER	uid_t *ruidp, uid_t *euidp, uid_t *suidp
+210	0xd2	setresgid	__ia32_sys_setresgid	kernel/sys.c:872	MULTIUSER	gid_t rgid, gid_t egid, gid_t sgid
+211	0xd3	getresgid	__ia32_sys_getresgid	kernel/sys.c:877	MULTIUSER	gid_t *rgidp, gid_t *egidp, gid_t *sgidp
+212	0xd4	chown	__ia32_sys_chown	fs/open.c:840		const char *filename, uid_t user, gid_t group
+213	0xd5	setuid	__ia32_sys_setuid	kernel/sys.c:698	MULTIUSER	uid_t uid
+214	0xd6	setgid	__ia32_sys_setgid	kernel/sys.c:515	MULTIUSER	gid_t gid
+215	0xd7	setfsuid	__ia32_sys_setfsuid	kernel/sys.c:940	MULTIUSER	uid_t uid
+216	0xd8	setfsgid	__ia32_sys_setfsgid	kernel/sys.c:984	MULTIUSER	gid_t gid
+217	0xd9	pivot_root	__ia32_sys_pivot_root	fs/namespace.c:4661		const char *new_root, const char *put_old
+218	0xda	mincore	__ia32_sys_mincore	mm/mincore.c:247	MMU	unsigned long start, size_t len, unsigned char *vec
+219	0xdb	madvise	__ia32_sys_madvise	mm/madvise.c:1985	ADVISE_SYSCALLS	unsigned long start, size_t len_in, int behavior
+220	0xdc	getdents64	__ia32_sys_getdents64	fs/readdir.c:396		unsigned int fd, struct linux_dirent64 *dirent, unsigned int count
+221	0xdd	fcntl64	__ia32_sys_fcntl64	fs/fcntl.c:597		unsigned int fd, unsigned int cmd, unsigned long arg
+224	0xe0	gettid	__ia32_sys_gettid	kernel/sys.c:1005		void
+225	0xe1	readahead	__ia32_sys_ia32_readahead	arch/x86/kernel/sys_ia32.c:97		int fd, unsigned int off_lo, unsigned int off_hi, size_t count
+226	0xe2	setxattr	__ia32_sys_setxattr	fs/xattr.c:743		const char *pathname, const char *name, const void *value, size_t size, int flags
+227	0xe3	lsetxattr	__ia32_sys_lsetxattr	fs/xattr.c:750		const char *pathname, const char *name, const void *value, size_t size, int flags
+228	0xe4	fsetxattr	__ia32_sys_fsetxattr	fs/xattr.c:758		int fd, const char *name, const void *value, size_t size, int flags
+229	0xe5	getxattr	__ia32_sys_getxattr	fs/xattr.c:888		const char *pathname, const char *name, void *value, size_t size
+230	0xe6	lgetxattr	__ia32_sys_lgetxattr	fs/xattr.c:894		const char *pathname, const char *name, void *value, size_t size
+231	0xe7	fgetxattr	__ia32_sys_fgetxattr	fs/xattr.c:901		int fd, const char *name, void *value, size_t size
+232	0xe8	listxattr	__ia32_sys_listxattr	fs/xattr.c:998		const char *pathname, char *list, size_t size
+233	0xe9	llistxattr	__ia32_sys_llistxattr	fs/xattr.c:1004		const char *pathname, char *list, size_t size
+234	0xea	flistxattr	__ia32_sys_flistxattr	fs/xattr.c:1010		int fd, char *list, size_t size
+235	0xeb	removexattr	__ia32_sys_removexattr	fs/xattr.c:1097		const char *pathname, const char *name
+236	0xec	lremovexattr	__ia32_sys_lremovexattr	fs/xattr.c:1103		const char *pathname, const char *name
+237	0xed	fremovexattr	__ia32_sys_fremovexattr	fs/xattr.c:1109		int fd, const char *name
+238	0xee	tkill	__ia32_sys_tkill	kernel/signal.c:4183		pid_t pid, int sig
+239	0xef	sendfile64	__ia32_sys_sendfile64	fs/read_write.c:1417		int out_fd, int in_fd, loff_t *offset, size_t count
+240	0xf0	futex	__ia32_sys_futex_time32	kernel/futex/syscalls.c:492	FUTEX	u32 *uaddr, int op, u32 val, const struct old_timespec32 *utime, u32 *uaddr2, u32 val3
+241	0xf1	sched_setaffinity	__ia32_sys_sched_setaffinity	kernel/sched/syscalls.c:1273		pid_t pid, unsigned int len, unsigned long *user_mask_ptr
+242	0xf2	sched_getaffinity	__ia32_sys_sched_getaffinity	kernel/sched/syscalls.c:1318		pid_t pid, unsigned int len, unsigned long *user_mask_ptr
+243	0xf3	set_thread_area	__ia32_sys_set_thread_area	arch/x86/kernel/tls.c:186		struct user_desc *u_info
+244	0xf4	get_thread_area	__ia32_sys_get_thread_area	arch/x86/kernel/tls.c:238		struct user_desc *u_info
+245	0xf5	io_setup	__ia32_sys_io_setup	fs/aio.c:1382	AIO	unsigned nr_events, aio_context_t *ctxp
+246	0xf6	io_destroy	__ia32_sys_io_destroy	fs/aio.c:1451	AIO	aio_context_t ctx
+247	0xf7	io_getevents	__ia32_sys_io_getevents_time32	fs/aio.c:2349	AIO	__u32 ctx_id, __s32 min_nr, __s32 nr, struct io_event *events, struct old_timespec32 *timeout
+248	0xf8	io_submit	__ia32_sys_io_submit	fs/aio.c:2082	AIO	aio_context_t ctx_id, long nr, struct iocb **iocbpp
+249	0xf9	io_cancel	__ia32_sys_io_cancel	fs/aio.c:2176	AIO	aio_context_t ctx_id, struct iocb *iocb, struct io_event *result
+250	0xfa	fadvise64	__ia32_sys_ia32_fadvise64	arch/x86/kernel/sys_ia32.c:112	ADVISE_SYSCALLS	int fd, unsigned int offset_lo, unsigned int offset_hi, size_t len, int advice
+252	0xfc	exit_group	__ia32_sys_exit_group	kernel/exit.c:1111		int error_code
+254	0xfe	epoll_create	__ia32_sys_epoll_create	fs/eventpoll.c:2301	EPOLL	int size
+255	0xff	epoll_ctl	__ia32_sys_epoll_ctl	fs/eventpoll.c:2481	EPOLL	int epfd, int op, int fd, struct epoll_event *event
+256	0x100	epoll_wait	__ia32_sys_epoll_wait	fs/eventpoll.c:2563	EPOLL	int epfd, struct epoll_event *events, int maxevents, int timeout
+257	0x101	remap_file_pages	__ia32_sys_remap_file_pages	mm/mmap.c:1087	MMU	unsigned long start, unsigned long size, unsigned long prot, unsigned long pgoff, unsigned long flags
+258	0x102	set_tid_address	__ia32_sys_set_tid_address	kernel/fork.c:1733		int *tidptr
+259	0x103	timer_create	__ia32_sys_timer_create	kernel/time/posix-timers.c:574	POSIX_TIMERS	const clockid_t which_clock, struct sigevent *timer_event_spec, timer_t *created_timer_id
+260	0x104	timer_settime	__ia32_sys_timer_settime32	kernel/time/posix-timers.c:978	POSIX_TIMERS	timer_t timer_id, int flags, struct old_itimerspec32 *new, struct old_itimerspec32 *old
+261	0x105	timer_gettime	__ia32_sys_timer_gettime32	kernel/time/posix-timers.c:767	POSIX_TIMERS	timer_t timer_id, struct old_itimerspec32 *setting
+262	0x106	timer_getoverrun	__ia32_sys_timer_getoverrun	kernel/time/posix-timers.c:800	POSIX_TIMERS	timer_t timer_id
+263	0x107	timer_delete	__ia32_sys_timer_delete	kernel/time/posix-timers.c:1060	POSIX_TIMERS	timer_t timer_id
+264	0x108	clock_settime	__ia32_sys_clock_settime32	kernel/time/posix-timers.c:1275		clockid_t which_clock, struct old_timespec32 *tp
+265	0x109	clock_gettime	__ia32_sys_clock_gettime32	kernel/time/posix-timers.c:1290		clockid_t which_clock, struct old_timespec32 *tp
+266	0x10a	clock_getres	__ia32_sys_clock_getres_time32	kernel/time/posix-timers.c:1326		clockid_t which_clock, struct old_timespec32 *tp
+267	0x10b	clock_nanosleep	__ia32_sys_clock_nanosleep_time32	kernel/time/posix-timers.c:1404		clockid_t which_clock, int flags, struct old_timespec32 *rqtp, struct old_timespec32 *rmtp
+268	0x10c	statfs64	__ia32_sys_statfs64	fs/statfs.c:199		const char *pathname, size_t sz, struct statfs64 *buf
+269	0x10d	fstatfs64	__ia32_sys_fstatfs64	fs/statfs.c:220		unsigned int fd, size_t sz, struct statfs64 *buf
+270	0x10e	tgkill	__ia32_sys_tgkill	kernel/signal.c:4167		pid_t tgid, pid_t pid, int sig
+271	0x10f	utimes	__ia32_sys_utimes_time32	fs/utimes.c:290		const char *filename, struct old_timeval32 *t
+272	0x110	fadvise64_64	__ia32_sys_ia32_fadvise64_64	arch/x86/kernel/sys_ia32.c:87	ADVISE_SYSCALLS	int fd, __u32 offset_low, __u32 offset_high, __u32 len_low, __u32 len_high, int advice
+277	0x115	mq_open	__ia32_sys_mq_open	ipc/mqueue.c:945	POSIX_MQUEUE	const char *u_name, int oflag, umode_t mode, struct mq_attr *u_attr
+278	0x116	mq_unlink	__ia32_sys_mq_unlink	ipc/mqueue.c:955	POSIX_MQUEUE	const char *u_name
+279	0x117	mq_timedsend	__ia32_sys_mq_timedsend_time32	ipc/mqueue.c:1582	POSIX_MQUEUE	mqd_t mqdes, const char *u_msg_ptr, unsigned int msg_len, unsigned int msg_prio, const struct old_timespec32 *u_abs_timeout
+280	0x118	mq_timedreceive	__ia32_sys_mq_timedreceive_time32	ipc/mqueue.c:1597	POSIX_MQUEUE	mqd_t mqdes, char *u_msg_ptr, unsigned int msg_len, unsigned int *u_msg_prio, const struct old_timespec32 *u_abs_timeout
+281	0x119	mq_notify	__ia32_sys_mq_notify	ipc/mqueue.c:1400	POSIX_MQUEUE	mqd_t mqdes, const struct sigevent *u_notification
+282	0x11a	mq_getsetattr	__ia32_sys_mq_getsetattr	ipc/mqueue.c:1452	POSIX_MQUEUE	mqd_t mqdes, const struct mq_attr *u_mqstat, struct mq_attr *u_omqstat
+283	0x11b	kexec_load	__ia32_sys_kexec_load	kernel/kexec.c:242	KEXEC	unsigned long entry, unsigned long nr_segments, struct kexec_segment *segments, unsigned long flags
+284	0x11c	waitid	__ia32_sys_waitid	kernel/exit.c:1797		int which, pid_t upid, struct siginfo *infop, int options, struct rusage *ru
+286	0x11e	add_key	__ia32_sys_add_key	security/keys/keyctl.c:74	KEYS	const char *_type, const char *_description, const void *_payload, size_t plen, key_serial_t ringid
+287	0x11f	request_key	__ia32_sys_request_key	security/keys/keyctl.c:167	KEYS	const char *_type, const char *_description, const char *_callout_info, key_serial_t destringid
+288	0x120	keyctl	__ia32_sys_keyctl	security/keys/keyctl.c:1874	KEYS	int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5
+289	0x121	ioprio_set	__ia32_sys_ioprio_set	block/ioprio.c:65	BLOCK	int which, int who, int ioprio
+290	0x122	ioprio_get	__ia32_sys_ioprio_get	block/ioprio.c:180	BLOCK	int which, int who
+291	0x123	inotify_init	__ia32_sys_inotify_init	fs/notify/inotify/inotify_user.c:724	INOTIFY_USER	void
+292	0x124	inotify_add_watch	__ia32_sys_inotify_add_watch	fs/notify/inotify/inotify_user.c:729	INOTIFY_USER	int fd, const char *pathname, u32 mask
+293	0x125	inotify_rm_watch	__ia32_sys_inotify_rm_watch	fs/notify/inotify/inotify_user.c:786	INOTIFY_USER	int fd, __s32 wd
+295	0x127	openat	__ia32_sys_openat	fs/open.c:1461		int dfd, const char *filename, int flags, umode_t mode
+296	0x128	mkdirat	__ia32_sys_mkdirat	fs/namei.c:4414		int dfd, const char *pathname, umode_t mode
+297	0x129	mknodat	__ia32_sys_mknodat	fs/namei.c:4310		int dfd, const char *filename, umode_t mode, unsigned int dev
+298	0x12a	fchownat	__ia32_sys_fchownat	fs/open.c:834		int dfd, const char *filename, uid_t user, gid_t group, int flag
+299	0x12b	futimesat	__ia32_sys_futimesat_time32	fs/utimes.c:283		unsigned int dfd, const char *filename, struct old_timeval32 *t
+300	0x12c	fstatat64	__ia32_sys_fstatat64	fs/stat.c:694		int dfd, const char *filename, struct stat64 *statbuf, int flag
+301	0x12d	unlinkat	__ia32_sys_unlinkat	fs/namei.c:4684		int dfd, const char *pathname, int flag
+302	0x12e	renameat	__ia32_sys_renameat	fs/namei.c:5316		int olddfd, const char *oldname, int newdfd, const char *newname
+303	0x12f	linkat	__ia32_sys_linkat	fs/namei.c:4949		int olddfd, const char *oldname, int newdfd, const char *newname, int flags
+304	0x130	symlinkat	__ia32_sys_symlinkat	fs/namei.c:4769		const char *oldname, int newdfd, const char *newname
+305	0x131	readlinkat	__ia32_sys_readlinkat	fs/stat.c:604		int dfd, const char *pathname, char *buf, int bufsiz
+306	0x132	fchmodat	__ia32_sys_fchmodat	fs/open.c:713		int dfd, const char *filename, umode_t mode
+307	0x133	faccessat	__ia32_sys_faccessat	fs/open.c:539		int dfd, const char *filename, int mode
+308	0x134	pselect6	__ia32_sys_pselect6_time32	fs/select.c:807		int n, fd_set *inp, fd_set *outp, fd_set *exp, struct old_timespec32 *tsp, void *sig
+309	0x135	ppoll	__ia32_sys_ppoll_time32	fs/select.c:1121		struct pollfd *ufds, unsigned int nfds, struct old_timespec32 *tsp, const sigset_t *sigmask, size_t sigsetsize
+310	0x136	unshare	__ia32_sys_unshare	kernel/fork.c:3196		unsigned long unshare_flags
+311	0x137	set_robust_list	__ia32_sys_set_robust_list	kernel/futex/syscalls.c:28	FUTEX	struct robust_list_head *head, size_t len
+312	0x138	get_robust_list	__ia32_sys_get_robust_list	kernel/futex/syscalls.c:48	FUTEX	int pid, struct robust_list_head **head_ptr, size_t *len_ptr
+313	0x139	splice	__ia32_sys_splice	fs/splice.c:1618		int fd_in, loff_t *off_in, int fd_out, loff_t *off_out, size_t len, unsigned int flags
+314	0x13a	sync_file_range	__ia32_sys_ia32_sync_file_range	arch/x86/kernel/sys_ia32.c:103		int fd, unsigned int off_low, unsigned int off_hi, unsigned int n_low, unsigned int n_hi, int flags
+315	0x13b	tee	__ia32_sys_tee	fs/splice.c:1979		int fdin, int fdout, size_t len, unsigned int flags
+316	0x13c	vmsplice	__ia32_sys_vmsplice	fs/splice.c:1580		int fd, const struct iovec *uiov, unsigned long nr_segs, unsigned int flags
+318	0x13e	getcpu	__ia32_sys_getcpu	kernel/sys.c:2816		unsigned *cpup, unsigned *nodep, struct getcpu_cache *unused
+319	0x13f	epoll_pwait	__ia32_sys_epoll_pwait	fs/eventpoll.c:2597	EPOLL	int epfd, struct epoll_event *events, int maxevents, int timeout, const sigset_t *sigmask, size_t sigsetsize
+320	0x140	utimensat	__ia32_sys_utimensat_time32	fs/utimes.c:247		unsigned int dfd, const char *filename, struct old_timespec32 *t, int flags
+321	0x141	signalfd	__ia32_sys_signalfd	fs/signalfd.c:318	SIGNALFD	int ufd, sigset_t *user_mask, size_t sizemask
+322	0x142	timerfd_create	__ia32_sys_timerfd_create	fs/timerfd.c:394		int clockid, int flags
+323	0x143	eventfd	__ia32_sys_eventfd	fs/eventfd.c:428		unsigned int count
+324	0x144	fallocate	__ia32_sys_ia32_fallocate	arch/x86/kernel/sys_ia32.c:119		int fd, int mode, unsigned int offset_lo, unsigned int offset_hi, unsigned int len_lo, unsigned int len_hi
+325	0x145	timerfd_settime	__ia32_sys_timerfd_settime32	fs/timerfd.c:587		int ufd, int flags, const struct old_itimerspec32 *utmr, struct old_itimerspec32 *otmr
+326	0x146	timerfd_gettime	__ia32_sys_timerfd_gettime32	fs/timerfd.c:604		int ufd, struct old_itimerspec32 *otmr
+327	0x147	signalfd4	__ia32_sys_signalfd4	fs/signalfd.c:306	SIGNALFD	int ufd, sigset_t *user_mask, size_t sizemask, int flags
+328	0x148	eventfd2	__ia32_sys_eventfd2	fs/eventfd.c:423		unsigned int count, int flags
+329	0x149	epoll_create1	__ia32_sys_epoll_create1	fs/eventpoll.c:2296	EPOLL	int flags
+330	0x14a	dup3	__ia32_sys_dup3	fs/file.c:1430		unsigned int oldfd, unsigned int newfd, int flags
+331	0x14b	pipe2	__ia32_sys_pipe2	fs/pipe.c:1052		int *fildes, int flags
+332	0x14c	inotify_init1	__ia32_sys_inotify_init1	fs/notify/inotify/inotify_user.c:719	INOTIFY_USER	int flags
+333	0x14d	preadv	__ia32_sys_preadv	fs/read_write.c:1174		unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h
+334	0x14e	pwritev	__ia32_sys_pwritev	fs/read_write.c:1194		unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h
+335	0x14f	rt_tgsigqueueinfo	__ia32_sys_rt_tgsigqueueinfo	kernel/signal.c:4251		pid_t tgid, pid_t pid, int sig, siginfo_t *uinfo
+336	0x150	perf_event_open	__ia32_sys_perf_event_open	kernel/events/core.c:13360	PERF_EVENTS	struct perf_event_attr *attr_uptr, pid_t pid, int cpu, int group_fd, unsigned long flags
+337	0x151	recvmmsg	__ia32_sys_recvmmsg_time32	net/socket.c:3072	NET	int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags, struct old_timespec32 *timeout
+338	0x152	fanotify_init	__ia32_sys_fanotify_init	fs/notify/fanotify/fanotify_user.c:1500	FANOTIFY	unsigned int flags, unsigned int event_f_flags
+339	0x153	fanotify_mark	__ia32_sys_fanotify_mark	fs/notify/fanotify/fanotify_user.c:2075	FANOTIFY	int fanotify_fd, unsigned int flags, u32 mask_lo, u32 mask_hi, int dfd, const char *pathname
+340	0x154	prlimit64	__ia32_sys_prlimit64	kernel/sys.c:1729		pid_t pid, unsigned int resource, const struct rlimit64 *new_rlim, struct rlimit64 *old_rlim
+341	0x155	name_to_handle_at	__ia32_sys_name_to_handle_at	fs/fhandle.c:129	FHANDLE	int dfd, const char *name, struct file_handle *handle, void *mnt_id, int flag
+342	0x156	open_by_handle_at	__ia32_sys_open_by_handle_at	fs/fhandle.c:440	FHANDLE	int mountdirfd, struct file_handle *handle, int flags
+343	0x157	clock_adjtime	__ia32_sys_clock_adjtime32	kernel/time/posix-timers.c:1308		clockid_t which_clock, struct old_timex32 *utp
+344	0x158	syncfs	__ia32_sys_syncfs	fs/sync.c:149		int fd
+345	0x159	sendmmsg	__ia32_sys_sendmmsg	net/socket.c:2781	NET	int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags
+346	0x15a	setns	__ia32_sys_setns	kernel/nsproxy.c:536		int fd, int flags
+347	0x15b	process_vm_readv	__ia32_sys_process_vm_readv	mm/process_vm_access.c:292	CROSS_MEMORY_ATTACH	pid_t pid, const struct iovec *lvec, unsigned long liovcnt, const struct iovec *rvec, unsigned long riovcnt, unsigned long flags
+348	0x15c	process_vm_writev	__ia32_sys_process_vm_writev	mm/process_vm_access.c:299	CROSS_MEMORY_ATTACH	pid_t pid, const struct iovec *lvec, unsigned long liovcnt, const struct iovec *rvec, unsigned long riovcnt, unsigned long flags
+349	0x15d	kcmp	__ia32_sys_kcmp	kernel/kcmp.c:135	KCMP	pid_t pid1, pid_t pid2, int type, unsigned long idx1, unsigned long idx2
+350	0x15e	finit_module	__ia32_sys_finit_module	kernel/module/main.c:3723	MODULES	int fd, const char *uargs, int flags
+351	0x15f	sched_setattr	__ia32_sys_sched_setattr	kernel/sched/syscalls.c:977		pid_t pid, struct sched_attr *uattr, unsigned int flags
+352	0x160	sched_getattr	__ia32_sys_sched_getattr	kernel/sched/syscalls.c:1077		pid_t pid, struct sched_attr *uattr, unsigned int usize, unsigned int flags
+353	0x161	renameat2	__ia32_sys_renameat2	fs/namei.c:5309		int olddfd, const char *oldname, int newdfd, const char *newname, unsigned int flags
+354	0x162	seccomp	__ia32_sys_seccomp	kernel/seccomp.c:2110	SECCOMP	unsigned int op, unsigned int flags, void *uargs
+355	0x163	getrandom	__ia32_sys_getrandom	drivers/char/random.c:1390		char *ubuf, size_t len, unsigned int flags
+356	0x164	memfd_create	__ia32_sys_memfd_create	mm/memfd.c:469	MEMFD_CREATE	const char *uname, unsigned int flags
+357	0x165	bpf	__ia32_sys_bpf	kernel/bpf/syscall.c:6137	BPF_SYSCALL	int cmd, union bpf_attr *uattr, unsigned int size
+358	0x166	execveat	__ia32_sys_execveat	fs/exec.c:2013		int fd, const char *filename, const char *const *argv, const char *const *envp, int flags
+359	0x167	socket	__ia32_sys_socket	net/socket.c:1743	NET	int family, int type, int protocol
+360	0x168	socketpair	__ia32_sys_socketpair	net/socket.c:1844	NET	int family, int type, int protocol, int *usockvec
+361	0x169	bind	__ia32_sys_bind	net/socket.c:1892	NET	int fd, struct sockaddr *umyaddr, int addrlen
+362	0x16a	connect	__ia32_sys_connect	net/socket.c:2108	NET	int fd, struct sockaddr *uservaddr, int addrlen
+363	0x16b	listen	__ia32_sys_listen	net/socket.c:1930	NET	int fd, int backlog
+364	0x16c	accept4	__ia32_sys_accept4	net/socket.c:2045	NET	int fd, struct sockaddr *upeer_sockaddr, int *upeer_addrlen, int flags
+365	0x16d	getsockopt	__ia32_sys_getsockopt	net/socket.c:2438	NET	int fd, int level, int optname, char *optval, int *optlen
+366	0x16e	setsockopt	__ia32_sys_setsockopt	net/socket.c:2372	NET	int fd, int level, int optname, char *optval, int optlen
+367	0x16f	getsockname	__ia32_sys_getsockname	net/socket.c:2145	NET	int fd, struct sockaddr *usockaddr, int *usockaddr_len
+368	0x170	getpeername	__ia32_sys_getpeername	net/socket.c:2182	NET	int fd, struct sockaddr *usockaddr, int *usockaddr_len
+369	0x171	sendto	__ia32_sys_sendto	net/socket.c:2231	NET	int fd, void *buff, size_t len, unsigned int flags, struct sockaddr *addr, int addr_len
+370	0x172	sendmsg	__ia32_sys_sendmsg	net/socket.c:2703	NET	int fd, struct user_msghdr *msg, unsigned int flags
+371	0x173	recvfrom	__ia32_sys_recvfrom	net/socket.c:2289	NET	int fd, void *ubuf, size_t size, unsigned int flags, struct sockaddr *addr, int *addr_len
+372	0x174	recvmsg	__ia32_sys_recvmsg	net/socket.c:2912	NET	int fd, struct user_msghdr *msg, unsigned int flags
+373	0x175	shutdown	__ia32_sys_shutdown	net/socket.c:2473	NET	int fd, int how
+374	0x176	userfaultfd	__ia32_sys_userfaultfd	fs/userfaultfd.c:2177	USERFAULTFD	int flags
+375	0x177	membarrier	__ia32_sys_membarrier	kernel/sched/membarrier.c:627	MEMBARRIER	int cmd, unsigned int flags, int cpu_id
+376	0x178	mlock2	__ia32_sys_mlock2	mm/mlock.c:664	MMU	unsigned long start, size_t len, int flags
+377	0x179	copy_file_range	__ia32_sys_copy_file_range	fs/read_write.c:1644		int fd_in, loff_t *off_in, int fd_out, loff_t *off_out, size_t len, unsigned int flags
+378	0x17a	preadv2	__ia32_sys_preadv2	fs/read_write.c:1182		unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags
+379	0x17b	pwritev2	__ia32_sys_pwritev2	fs/read_write.c:1202		unsigned long fd, const struct iovec *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags
+383	0x17f	statx	__ia32_sys_statx	fs/stat.c:812		int dfd, const char *filename, unsigned flags, unsigned int mask, struct statx *buffer
+384	0x180	arch_prctl	__ia32_sys_arch_prctl	arch/x86/kernel/process.c:1065		int option, unsigned long arg2
+385	0x181	io_pgetevents	__ia32_sys_io_pgetevents_time32	fs/aio.c:2311	AIO	aio_context_t ctx_id, long min_nr, long nr, struct io_event *events, struct old_timespec32 *timeout, const struct __aio_sigset *usig
+386	0x182	rseq	__ia32_sys_rseq	kernel/rseq.c:474	RSEQ	struct rseq *rseq, u32 rseq_len, int flags, u32 sig
+393	0x189	semget	__ia32_sys_semget	ipc/sem.c:624	SYSVIPC	key_t key, int nsems, int semflg
+394	0x18a	semctl	__ia32_sys_semctl	ipc/sem.c:1705	SYSVIPC	int semid, int semnum, int cmd, unsigned long arg
+395	0x18b	shmget	__ia32_sys_shmget	ipc/shm.c:845	SYSVIPC	key_t key, size_t size, int shmflg
+396	0x18c	shmctl	__ia32_sys_shmctl	ipc/shm.c:1294	SYSVIPC	int shmid, int cmd, struct shmid_ds *buf
+397	0x18d	shmat	__ia32_sys_shmat	ipc/shm.c:1691	SYSVIPC	int shmid, char *shmaddr, int shmflg
+398	0x18e	shmdt	__ia32_sys_shmdt	ipc/shm.c:1832	SYSVIPC	char *shmaddr
+399	0x18f	msgget	__ia32_sys_msgget	ipc/msg.c:315	SYSVIPC	key_t key, int msgflg
+400	0x190	msgsnd	__ia32_sys_msgsnd	ipc/msg.c:971	SYSVIPC	int msqid, struct msgbuf *msgp, size_t msgsz, int msgflg
+401	0x191	msgrcv	__ia32_sys_msgrcv	ipc/msg.c:1270	SYSVIPC	int msqid, struct msgbuf *msgp, size_t msgsz, long msgtyp, int msgflg
+402	0x192	msgctl	__ia32_sys_msgctl	ipc/msg.c:640	SYSVIPC	int msqid, int cmd, struct msqid_ds *buf
+403	0x193	clock_gettime	__ia32_sys_clock_gettime	kernel/time/posix-timers.c:1135		const clockid_t which_clock, struct __kernel_timespec *tp
+404	0x194	clock_settime	__ia32_sys_clock_settime	kernel/time/posix-timers.c:1116		const clockid_t which_clock, const struct __kernel_timespec *tp
+405	0x195	clock_adjtime	__ia32_sys_clock_adjtime	kernel/time/posix-timers.c:1165		const clockid_t which_clock, struct __kernel_timex *utx
+406	0x196	clock_getres	__ia32_sys_clock_getres	kernel/time/posix-timers.c:1255		const clockid_t which_clock, struct __kernel_timespec *tp
+407	0x197	clock_nanosleep	__ia32_sys_clock_nanosleep	kernel/time/posix-timers.c:1376		const clockid_t which_clock, int flags, const struct __kernel_timespec *rqtp, struct __kernel_timespec *rmtp
+408	0x198	timer_gettime	__ia32_sys_timer_gettime	kernel/time/posix-timers.c:752	POSIX_TIMERS	timer_t timer_id, struct __kernel_itimerspec *setting
+409	0x199	timer_settime	__ia32_sys_timer_settime	kernel/time/posix-timers.c:955	POSIX_TIMERS	timer_t timer_id, int flags, const struct __kernel_itimerspec *new_setting, struct __kernel_itimerspec *old_setting
+410	0x19a	timerfd_gettime	__ia32_sys_timerfd_gettime	fs/timerfd.c:577		int ufd, struct __kernel_itimerspec *otmr
+411	0x19b	timerfd_settime	__ia32_sys_timerfd_settime	fs/timerfd.c:559		int ufd, int flags, const struct __kernel_itimerspec *utmr, struct __kernel_itimerspec *otmr
+412	0x19c	utimensat	__ia32_sys_utimensat	fs/utimes.c:143		int dfd, const char *filename, struct __kernel_timespec *utimes, int flags
+413	0x19d	pselect6	__ia32_sys_pselect6	fs/select.c:793		int n, fd_set *inp, fd_set *outp, fd_set *exp, struct __kernel_timespec *tsp, void *sig
+414	0x19e	ppoll	__ia32_sys_ppoll	fs/select.c:1095		struct pollfd *ufds, unsigned int nfds, struct __kernel_timespec *tsp, const sigset_t *sigmask, size_t sigsetsize
+416	0x1a0	io_pgetevents	__ia32_sys_io_pgetevents	fs/aio.c:2276	AIO	aio_context_t ctx_id, long min_nr, long nr, struct io_event *events, struct __kernel_timespec *timeout, const struct __aio_sigset *usig
+417	0x1a1	recvmmsg	__ia32_sys_recvmmsg	net/socket.c:3061	NET	int fd, struct mmsghdr *mmsg, unsigned int vlen, unsigned int flags, struct __kernel_timespec *timeout
+418	0x1a2	mq_timedsend	__ia32_sys_mq_timedsend	ipc/mqueue.c:1258	POSIX_MQUEUE	mqd_t mqdes, const char *u_msg_ptr, size_t msg_len, unsigned int msg_prio, const struct __kernel_timespec *u_abs_timeout
+419	0x1a3	mq_timedreceive	__ia32_sys_mq_timedreceive	ipc/mqueue.c:1272	POSIX_MQUEUE	mqd_t mqdes, char *u_msg_ptr, size_t msg_len, unsigned int *u_msg_prio, const struct __kernel_timespec *u_abs_timeout
+420	0x1a4	semtimedop	__ia32_sys_semtimedop	ipc/sem.c:2268	SYSVIPC	int semid, struct sembuf *tsops, unsigned int nsops, const struct __kernel_timespec *timeout
+421	0x1a5	rt_sigtimedwait	__ia32_sys_rt_sigtimedwait	kernel/signal.c:3804		const sigset_t *uthese, siginfo_t *uinfo, const struct __kernel_timespec *uts, size_t sigsetsize
+422	0x1a6	futex	__ia32_sys_futex	kernel/futex/syscalls.c:160	FUTEX	u32 *uaddr, int op, u32 val, const struct __kernel_timespec *utime, u32 *uaddr2, u32 val3
+423	0x1a7	sched_rr_get_interval	__ia32_sys_sched_rr_get_interval	kernel/sched/syscalls.c:1565		pid_t pid, struct __kernel_timespec *interval
+424	0x1a8	pidfd_send_signal	__ia32_sys_pidfd_send_signal	kernel/signal.c:4065		int pidfd, int sig, siginfo_t *info, unsigned int flags
+425	0x1a9	io_uring_setup	__ia32_sys_io_uring_setup	io_uring/io_uring.c:3914	IO_URING	u32 entries, struct io_uring_params *params
+426	0x1aa	io_uring_enter	__ia32_sys_io_uring_enter	io_uring/io_uring.c:3397	IO_URING	unsigned int fd, u32 to_submit, u32 min_complete, u32 flags, const void *argp, size_t argsz
+427	0x1ab	io_uring_register	__ia32_sys_io_uring_register	io_uring/register.c:906	IO_URING	unsigned int fd, unsigned int opcode, void *arg, unsigned int nr_args
+428	0x1ac	open_tree	__ia32_sys_open_tree	fs/namespace.c:3150		int dfd, const char *filename, unsigned flags
+429	0x1ad	move_mount	__ia32_sys_move_mount	fs/namespace.c:4531		int from_dfd, const char *from_pathname, int to_dfd, const char *to_pathname, unsigned int flags
+430	0x1ae	fsopen	__ia32_sys_fsopen	fs/fsopen.c:114		const char *_fs_name, unsigned int flags
+431	0x1af	fsconfig	__ia32_sys_fsconfig	fs/fsopen.c:344		int fd, unsigned int cmd, const char *_key, const void *_value, int aux
+432	0x1b0	fsmount	__ia32_sys_fsmount	fs/namespace.c:4392		int fs_fd, unsigned int flags, unsigned int attr_flags
+433	0x1b1	fspick	__ia32_sys_fspick	fs/fsopen.c:157		int dfd, const char *path, unsigned int flags
+434	0x1b2	pidfd_open	__ia32_sys_pidfd_open	kernel/pid.c:644		pid_t pid, unsigned int flags
+435	0x1b3	clone3	__ia32_sys_clone3	kernel/fork.c:2888		struct clone_args *uargs, size_t size
+436	0x1b4	close_range	__ia32_sys_close_range	fs/file.c:790		unsigned int fd, unsigned int max_fd, unsigned int flags
+437	0x1b5	openat2	__ia32_sys_openat2	fs/open.c:1469		int dfd, const char *filename, struct open_how *how, size_t usize
+438	0x1b6	pidfd_getfd	__ia32_sys_pidfd_getfd	kernel/pid.c:903		int pidfd, int fd, unsigned int flags
+439	0x1b7	faccessat2	__ia32_sys_faccessat2	fs/open.c:544		int dfd, const char *filename, int mode, int flags
+440	0x1b8	process_madvise	__ia32_sys_process_madvise	mm/madvise.c:2057	ADVISE_SYSCALLS	int pidfd, const struct iovec *vec, size_t vlen, int behavior, unsigned int flags
+441	0x1b9	epoll_pwait2	__ia32_sys_epoll_pwait2	fs/eventpoll.c:2608	EPOLL	int epfd, struct epoll_event *events, int maxevents, const struct __kernel_timespec *timeout, const sigset_t *sigmask, size_t sigsetsize
+442	0x1ba	mount_setattr	__ia32_sys_mount_setattr	fs/namespace.c:5130		int dfd, const char *path, unsigned int flags, struct mount_attr *uattr, size_t usize
+443	0x1bb	quotactl_fd	__ia32_sys_quotactl_fd	fs/quota/quota.c:973	QUOTACTL	unsigned int fd, unsigned int cmd, qid_t id, void *addr
+444	0x1bc	landlock_create_ruleset	__ia32_sys_landlock_create_ruleset	security/landlock/syscalls.c:195	SECURITY_LANDLOCK	const struct landlock_ruleset_attr *const attr, const size_t size, const __u32 flags
+445	0x1bd	landlock_add_rule	__ia32_sys_landlock_add_rule	security/landlock/syscalls.c:418	SECURITY_LANDLOCK	const int ruleset_fd, const enum landlock_rule_type rule_type, const void *const rule_attr, const __u32 flags
+446	0x1be	landlock_restrict_self	__ia32_sys_landlock_restrict_self	security/landlock/syscalls.c:478	SECURITY_LANDLOCK	const int ruleset_fd, const __u32 flags
+447	0x1bf	memfd_secret	__ia32_sys_memfd_secret	mm/secretmem.c:225	SECRETMEM	unsigned int flags
+448	0x1c0	process_mrelease	__ia32_sys_process_mrelease	mm/oom_kill.c:1204	MMU	int pidfd, unsigned int flags
+449	0x1c1	futex_waitv	__ia32_sys_futex_waitv	kernel/futex/syscalls.c:290	FUTEX	struct futex_waitv *waiters, unsigned int nr_futexes, unsigned int flags, struct __kernel_timespec *timeout, clockid_t clockid
+451	0x1c3	cachestat	__ia32_sys_cachestat	mm/filemap.c:4571	CACHESTAT_SYSCALL	unsigned int fd, struct cachestat_range *cstat_range, struct cachestat *cstat, unsigned int flags
+452	0x1c4	fchmodat2	__ia32_sys_fchmodat2	fs/open.c:707		int dfd, const char *filename, umode_t mode, unsigned int flags
+454	0x1c6	futex_wake	__ia32_sys_futex_wake	kernel/futex/syscalls.c:338	FUTEX	void *uaddr, unsigned long mask, int nr, unsigned int flags
+455	0x1c7	futex_wait	__ia32_sys_futex_wait	kernel/futex/syscalls.c:370	FUTEX	void *uaddr, unsigned long val, unsigned long mask, unsigned int flags, struct __kernel_timespec *timeout, clockid_t clockid
+456	0x1c8	futex_requeue	__ia32_sys_futex_requeue	kernel/futex/syscalls.c:414	FUTEX	struct futex_waitv *waiters, unsigned int flags, int nr_wake, int nr_requeue
+457	0x1c9	statmount	__ia32_sys_statmount	fs/namespace.c:5925		const struct mnt_id_req *req, struct statmount *buf, size_t bufsize, unsigned int flags
+458	0x1ca	listmount	__ia32_sys_listmount	fs/namespace.c:6032		const struct mnt_id_req *req, u64 *mnt_ids, size_t nr_mnt_ids, unsigned int flags
+459	0x1cb	lsm_get_self_attr	__ia32_sys_lsm_get_self_attr	security/lsm_syscalls.c:77	SECURITY	unsigned int attr, struct lsm_ctx *ctx, u32 *size, u32 flags
+460	0x1cc	lsm_set_self_attr	__ia32_sys_lsm_set_self_attr	security/lsm_syscalls.c:55	SECURITY	unsigned int attr, struct lsm_ctx *ctx, u32 size, u32 flags
+461	0x1cd	lsm_list_modules	__ia32_sys_lsm_list_modules	security/lsm_syscalls.c:96	SECURITY	u64 *ids, u32 *size, u32 flags
+463	0x1cf	setxattrat	__ia32_sys_setxattrat	fs/xattr.c:719		int dfd, const char *pathname, unsigned int at_flags, const char *name, const struct xattr_args *uargs, size_t usize
+464	0x1d0	getxattrat	__ia32_sys_getxattrat	fs/xattr.c:863		int dfd, const char *pathname, unsigned int at_flags, const char *name, struct xattr_args *uargs, size_t usize
+465	0x1d1	listxattrat	__ia32_sys_listxattrat	fs/xattr.c:991		int dfd, const char *pathname, unsigned int at_flags, char *list, size_t size
+466	0x1d2	removexattrat	__ia32_sys_removexattrat	fs/xattr.c:1091		int dfd, const char *pathname, unsigned int at_flags, const char *name
+467	0x1d3	open_tree_attr	__ia32_sys_open_tree_attr	fs/namespace.c:5172		int dfd, const char *filename, unsigned flags, struct mount_attr *uattr, size_t usize
+468	0x1d4	file_getattr	__ia32_sys_file_getattr	fs/file_attr.c:382		int dfd, const char *filename, struct file_attr *ufattr, size_t usize, unsigned int at_flags
+469	0x1d5	file_setattr	__ia32_sys_file_setattr	fs/file_attr.c:437		int dfd, const char *filename, struct file_attr *ufattr, size_t usize, unsigned int at_flags
