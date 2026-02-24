@@ -796,4 +796,44 @@
 	X32(SYS32_FILE_GETATTR , 0x1d4 , 5 , "file_getattr") \
 	X32(SYS32_FILE_SETATTR , 0x1d5 , 5 , "file_setattr")
 
+typedef enum e_SYS64{
+	#define X64(id, number, count, str) id = number,
+	SYS64_LIST
+	#undef X64
+} e_SYS64 ;
+
+typedef enum e_SYS32{
+	#define X32(id, number, count, str) id = number,
+	SYS32_LIST
+	#undef X32
+} e_SYS32 ;
+
+static const char *get_function_name_SYS64[] = {
+	#define X64(id, number, count, str) [id] = str,
+	SYS64_LIST
+	#undef X64
+};
+
+static const char *get_function_name_SYS32[] = {
+	#define X32(id, number, count, str) [id] = str,
+	SYS32_LIST
+	#undef X32
+};
+
+static const int get_function_count_SYS64[] = {
+	#define X64(id, number, count, str) [id] = count,
+	SYS64_LIST
+	#undef X64
+};
+
+static const int get_function_count_SYS32[] = {
+	#define X32(id, number, count, str) [id] = count,
+	SYS32_LIST
+	#undef X32
+};
+
+static inline const char *return_syscall() {
+
+};
+
 # endif	

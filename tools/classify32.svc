@@ -1,0 +1,426 @@
+ARG_NONE                    |                                         |                              |                          |                         | 
+int error_code              |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_FD                      | ARG_STR                                 | ARG_SIZE                     |                          |                         | 
+ARG_FD                      | ARG_STR                                 | ARG_SIZE                     |                          |                         | 
+ARG_STR                     | ARG_FLAGS                               | ARG_MODE                     |                          |                         | 
+ARG_FD                      |                                         |                              |                          |                         | 
+ARG_PID                     | int *stat_addr                          | int options                  |                          |                         | 
+ARG_STR                     | ARG_MODE                                |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_STR                      |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+old_time32_t *tloc          |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_MODE                                | unsigned dev                 |                          |                         | 
+ARG_STR                     | ARG_MODE                                |                              |                          |                         | 
+ARG_STR                     | old_uid_t user                          | old_gid_t group              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | ARG_OFFSET                              | unsigned int whence          |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_STR                      | ARG_FLAGS                | ARG_PTR                 | 
+ARG_STR                     |                                         |                              |                          |                         | 
+old_uid_t uid               |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+old_time32_t *tptr          |                                         |                              |                          |                         | 
+long request                | long pid                                | unsigned long addr           | unsigned long data       |                         | 
+unsigned int seconds        |                                         |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | int mode                                |                              |                          |                         | 
+int increment               |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_PID                     | int sig                                 |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+ARG_STR                     | ARG_MODE                                |                              |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+unsigned int fildes         |                                         |                              |                          |                         | 
+int *fildes                 |                                         |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned long brk           |                                         |                              |                          |                         | 
+old_gid_t gid               |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+int sig                     | __sighandler_t handler                  |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_FLAGS                               |                              |                          |                         | 
+ARG_FD                      | unsigned int cmd                        | unsigned long arg            |                          |                         | 
+ARG_FD                      | unsigned int cmd                        | unsigned long arg            |                          |                         | 
+ARG_PID                     | ARG_PID                                 |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+int mask                    |                                         |                              |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+unsigned dev                | ARG_STRUCT_PTR                          |                              |                          |                         | 
+unsigned int oldfd          | unsigned int newfd                      |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+int sig                     | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+int newmask                 |                                         |                              |                          |                         | 
+old_uid_t ruid              | old_uid_t euid                          |                              |                          |                         | 
+old_gid_t rgid              | old_gid_t egid                          |                              |                          |                         | 
+int unused1                 | int unused2                             | old_sigset_t mask            |                          |                         | 
+old_sigset_t *uset          |                                         |                              |                          |                         | 
+ARG_STR                     | int len                                 |                              |                          |                         | 
+unsigned int resource       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+unsigned int resource       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+int who                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STRUCT_PTR              | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STRUCT_PTR              | ARG_STRUCT_PTR                          |                              |                          |                         | 
+int gidsetsize              | old_gid_t *grouplist                    |                              |                          |                         | 
+int gidsetsize              | old_gid_t *grouplist                    |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 | int bufsiz                   |                          |                         | 
+ARG_STR                     | ARG_FLAGS                               |                              |                          |                         | 
+int magic1                  | int magic2                              | unsigned int cmd             | ARG_PTR                  |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int count           |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned long addr          | ARG_SIZE                                |                              |                          |                         | 
+ARG_STR                     | long length                             |                              |                          |                         | 
+ARG_FD                      | ARG_OFFSET                              |                              |                          |                         | 
+ARG_FD                      | ARG_MODE                                |                              |                          |                         | 
+ARG_FD                      | old_uid_t user                          | old_gid_t group              |                          |                         | 
+int which                   | int who                                 |                              |                          |                         | 
+int which                   | int who                                 | int niceval                  |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          |                              |                          |                         | 
+unsigned long from          | unsigned long num                       | int turn_on                  |                          |                         | 
+int call                    | unsigned long *args                     |                              |                          |                         | 
+int type                    | ARG_STR                                 | int len                      |                          |                         | 
+int which                   | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               |                          |                         | 
+int which                   | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned int level          |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+ARG_PID                     | int *stat_addr                          | int options                  | ARG_STRUCT_PTR           |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned int call           | int first                               | unsigned long second         | unsigned long third      | ARG_PTR                 | long fifth
+ARG_FD                      |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_FLAGS                   | unsigned long newsp                     | int *parent_tidptr           | unsigned long tls        | int *child_tidptr       | 
+ARG_STR                     | int len                                 |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+int func                    | ARG_PTR                                 | unsigned long bytecount      |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned long start         | ARG_SIZE                                | unsigned long prot           |                          |                         | 
+int how                     | old_sigset_t *nset                      | old_sigset_t *oset           |                          |                         | 
+ARG_PTR                     | unsigned long len                       | ARG_STR                      |                          |                         | 
+ARG_STR                     | ARG_FLAGS                               |                              |                          |                         | 
+unsigned int cmd            | ARG_STR                                 | qid_t id                     | ARG_PTR                  |                         | 
+ARG_PID                     |                                         |                              |                          |                         | 
+ARG_FD                      |                                         |                              |                          |                         | 
+int option                  | unsigned long arg1                      | unsigned long arg2           |                          |                         | 
+unsigned int personality    |                                         |                              |                          |                         | 
+old_uid_t uid               |                                         |                              |                          |                         | 
+old_gid_t gid               |                                         |                              |                          |                         | 
+ARG_FD                      | unsigned long offset_high               | unsigned long offset_low     | ARG_OFFSET               | unsigned int whence     | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int count           |                          |                         | 
+int n                       | fd_set *inp                             | fd_set *outp                 | fd_set *exp              | ARG_STRUCT_PTR          | 
+ARG_FD                      | unsigned int cmd                        |                              |                          |                         | 
+unsigned long start         | ARG_SIZE                                | ARG_FLAGS                    |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           |                          |                         | 
+ARG_PID                     |                                         |                              |                          |                         | 
+ARG_FD                      |                                         |                              |                          |                         | 
+unsigned long start         | ARG_SIZE                                |                              |                          |                         | 
+unsigned long start         | ARG_SIZE                                |                              |                          |                         | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_PID                     | int policy                              | ARG_STRUCT_PTR               |                          |                         | 
+ARG_PID                     |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+int policy                  |                                         |                              |                          |                         | 
+int policy                  |                                         |                              |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STRUCT_PTR              | ARG_STRUCT_PTR                          |                              |                          |                         | 
+unsigned long addr          | unsigned long old_len                   | unsigned long new_len        | ARG_FLAGS                | unsigned long new_addr  | 
+old_uid_t ruid              | old_uid_t euid                          | old_uid_t suid               |                          |                         | 
+old_uid_t *ruidp            | old_uid_t *euidp                        | old_uid_t *suidp             |                          |                         | 
+unsigned long cmd           | unsigned long arg                       |                              |                          |                         | 
+ARG_STRUCT_PTR              | unsigned int nfds                       | int timeout_msecs            |                          |                         | 
+old_gid_t rgid              | old_gid_t egid                          | old_gid_t sgid               |                          |                         | 
+old_gid_t *rgidp            | old_gid_t *egidp                        | old_gid_t *sgidp             |                          |                         | 
+int option                  | unsigned long arg2                      | unsigned long arg3           | unsigned long arg4       | unsigned long arg5      | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+int sig                     | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               | ARG_SIZE                 |                         | 
+int how                     | sigset_t *nset                          | sigset_t *oset               | ARG_SIZE                 |                         | 
+sigset_t *uset              | ARG_SIZE                                |                              |                          |                         | 
+const sigset_t *uthese      | siginfo_t *uinfo                        | ARG_STRUCT_PTR               | ARG_SIZE                 |                         | 
+ARG_PID                     | int sig                                 | siginfo_t *uinfo             |                          |                         | 
+sigset_t *unewset           | ARG_SIZE                                |                              |                          |                         | 
+ARG_FD                      | ARG_STR                                 | u32 count                    | u32 poslo                | u32 poshi               | 
+ARG_FD                      | ARG_STR                                 | u32 count                    | u32 poslo                | u32 poshi               | 
+ARG_STR                     | old_uid_t user                          | old_gid_t group              |                          |                         | 
+ARG_STR                     | unsigned long size                      |                              |                          |                         | 
+cap_user_header_t header    | cap_user_data_t dataptr                 |                              |                          |                         | 
+cap_user_header_t header    | const cap_user_data_t data              |                              |                          |                         | 
+const stack_t *uss          | stack_t *uoss                           |                              |                          |                         | 
+int out_fd                  | int in_fd                               | ARG_OFFSET                   | ARG_SIZE                 |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+unsigned int resource       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+unsigned long addr          | unsigned long len                       | unsigned long prot           | ARG_FLAGS                | ARG_FD                  | unsigned long pgoff
+ARG_STR                     | unsigned long offset_low                | unsigned long offset_high    |                          |                         | 
+ARG_FD                      | unsigned long offset_low                | unsigned long offset_high    |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_STR                     | uid_t user                              | gid_t group                  |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+uid_t ruid                  | uid_t euid                              |                              |                          |                         | 
+gid_t rgid                  | gid_t egid                              |                              |                          |                         | 
+int gidsetsize              | gid_t *grouplist                        |                              |                          |                         | 
+int gidsetsize              | gid_t *grouplist                        |                              |                          |                         | 
+ARG_FD                      | uid_t user                              | gid_t group                  |                          |                         | 
+uid_t ruid                  | uid_t euid                              | uid_t suid                   |                          |                         | 
+uid_t *ruidp                | uid_t *euidp                            | uid_t *suidp                 |                          |                         | 
+gid_t rgid                  | gid_t egid                              | gid_t sgid                   |                          |                         | 
+gid_t *rgidp                | gid_t *egidp                            | gid_t *sgidp                 |                          |                         | 
+ARG_STR                     | uid_t user                              | gid_t group                  |                          |                         | 
+uid_t uid                   |                                         |                              |                          |                         | 
+gid_t gid                   |                                         |                              |                          |                         | 
+uid_t uid                   |                                         |                              |                          |                         | 
+gid_t gid                   |                                         |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+unsigned long start         | ARG_SIZE                                | ARG_STR                      |                          |                         | 
+unsigned long start         | ARG_SIZE                                | int behavior                 |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int count           |                          |                         | 
+ARG_FD                      | unsigned int cmd                        | unsigned long arg            |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_FD                      | unsigned int off_lo                     | unsigned int off_hi          | ARG_SIZE                 |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 | ARG_FLAGS               | 
+ARG_STR                     | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 | ARG_FLAGS               | 
+ARG_FD                      | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 | ARG_FLAGS               | 
+ARG_STR                     | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 |                         | 
+ARG_FD                      | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_SIZE                     |                          |                         | 
+ARG_STR                     | ARG_STR                                 | ARG_SIZE                     |                          |                         | 
+ARG_FD                      | ARG_STR                                 | ARG_SIZE                     |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+ARG_STR                     | ARG_STR                                 |                              |                          |                         | 
+ARG_FD                      | ARG_STR                                 |                              |                          |                         | 
+ARG_PID                     | int sig                                 |                              |                          |                         | 
+int out_fd                  | int in_fd                               | ARG_OFFSET                   | ARG_SIZE                 |                         | 
+u32 *uaddr                  | int op                                  | u32 val                      | ARG_STRUCT_PTR           | u32 *uaddr2             | u32 val3
+ARG_PID                     | unsigned int len                        | unsigned long *user_mask_ptr |                          |                         | 
+ARG_PID                     | unsigned int len                        | unsigned long *user_mask_ptr |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+ARG_STRUCT_PTR              |                                         |                              |                          |                         | 
+unsigned nr_events          | aio_context_t *ctxp                     |                              |                          |                         | 
+aio_context_t ctx           |                                         |                              |                          |                         | 
+__u32 ctx_id                | __s32 min_nr                            | __s32 nr                     | ARG_STRUCT_PTR           | ARG_STRUCT_PTR          | 
+aio_context_t ctx_id        | long nr                                 | ARG_STRUCT_PTR               |                          |                         | 
+aio_context_t ctx_id        | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               |                          |                         | 
+ARG_FD                      | unsigned int offset_lo                  | unsigned int offset_hi       | ARG_SIZE                 | int advice              | 
+int error_code              |                                         |                              |                          |                         | 
+int size                    |                                         |                              |                          |                         | 
+int epfd                    | int op                                  | ARG_FD                       | ARG_STRUCT_PTR           |                         | 
+int epfd                    | ARG_STRUCT_PTR                          | int maxevents                | int timeout              |                         | 
+unsigned long start         | unsigned long size                      | unsigned long prot           | unsigned long pgoff      | ARG_FLAGS               | 
+int *tidptr                 |                                         |                              |                          |                         | 
+const clockid_t which_clock | ARG_STRUCT_PTR                          | timer_t *created_timer_id    |                          |                         | 
+timer_t timer_id            | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+timer_t timer_id            | ARG_STRUCT_PTR                          |                              |                          |                         | 
+timer_t timer_id            |                                         |                              |                          |                         | 
+timer_t timer_id            |                                         |                              |                          |                         | 
+clockid_t which_clock       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+clockid_t which_clock       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+clockid_t which_clock       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+clockid_t which_clock       | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+ARG_STR                     | ARG_SIZE                                | ARG_STRUCT_PTR               |                          |                         | 
+ARG_FD                      | ARG_SIZE                                | ARG_STRUCT_PTR               |                          |                         | 
+ARG_PID                     | ARG_PID                                 | int sig                      |                          |                         | 
+ARG_STR                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | __u32 offset_low                        | __u32 offset_high            | __u32 len_low            | __u32 len_high          | int advice
+ARG_STR                     | ARG_FLAGS                               | ARG_MODE                     | ARG_STRUCT_PTR           |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+mqd_t mqdes                 | ARG_STR                                 | unsigned int msg_len         | unsigned int msg_prio    | ARG_STRUCT_PTR          | 
+mqd_t mqdes                 | ARG_STR                                 | unsigned int msg_len         | unsigned int *u_msg_prio | ARG_STRUCT_PTR          | 
+mqd_t mqdes                 | ARG_STRUCT_PTR                          |                              |                          |                         | 
+mqd_t mqdes                 | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               |                          |                         | 
+unsigned long entry         | unsigned long nr_segments               | ARG_STRUCT_PTR               | ARG_FLAGS                |                         | 
+int which                   | ARG_PID                                 | ARG_STRUCT_PTR               | int options              | ARG_STRUCT_PTR          | 
+ARG_STR                     | ARG_STR                                 | ARG_PTR                      | ARG_SIZE                 | key_serial_t ringid     | 
+ARG_STR                     | ARG_STR                                 | ARG_STR                      | key_serial_t destringid  |                         | 
+int option                  | unsigned long arg2                      | unsigned long arg3           | unsigned long arg4       | unsigned long arg5      | 
+int which                   | int who                                 | int ioprio                   |                          |                         | 
+int which                   | int who                                 |                              |                          |                         | 
+ARG_NONE                    |                                         |                              |                          |                         | 
+ARG_FD                      | ARG_STR                                 | u32 mask                     |                          |                         | 
+ARG_FD                      | __s32 wd                                |                              |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_MODE                 |                         | 
+int dfd                     | ARG_STR                                 | ARG_MODE                     |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_MODE                     | unsigned int dev         |                         | 
+int dfd                     | ARG_STR                                 | uid_t user                   | gid_t group              | ARG_FLAGS               | 
+unsigned int dfd            | ARG_STR                                 | ARG_STRUCT_PTR               |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_FLAGS                |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    |                          |                         | 
+int olddfd                  | ARG_STR                                 | int newdfd                   | ARG_STR                  |                         | 
+int olddfd                  | ARG_STR                                 | int newdfd                   | ARG_STR                  | ARG_FLAGS               | 
+ARG_STR                     | int newdfd                              | ARG_STR                      |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_STR                      | int bufsiz               |                         | 
+int dfd                     | ARG_STR                                 | ARG_MODE                     |                          |                         | 
+int dfd                     | ARG_STR                                 | int mode                     |                          |                         | 
+int n                       | fd_set *inp                             | fd_set *outp                 | fd_set *exp              | ARG_STRUCT_PTR          | ARG_PTR
+ARG_STRUCT_PTR              | unsigned int nfds                       | ARG_STRUCT_PTR               | const sigset_t *sigmask  | ARG_SIZE                | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+ARG_STRUCT_PTR              | ARG_SIZE                                |                              |                          |                         | 
+int pid                     | ARG_STRUCT_PTR                          | ARG_SIZE                     |                          |                         | 
+int fd_in                   | ARG_OFFSET                              | int fd_out                   | ARG_OFFSET               | ARG_SIZE                | ARG_FLAGS
+ARG_FD                      | unsigned int off_low                    | unsigned int off_hi          | unsigned int n_low       | unsigned int n_hi       | ARG_FLAGS
+int fdin                    | int fdout                               | ARG_SIZE                     | ARG_FLAGS                |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long nr_segs        | ARG_FLAGS                |                         | 
+unsigned *cpup              | unsigned *nodep                         | ARG_STRUCT_PTR               |                          |                         | 
+int epfd                    | ARG_STRUCT_PTR                          | int maxevents                | int timeout              | const sigset_t *sigmask | ARG_SIZE
+unsigned int dfd            | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_FLAGS                |                         | 
+int ufd                     | sigset_t *user_mask                     | ARG_SIZE                     |                          |                         | 
+int clockid                 | ARG_FLAGS                               |                              |                          |                         | 
+unsigned int count          |                                         |                              |                          |                         | 
+ARG_FD                      | int mode                                | unsigned int offset_lo       | unsigned int offset_hi   | unsigned int len_lo     | unsigned int len_hi
+int ufd                     | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+int ufd                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+int ufd                     | sigset_t *user_mask                     | ARG_SIZE                     | ARG_FLAGS                |                         | 
+unsigned int count          | ARG_FLAGS                               |                              |                          |                         | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+unsigned int oldfd          | unsigned int newfd                      | ARG_FLAGS                    |                          |                         | 
+int *fildes                 | ARG_FLAGS                               |                              |                          |                         | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           | unsigned long pos_l      | unsigned long pos_h     | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           | unsigned long pos_l      | unsigned long pos_h     | 
+ARG_PID                     | ARG_PID                                 | int sig                      | siginfo_t *uinfo         |                         | 
+ARG_STRUCT_PTR              | ARG_PID                                 | int cpu                      | int group_fd             | ARG_FLAGS               | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int vlen            | ARG_FLAGS                | ARG_STRUCT_PTR          | 
+ARG_FLAGS                   | ARG_FLAGS                               |                              |                          |                         | 
+int fanotify_fd             | ARG_FLAGS                               | u32 mask_lo                  | u32 mask_hi              | int dfd                 | ARG_STR
+ARG_PID                     | unsigned int resource                   | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_PTR                  | ARG_FLAGS               | 
+int mountdirfd              | ARG_STRUCT_PTR                          | ARG_FLAGS                    |                          |                         | 
+clockid_t which_clock       | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      |                                         |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int vlen            | ARG_FLAGS                |                         | 
+ARG_FD                      | ARG_FLAGS                               |                              |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          | unsigned long liovcnt        | ARG_STRUCT_PTR           | unsigned long riovcnt   | ARG_FLAGS
+ARG_PID                     | ARG_STRUCT_PTR                          | unsigned long liovcnt        | ARG_STRUCT_PTR           | unsigned long riovcnt   | ARG_FLAGS
+ARG_PID                     | ARG_PID                                 | int type                     | unsigned long idx1       | unsigned long idx2      | 
+ARG_FD                      | ARG_STR                                 | ARG_FLAGS                    |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          | ARG_FLAGS                    |                          |                         | 
+ARG_PID                     | ARG_STRUCT_PTR                          | unsigned int usize           | ARG_FLAGS                |                         | 
+int olddfd                  | ARG_STR                                 | int newdfd                   | ARG_STR                  | ARG_FLAGS               | 
+unsigned int op             | ARG_FLAGS                               | ARG_PTR                      |                          |                         | 
+ARG_STR                     | ARG_SIZE                                | ARG_FLAGS                    |                          |                         | 
+ARG_STR                     | ARG_FLAGS                               |                              |                          |                         | 
+int cmd                     | union bpf_attr *uattr                   | unsigned int size            |                          |                         | 
+ARG_FD                      | ARG_STR                                 | ARG_STR                      | ARG_STR                  | ARG_FLAGS               | 
+int family                  | int type                                | int protocol                 |                          |                         | 
+int family                  | int type                                | int protocol                 | int *usockvec            |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | int addrlen                  |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | int addrlen                  |                          |                         | 
+ARG_FD                      | int backlog                             |                              |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | int *upeer_addrlen           | ARG_FLAGS                |                         | 
+ARG_FD                      | int level                               | int optname                  | ARG_STR                  | int *optlen             | 
+ARG_FD                      | int level                               | int optname                  | ARG_STR                  | int optlen              | 
+ARG_FD                      | ARG_STRUCT_PTR                          | int *usockaddr_len           |                          |                         | 
+ARG_FD                      | ARG_STRUCT_PTR                          | int *usockaddr_len           |                          |                         | 
+ARG_FD                      | ARG_PTR                                 | ARG_SIZE                     | ARG_FLAGS                | ARG_STRUCT_PTR          | int addr_len
+ARG_FD                      | ARG_STRUCT_PTR                          | ARG_FLAGS                    |                          |                         | 
+ARG_FD                      | ARG_PTR                                 | ARG_SIZE                     | ARG_FLAGS                | ARG_STRUCT_PTR          | int *addr_len
+ARG_FD                      | ARG_STRUCT_PTR                          | ARG_FLAGS                    |                          |                         | 
+ARG_FD                      | int how                                 |                              |                          |                         | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+int cmd                     | ARG_FLAGS                               | int cpu_id                   |                          |                         | 
+unsigned long start         | ARG_SIZE                                | ARG_FLAGS                    |                          |                         | 
+int fd_in                   | ARG_OFFSET                              | int fd_out                   | ARG_OFFSET               | ARG_SIZE                | ARG_FLAGS
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           | unsigned long pos_l      | unsigned long pos_h     | ARG_FLAGS
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned long vlen           | unsigned long pos_l      | unsigned long pos_h     | ARG_FLAGS
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | unsigned int mask        | ARG_STRUCT_PTR          | 
+int option                  | unsigned long arg2                      |                              |                          |                         | 
+aio_context_t ctx_id        | long min_nr                             | long nr                      | ARG_STRUCT_PTR           | ARG_STRUCT_PTR          | ARG_STRUCT_PTR
+ARG_STRUCT_PTR              | u32 rseq_len                            | ARG_FLAGS                    | u32 sig                  |                         | 
+key_t key                   | int nsems                               | ARG_FLAGS                    |                          |                         | 
+int semid                   | int semnum                              | int cmd                      | unsigned long arg        |                         | 
+key_t key                   | ARG_SIZE                                | ARG_FLAGS                    |                          |                         | 
+int shmid                   | int cmd                                 | ARG_STRUCT_PTR               |                          |                         | 
+int shmid                   | ARG_STR                                 | ARG_FLAGS                    |                          |                         | 
+ARG_STR                     |                                         |                              |                          |                         | 
+key_t key                   | ARG_FLAGS                               |                              |                          |                         | 
+int msqid                   | ARG_STRUCT_PTR                          | ARG_SIZE                     | ARG_FLAGS                |                         | 
+int msqid                   | ARG_STRUCT_PTR                          | ARG_SIZE                     | long msgtyp              | ARG_FLAGS               | 
+int msqid                   | int cmd                                 | ARG_STRUCT_PTR               |                          |                         | 
+const clockid_t which_clock | ARG_STRUCT_PTR                          |                              |                          |                         | 
+const clockid_t which_clock | ARG_STRUCT_PTR                          |                              |                          |                         | 
+const clockid_t which_clock | ARG_STRUCT_PTR                          |                              |                          |                         | 
+const clockid_t which_clock | ARG_STRUCT_PTR                          |                              |                          |                         | 
+const clockid_t which_clock | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+timer_t timer_id            | ARG_STRUCT_PTR                          |                              |                          |                         | 
+timer_t timer_id            | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+int ufd                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+int ufd                     | ARG_FLAGS                               | ARG_STRUCT_PTR               | ARG_STRUCT_PTR           |                         | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_FLAGS                |                         | 
+int n                       | fd_set *inp                             | fd_set *outp                 | fd_set *exp              | ARG_STRUCT_PTR          | ARG_PTR
+ARG_STRUCT_PTR              | unsigned int nfds                       | ARG_STRUCT_PTR               | const sigset_t *sigmask  | ARG_SIZE                | 
+aio_context_t ctx_id        | long min_nr                             | long nr                      | ARG_STRUCT_PTR           | ARG_STRUCT_PTR          | ARG_STRUCT_PTR
+ARG_FD                      | ARG_STRUCT_PTR                          | unsigned int vlen            | ARG_FLAGS                | ARG_STRUCT_PTR          | 
+mqd_t mqdes                 | ARG_STR                                 | ARG_SIZE                     | unsigned int msg_prio    | ARG_STRUCT_PTR          | 
+mqd_t mqdes                 | ARG_STR                                 | ARG_SIZE                     | unsigned int *u_msg_prio | ARG_STRUCT_PTR          | 
+int semid                   | ARG_STRUCT_PTR                          | unsigned int nsops           | ARG_STRUCT_PTR           |                         | 
+const sigset_t *uthese      | siginfo_t *uinfo                        | ARG_STRUCT_PTR               | ARG_SIZE                 |                         | 
+u32 *uaddr                  | int op                                  | u32 val                      | ARG_STRUCT_PTR           | u32 *uaddr2             | u32 val3
+ARG_PID                     | ARG_STRUCT_PTR                          |                              |                          |                         | 
+int pidfd                   | int sig                                 | siginfo_t *info              | ARG_FLAGS                |                         | 
+u32 entries                 | ARG_STRUCT_PTR                          |                              |                          |                         | 
+ARG_FD                      | u32 to_submit                           | u32 min_complete             | ARG_FLAGS                | ARG_PTR                 | ARG_SIZE
+ARG_FD                      | unsigned int opcode                     | ARG_PTR                      | unsigned int nr_args     |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    |                          |                         | 
+int from_dfd                | ARG_STR                                 | int to_dfd                   | ARG_STR                  | ARG_FLAGS               | 
+ARG_STR                     | ARG_FLAGS                               |                              |                          |                         | 
+ARG_FD                      | unsigned int cmd                        | ARG_STR                      | ARG_PTR                  | int aux                 | 
+int fs_fd                   | ARG_FLAGS                               | ARG_FLAGS                    |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    |                          |                         | 
+ARG_PID                     | ARG_FLAGS                               |                              |                          |                         | 
+ARG_STRUCT_PTR              | ARG_SIZE                                |                              |                          |                         | 
+ARG_FD                      | unsigned int max_fd                     | ARG_FLAGS                    |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_SIZE                 |                         | 
+int pidfd                   | ARG_FD                                  | ARG_FLAGS                    |                          |                         | 
+int dfd                     | ARG_STR                                 | int mode                     | ARG_FLAGS                |                         | 
+int pidfd                   | ARG_STRUCT_PTR                          | ARG_SIZE                     | int behavior             | ARG_FLAGS               | 
+int epfd                    | ARG_STRUCT_PTR                          | int maxevents                | ARG_STRUCT_PTR           | const sigset_t *sigmask | ARG_SIZE
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STRUCT_PTR           | ARG_SIZE                | 
+ARG_FD                      | unsigned int cmd                        | qid_t id                     | ARG_PTR                  |                         | 
+ARG_STRUCT_PTR              | ARG_SIZE                                | ARG_FLAGS                    |                          |                         | 
+const int ruleset_fd        | const enum landlock_rule_type rule_type | ARG_PTR                      | ARG_FLAGS                |                         | 
+const int ruleset_fd        | ARG_FLAGS                               |                              |                          |                         | 
+ARG_FLAGS                   |                                         |                              |                          |                         | 
+int pidfd                   | ARG_FLAGS                               |                              |                          |                         | 
+ARG_STRUCT_PTR              | unsigned int nr_futexes                 | ARG_FLAGS                    | ARG_STRUCT_PTR           | clockid_t clockid       | 
+ARG_FD                      | ARG_STRUCT_PTR                          | ARG_STRUCT_PTR               | ARG_FLAGS                |                         | 
+int dfd                     | ARG_STR                                 | ARG_MODE                     | ARG_FLAGS                |                         | 
+ARG_PTR                     | unsigned long mask                      | int nr                       | ARG_FLAGS                |                         | 
+ARG_PTR                     | unsigned long val                       | unsigned long mask           | ARG_FLAGS                | ARG_STRUCT_PTR          | clockid_t clockid
+ARG_STRUCT_PTR              | ARG_FLAGS                               | int nr_wake                  | int nr_requeue           |                         | 
+ARG_STRUCT_PTR              | ARG_STRUCT_PTR                          | ARG_SIZE                     | ARG_FLAGS                |                         | 
+ARG_STRUCT_PTR              | u64 *mnt_ids                            | ARG_SIZE                     | ARG_FLAGS                |                         | 
+unsigned int attr           | ARG_STRUCT_PTR                          | u32 *size                    | ARG_FLAGS                |                         | 
+unsigned int attr           | ARG_STRUCT_PTR                          | u32 size                     | ARG_FLAGS                |                         | 
+u64 *ids                    | u32 *size                               | ARG_FLAGS                    |                          |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STR                  | ARG_STRUCT_PTR          | ARG_SIZE
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STR                  | ARG_STRUCT_PTR          | ARG_SIZE
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STR                  | ARG_SIZE                | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STR                  |                         | 
+int dfd                     | ARG_STR                                 | ARG_FLAGS                    | ARG_STRUCT_PTR           | ARG_SIZE                | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_SIZE                 | ARG_FLAGS               | 
+int dfd                     | ARG_STR                                 | ARG_STRUCT_PTR               | ARG_SIZE                 | ARG_FLAGS               | 
