@@ -815,13 +815,13 @@ typedef enum e_ARGTYPE{
 } e_ARGTYPE;
 
 typedef enum e_SYS64{
-	#define X64(id, number, count, str, a1, a2, a3, a4, a5, a6) id = number,
+	#define X64(id, number, count, str, a0, a1, a2, a3, a4, a5) id = number,
 	SYS64_LIST
 	#undef X64
 } e_SYS64 ;
 
 typedef enum e_SYS32{
-	#define X32(id, number, count, str, a1, a2, a3, a4, a5, a6) id = number,
+	#define X32(id, number, count, str, a0, a1, a2, a3, a4, a5) id = number,
 	SYS32_LIST
 	#undef X32
 } e_SYS32 ;
@@ -839,13 +839,13 @@ typedef struct S_SYS32_TABLE {
 } t_SYS32_TABLE;
 
 static const t_SYS64_TABLE get_SYS64_TABLE[] = {
-	#define X64(id, number, count, str, a1, a2, a3, a4, a5, a6) [id] = {str, count, {a1, a2, a3, a4, a5, a6}},
+	#define X64(id, number, count, str, a0, a1, a2, a3, a4, a5) [id] = {str, count, {a0, a1, a2, a3, a4, a5}},
 	SYS64_LIST
 	#undef X64
 };
 
 static const t_SYS64_TABLE get_SYS32_TABLE[] = {
-	#define X32(id, number, count, str, a1, a2, a3, a4, a5, a6) [id] = {str, count, {a1, a2, a3, a4, a5, a6}},
+	#define X32(id, number, count, str, a0, a1, a2, a3, a4, a5) [id] = {str, count, {a0, a1, a2, a3, a4, a5}},
 	SYS32_LIST
 	#undef X32
 };
