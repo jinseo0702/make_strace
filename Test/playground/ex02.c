@@ -1,6 +1,7 @@
 // step3_regs.c
 #include "../../include/strace_data.h"
 #include <ctype.h>
+#include <sys/wait.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdint.h>
@@ -18,6 +19,27 @@
 #include <signal.h>
 
 int pid_temp = 0;
+
+void handler(int sig) {
+    (void)sig;
+    if (pid_temp > 0) {
+        kill(pid_temp, SIGKILL);
+        waitpid(pid_temp, NULL, 0);
+    }
+	printf("\nstrace: Process %d detached\n", pid_temp);
+    _exit(1);
+}
+
+void handler_term(int sig) {
+    (void)sig;
+    if (pid_temp > 0) {
+        kill(pid_temp, SIGKILL);
+        waitpid(pid_temp, NULL, 0);
+    }
+	printf("= ?\n");
+	printf("+++ killed by SIGKILL +++\n");
+    _exit(1);
+}
 
 void fmt_int(unsigned long long v, char *out, const int *type, int *offset, int i, struct user_regs_struct regs){
 	(void)i;
@@ -219,6 +241,9 @@ int main(int argc, char *argv[]){
 
 	pid_t child = fork();
 	pid_temp = child;
+	signal(SIGINT,  handler);
+	signal(SIGTERM, handler);
+	signal(SIGHUP,  handler);
 	if (child == 0) {
 		raise(SIGSTOP);
 		execvp(argv[1], &argv[1]);
@@ -227,10 +252,9 @@ int main(int argc, char *argv[]){
 
 	int status;
 	waitpid(child, &status,  WUNTRACED);
-	ptrace(PTRACE_SEIZE, child, NULL, PTRACE_O_TRACESYSGOOD);
+	ptrace(PTRACE_SEIZE, child, NULL, PTRACE_O_TRACESYSGOOD | PTRACE_O_EXITKILL);
 	ptrace(PTRACE_INTERRUPT, child, NULL, NULL);
 	waitpid(child, &status, 0);
-	kill(child, SIGCONT);
 	int in_syscall = 0;
 	/*
 	//test print mem//
@@ -312,10 +336,23 @@ int main(int argc, char *argv[]){
 				}
 				in_syscall = 0;
 			}
+		} else if (WIFSTOPPED(status)) {
+			siginfo_t siginfo;
+			int sig = WSTOPSIG(status);
+			if (status  >> 16 != 0){
+				continue;
+			}
+			ptrace(PTRACE_GETSIGINFO, child, NULL, &siginfo);
+			printf("--- %s {si_signo=%s, si_code=%d, si_pid=%d, si_uid=%d} ---\n", sigabbrev_np(sig), sigabbrev_np(siginfo.si_signo), siginfo.si_code, siginfo.si_pid, siginfo.si_uid);
+			ptrace(PTRACE_SYSCALL, child, NULL, sig);
 		}
 	}
-	waitpid(child, &status, 0);
-	printf("= ?\n");
-	printf("+++ exited with %d ++\n", WEXITSTATUS(status));
+	if (WIFEXITED(status)) {
+		if (in_syscall) printf(" = ?\n");
+		printf("+++ exited with %d +++\n", WEXITSTATUS(status));
+	} else if (WIFSIGNALED(status)) {
+		if (in_syscall) printf(" = ?\n");
+		printf("+++ killed by SIG%s +++\n", sigabbrev_np(WTERMSIG(status)));
+	}
 	return 0;
 }

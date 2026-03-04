@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -D_GNU_SOURCE
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -f
 NAME = playground
 SRC = ex02.c
