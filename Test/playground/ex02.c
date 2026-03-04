@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stddef.h>
 #include <string.h>
+#include <stdint.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -110,11 +111,93 @@ void fmt_str(unsigned long long v, char *out, const int *type, int *offset, int 
 	}
 };
 
+// void fmt_vstr(unsigned long long v, char *out, const int *type, int *offset, int i, struct user_regs_struct regs){
+// 	(void)i;
+// 	(void)regs;
+// 	(void)type;
+// 	char buf[4095];
+// 	void *temp = 0;
+// 	*offset += sprintf(out + *offset, "[");
+// 	memset(buf, 0, sizeof(buf));
+// 	struct iovec local[1];
+// 	struct iovec remote[1];
+// 	local[0].iov_base = &temp;
+// 	local[0].iov_len = sizeof(void *);
+// 	remote[0].iov_base = (void *)v;
+// 	remote[0].iov_len = sizeof(void *);
+// 	process_vm_readv(pid_temp, local, 1, remote, 1, 0);
+// 	while (temp != NULL) {
+// 		memset(buf, 0, sizeof(buf));
+// 		struct iovec local2[1];
+// 		struct iovec remote2[1];
+// 		local2[0].iov_base = buf;
+// 		local2[0].iov_len = sizeof(buf);
+// 		remote2[0].iov_base = temp;
+// 		remote2[0].iov_len = 8;
+// 		process_vm_readv(pid_temp, local2, 1, remote2, 1, 0);
+// 		*offset += sprintf(out + *offset, "\"%s\"", buf);
+// 		temp++;
+// 		if (temp != NULL) {
+// 			*offset += sprintf(out + *offset, ", ");
+// 		}
+// 	}
+// 	*offset += sprintf(out + *offset, "]");
+// };
+
+void fmt_vstr(unsigned long long v, char *out, const int *type, int *offset, int i, struct user_regs_struct regs){
+    (void)i;
+    (void)regs;
+    (void)type;
+
+    char buf[4095];
+    uintptr_t elem = 0;              // argv[idx] 값 (char* 주소)
+    uintptr_t argv_base = (uintptr_t)v;
+    int first = 1;
+
+    *offset += sprintf(out + *offset, "[");
+
+    for (size_t idx = 0; idx < 128; idx++) {
+        struct iovec local[1];
+        struct iovec remote[1];
+
+        // 1) argv[idx] 포인터값 읽기
+        elem = 0;
+        local[0].iov_base = &elem;
+        local[0].iov_len = sizeof(elem);
+        remote[0].iov_base = (void *)(argv_base + idx * sizeof(uintptr_t));
+        remote[0].iov_len = sizeof(elem);
+
+        ssize_t n = process_vm_readv(pid_temp, local, 1, remote, 1, 0);
+        if (n != (ssize_t)sizeof(elem)) break;
+        if (elem == 0) break; // NULL 종단
+
+        // 2) elem이 가리키는 문자열 읽기
+        memset(buf, 0, sizeof(buf));
+        struct iovec local2[1];
+        struct iovec remote2[1];
+        local2[0].iov_base = buf;
+        local2[0].iov_len = sizeof(buf) - 1;
+        remote2[0].iov_base = (void *)elem;
+        remote2[0].iov_len = sizeof(buf) - 1;
+
+        n = process_vm_readv(pid_temp, local2, 1, remote2, 1, 0);
+        if (n < 0) break;
+        buf[sizeof(buf) - 1] = '\0';
+
+        if (!first) *offset += sprintf(out + *offset, ", ");
+        first = 0;
+        *offset += sprintf(out + *offset, "\"%s\"", buf);
+    }
+
+    *offset += sprintf(out + *offset, "]");
+}
+
 typedef void (*arg_fmt_fn)(unsigned long long v, char *out, const int *type, int *offset, int i, struct user_regs_struct regs);
 
 static arg_fmt_fn g_fmt[] = {
 	[ARG_FD] = fmt_int,
 	[ARG_STR] = fmt_str,
+	[ARG_VSTR] = fmt_vstr,
 	[ARG_FLAGS] = fmt_ptr,
 	[ARG_MODE] = fmt_int,
 	[ARG_SIZE] = fmt_int,
@@ -231,5 +314,8 @@ int main(int argc, char *argv[]){
 			}
 		}
 	}
+	waitpid(child, &status, 0);
+	printf("= ?\n");
+	printf("+++ exited with %d ++\n", WEXITSTATUS(status));
 	return 0;
 }

@@ -61,7 +61,7 @@ X64(SYS64_GETSOCKOPT , 0x37 , 5 , "getsockopt" ,  ARG_FD, ARG_INT, ARG_INT, ARG_
 X64(SYS64_CLONE , 0x38 , 5 , "clone" ,  ARG_FLAGS, ARG_ULONG, ARG_PTR, ARG_PTR, ARG_ULONG, 0 ) \
 X64(SYS64_FORK , 0x39 , 0 , "fork" ,  ARG_NONE, 0, 0, 0, 0, 0 ) \
 X64(SYS64_VFORK , 0x3a , 0 , "vfork" ,  ARG_NONE, 0, 0, 0, 0, 0 ) \
-X64(SYS64_EXECVE , 0x3b , 3 , "execve" ,  ARG_STR, ARG_STR, ARG_STR, 0, 0, 0 ) \
+X64(SYS64_EXECVE , 0x3b , 3 , "execve" ,  ARG_STR, ARG_VSTR, ARG_PTR, 0, 0, 0 ) \
 X64(SYS64_EXIT , 0x3c , 1 , "exit" ,  ARG_INT, 0, 0, 0, 0, 0 ) \
 X64(SYS64_WAIT4 , 0x3d , 4 , "wait4" ,  ARG_PID, ARG_PTR, ARG_INT, ARG_STRUCT_PTR, 0, 0 ) \
 X64(SYS64_KILL , 0x3e , 2 , "kill" ,  ARG_PID, ARG_SIGNAL, 0, 0, 0, 0 ) \
@@ -307,7 +307,7 @@ X64(SYS64_GETRANDOM , 0x13e , 3 , "getrandom" ,  ARG_STR, ARG_SIZE, ARG_FLAGS, 0
 X64(SYS64_MEMFD_CREATE , 0x13f , 2 , "memfd_create" ,  ARG_STR, ARG_FLAGS, 0, 0, 0, 0 ) \
 X64(SYS64_KEXEC_FILE_LOAD , 0x140 , 5 , "kexec_file_load" ,  ARG_INT, ARG_INT, ARG_ULONG, ARG_STR, ARG_FLAGS, 0 ) \
 X64(SYS64_BPF , 0x141 , 3 , "bpf" ,  ARG_INT, ARG_PTR, ARG_UINT, 0, 0, 0 ) \
-X64(SYS64_EXECVEAT , 0x142 , 5 , "execveat" ,  ARG_FD, ARG_STR, ARG_STR, ARG_STR, ARG_FLAGS, 0 ) \
+X64(SYS64_EXECVEAT , 0x142 , 5 , "execveat" ,  ARG_FD, ARG_STR, ARG_VSTR, ARG_PTR, ARG_FLAGS, 0 ) \
 X64(SYS64_USERFAULTFD , 0x143 , 1 , "userfaultfd" ,  ARG_FLAGS, 0, 0, 0, 0, 0 ) \
 X64(SYS64_MEMBARRIER , 0x144 , 3 , "membarrier" ,  ARG_INT, ARG_FLAGS, ARG_INT, 0, 0, 0 ) \
 X64(SYS64_MLOCK2 , 0x145 , 3 , "mlock2" ,  ARG_ULONG, ARG_SIZE, ARG_FLAGS, 0, 0, 0 ) \
@@ -380,7 +380,7 @@ X32(SYS32_WAITPID , 0x7 , 3 , "waitpid" ,  ARG_PID, ARG_PTR, ARG_INT, 0, 0, 0 ) 
 X32(SYS32_CREAT , 0x8 , 2 , "creat" ,  ARG_STR, ARG_MODE, 0, 0, 0, 0 ) \
 X32(SYS32_LINK , 0x9 , 2 , "link" ,  ARG_STR, ARG_STR, 0, 0, 0, 0 ) \
 X32(SYS32_UNLINK , 0xa , 1 , "unlink" ,  ARG_STR, 0, 0, 0, 0, 0 ) \
-X32(SYS32_EXECVE , 0xb , 3 , "execve" ,  ARG_STR, ARG_STR, ARG_STR, 0, 0, 0 ) \
+X32(SYS32_EXECVE , 0xb , 3 , "execve" ,  ARG_STR, ARG_VSTR, ARG_PTR, 0, 0, 0 ) \
 X32(SYS32_CHDIR , 0xc , 1 , "chdir" ,  ARG_STR, 0, 0, 0, 0, 0 ) \
 X32(SYS32_TIME , 0xd , 1 , "time" ,  ARG_PTR, 0, 0, 0, 0, 0 ) \
 X32(SYS32_MKNOD , 0xe , 3 , "mknod" ,  ARG_STR, ARG_MODE, ARG_INT, 0, 0, 0 ) \
@@ -696,7 +696,7 @@ X32(SYS32_SECCOMP , 0x162 , 3 , "seccomp" ,  ARG_UINT, ARG_FLAGS, ARG_PTR, 0, 0,
 X32(SYS32_GETRANDOM , 0x163 , 3 , "getrandom" ,  ARG_STR, ARG_SIZE, ARG_FLAGS, 0, 0, 0 ) \
 X32(SYS32_MEMFD_CREATE , 0x164 , 2 , "memfd_create" ,  ARG_STR, ARG_FLAGS, 0, 0, 0, 0 ) \
 X32(SYS32_BPF , 0x165 , 3 , "bpf" ,  ARG_INT, ARG_PTR, ARG_UINT, 0, 0, 0 ) \
-X32(SYS32_EXECVEAT , 0x166 , 5 , "execveat" ,  ARG_FD, ARG_STR, ARG_STR, ARG_STR, ARG_FLAGS, 0 ) \
+X32(SYS32_EXECVEAT , 0x166 , 5 , "execveat" ,  ARG_FD, ARG_STR, ARG_VSTR, ARG_PTR, ARG_FLAGS, 0 ) \
 X32(SYS32_SOCKET , 0x167 , 3 , "socket" ,  ARG_INT, ARG_INT, ARG_INT, 0, 0, 0 ) \
 X32(SYS32_SOCKETPAIR , 0x168 , 4 , "socketpair" ,  ARG_INT, ARG_INT, ARG_INT, ARG_PTR, 0, 0 ) \
 X32(SYS32_BIND , 0x169 , 3 , "bind" ,  ARG_FD, ARG_STRUCT_PTR, ARG_INT, 0, 0, 0 ) \
@@ -801,6 +801,7 @@ typedef enum e_ARGTYPE{
 	ARG_NONE,
 	ARG_FD,
 	ARG_STR,
+	ARG_VSTR,
 	ARG_FLAGS,
 	ARG_MODE,
 	ARG_SIZE,
