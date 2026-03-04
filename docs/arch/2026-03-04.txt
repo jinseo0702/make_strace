@@ -1,0 +1,50 @@
+약간의 문제가 생기고 있다.
+문제의 원인은 다음과 같다.
+```bash
+~/Desktop/make_strace/Test/playground (main*) » strace /bin/uname 2>&1 | grep "mmap"   1 ↵ jinseo@c1r5s6
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x74e2d0f92000
+mmap(NULL, 88668, PROT_READ, MAP_PRIVATE, 3, 0) = 0x74e2d0f7c000
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x74e2d0c00000
+mmap(0x74e2d0c28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x74e2d0c28000
+mmap(0x74e2d0dbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x74e2d0dbd000
+mmap(0x74e2d0e16000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x74e2d0e16000
+mmap(0x74e2d0e1c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x74e2d0e1c000
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x74e2d0f79000
+mmap(NULL, 5475184, PROT_READ, MAP_PRIVATE, 3, 0) = 0x74e2d0600000
+```
+
+```bash
+~/Desktop/make_strace/Test/playground (main*) » ./playground /bin/uname | grep "mmap"      jinseo@c1r5s6
+mmap(0, 8192, 3, 0x22, 4294967295, 0) = 125577778712576
+mmap(0, 88668, 1, 0x2, 3, 0) = 125577778622464
+mmap(0, 2264656, 1, 0x802, 3, 0) = 125577776332800
+mmap(125577776496640, 1658880, 5, 0x812, 3, 163840) = 125577776496640
+mmap(125577778155520, 360448, 1, 0x812, 3, 1822720) = 125577778155520
+mmap(125577778520064, 24576, 3, 0x812, 3, 2183168) = 125577778520064
+mmap(125577778544640, 52816, 3, 0x32, 4294967295, 0) = 125577778544640
+mmap(0, 12288, 3, 0x22, 4294967295, 0) = 125577778610176
+mmap(0, 5475184, 1, 0x2, 3, 0) = 125577770041344
+
+```
+음수가 들어가야 하는 자리에 음수가 해석이 되는게 안니라 비트 그자체가 해석이 되고 있는게 문제가 된다.
+그 이유는 다음과 같다.
+
+```c
+int fmt_int(unsigned long long v, char *out, size_t n, int *offset){
+	long long temp = (long long)v;
+	*offset += sprintf(out + *offset, "%lld", temp);
+	return n;
+}
+```
+
+여기서 unsigned long long 을 다시 long long 으로 캐스팅 해주는 과정에서 음수의 비트가 해석이 되는 문제가 의도하지 않은 방향으로 발생하고 있다.
+
+방금 생각한 수정해야하는 방향은 다음과 같다.
+ - 인자 type을 더욱 구체화 한다.
+
+이유는 다음과 같다.
+현재 발생하는 문제는 type 의 불일치이다. negative 값을 양수로 해석하거나 unsigned 값을 negative로 해석한다.
+그렇다면 더욱 해석을 세분화 하면 된다.
+
+unsigned 에 관련된 type
+long에 관련된 type 을 추가해보자

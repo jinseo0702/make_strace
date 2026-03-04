@@ -18,7 +18,7 @@ def classify(col):
     if 'umode_t' in full:                     return 'ARG_MODE'
     if name == 'fd':                          return 'ARG_FD'
     if 'pid_t' in full:                       return 'ARG_PID'
-    if 'size_t' in full:                      return 'ARG_SIZE'
+    if 'size_t' in full and ('len' in name or 'size' in name or 'count' in name or 'bufsiz' in name): return 'ARG_SIZE'
     if 'off_t' in full:                       return 'ARG_OFFSET'
     if 'struct' in full and '*' in full:      return 'ARG_STRUCT_PTR'
     if 'void *' in full:                      return 'ARG_PTR'
@@ -29,6 +29,9 @@ def classify(col):
     if name == 'sig' or 'sigset' in full or 'sighandler' in full: return 'ARG_SIGNAL'
     if 'mask' in name:                 return 'ARG_FLAGS'
     if '*' in full:                    return 'ARG_PTR'   # 포인터는 다 ARG_PTR
+    if 'unsigned int' in full:         return 'ARG_UINT'
+    if 'unsigned long' in full:         return 'ARG_ULONG'
+    if 'long' in full:         return 'ARG_LONG'
     return 'ARG_INT'                   # 마지막은 다 ARG_INT
 
 with open(sys.argv[1]) as f:

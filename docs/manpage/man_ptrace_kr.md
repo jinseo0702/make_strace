@@ -10,9 +10,10 @@ ptrace - 프로세스 추적 (process trace)
 #include <sys/ptrace.h>
 
 long ptrace(enum __ptrace_request request, pid_t pid, void *addr, void *data);
-``` 
+```
 
 ### 설명 (DESCRIPTION)
+
 ptrace() 시스템 호출은 한 프로세스("추적자" (tracer))가 다른 프로세스("피추적자" (tracee))의 실행을 관찰 및 제어하고, 피추적자의 메모리와 레지스터를 조사 및 변경할 수 있는 수단을 제공한다. 이는 주로 중단점 디버깅 (breakpoint debugging) 및 시스템 호출 추적 (system call tracing)을 구현하는 데 사용된다.
 
 피추적자는 먼저 추적자에게 부착(attach)되어야 한다. 부착 및 이후의 명령은 스레드별로 이루어진다: 다중 스레드 프로세스에서, 모든 스레드는 개별적으로 (잠재적으로 다른) 추적자에게 부착되거나, 부착되지 않은 상태로 남아 디버깅되지 않을 수 있다. 따라서, "피추적자" (tracee)는 항상 "(하나의) 스레드"를 의미하며, 결코 "(다중 스레드일 수 있는) 프로세스"를 의미하지 않는다. Ptrace 명령은 항상 다음과 같은 형태의 호출을 사용하여 특정 피추적자에게 전송된다:
@@ -73,7 +74,7 @@ struct ptrace_peeksiginfo_args {
     u32 flags;  /* PTRACE_PEEKSIGINFO_SHARED 또는 0 */
     s32 nr;     /* 복사할 신호의 수 */
 };
-``` 
+```
 
 현재 프로세스 전체 신호 큐에서 신호를 덤프하기 위한 플래그는 PTRACE_PEEKSIGINFO_SHARED 하나뿐이다. 이 플래그가 설정되지 않으면, 지정된 스레드의 스레드별 큐에서 신호를 읽는다.
 
@@ -86,40 +87,40 @@ struct ptrace_peeksiginfo_args {
 **PTRACE_SETOPTIONS (리눅스 2.4.6부터; 주의사항은 결함(BUGS) 참조)**
 data로부터 ptrace 옵션을 설정한다. (addr은 무시된다.) data는 다음 플래그들에 의해 지정되는 옵션들의 비트 마스크로 해석된다: 
 
-* **PTRACE_O_EXITKILL (리눅스 3.8부터)**
-  추적자가 종료되면 피추적자에게 SIGKILL 신호를 보낸다. 이 옵션은 피추적자가 추적자의 제어를 절대 벗어나지 못하도록 보장하려는 ptrace 감옥(jailer)들에게 유용하다.
-* **PTRACE_O_TRACECLONE (리눅스 2.5.46부터)**
-  다음 clone(2)에서 피추적자를 정지시키고 새로 복제된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_CLONE<<8))`
-  새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다. 이 옵션은 모든 경우에 clone(2) 호출을 포착하지 못할 수도 있다. 피추적자가 CLONE_VFORK 플래그와 함께 clone(2)을 호출하면, PTRACE_O_TRACEVFORK가 설정된 경우 대신 PTRACE_EVENT_VFORK가 전달될 것이다; 그렇지 않고 피추적자가 종료 신호가 SIGCHLD로 설정된 clone(2)을 호출하면, PTRACE_O_TRACEFORK가 설정된 경우 PTRACE_EVENT_FORK가 전달될 것이다.
-* **PTRACE_O_TRACEEXEC (리눅스 2.5.46부터)**
-  다음 execve(2)에서 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_EXEC<<8))`
-  exec를 수행하는 스레드가 스레드 그룹 리더가 아닌 경우, 이 정지 이전에 스레드 ID가 스레드 그룹 리더의 ID로 재설정된다. 리눅스 3.0부터, 이전 스레드 ID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
-* **PTRACE_O_TRACEEXIT (리눅스 2.5.60부터)**
-  종료 시 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_EXIT<<8))`
-  피추적자의 종료 상태는 PTRACE_GETEVENTMSG로 가져올 수 있다. 피추적자는 프로세스 종료 중 레지스터가 여전히 사용 가능한 초기에 정지되므로, 추적자가 종료가 발생한 위치를 볼 수 있게 해준다. 반면 일반적인 종료 통지는 프로세스가 종료를 마친 후에 이루어진다. 문맥(context)이 가용함에도 불구하고, 추적자는 이 시점에서 종료가 일어나는 것을 막을 수 없다.
-* **PTRACE_O_TRACEFORK (리눅스 2.5.46부터)**
-  다음 fork(2)에서 피추적자를 정지시키고 새로 포크된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_FORK<<8))`
-  새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
-* **PTRACE_O_TRACESYSGOOD (리눅스 2.4.6부터)**
-  시스템 호출 트랩(trap)을 전달할 때, 신호 번호의 7번 비트를 설정한다 (즉, SIGTRAP|0x80을 전달함). 이는 추적자가 일반 트랩과 시스템 호출에 의해 유발된 트랩을 쉽게 구별할 수 있게 해준다.
-* **PTRACE_O_TRACEVFORK (리눅스 2.5.46부터)**
-  다음 vfork(2)에서 피추적자를 정지시키고 새로 vfork된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_VFORK<<8))`
-  새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
-* **PTRACE_O_TRACEVFORKDONE (리눅스 2.5.60부터)**
-  다음 vfork(2)의 완료 시 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_VFORK_DONE<<8))`
-  새 프로세스의 PID는 (리눅스 2.6.18부터) PTRACE_GETEVENTMSG로 가져올 수 있다.
-* **PTRACE_O_TRACESECCOMP (리눅스 3.5부터)**
-  seccomp(2) SECCOMP_RET_TRACE 규칙이 트리거될 때 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
-  `status>>8 == (SIGTRAP | (PTRACE_EVENT_SECCOMP<<8))`
-  이것은 PTRACE_EVENT 정지를 트리거하지만, syscall-enter-stop과 유사하다. 자세한 내용은 아래 PTRACE_EVENT_SECCOMP에 관한 노트를 참조하라. seccomp 이벤트 메시지 데이터(seccomp 필터 규칙의 SECCOMP_RET_DATA 부분으로부터)는 PTRACE_GETEVENTMSG로 가져올 수 있다.
-* **PTRACE_O_SUSPEND_SECCOMP (리눅스 4.3부터)**
-  피추적자의 seccomp 보호를 중단(suspend)시킨다. 이는 모드에 관계없이 적용되며, 피추적자가 아직 seccomp 필터를 설치하지 않았을 때 사용될 수 있다. 즉, 유효한 사용 사례는 피추적자가 필터를 설치하기 전에 피추적자의 seccomp 보호를 중단하고, 피추적자가 필터를 설치하게 한 다음, 필터가 재개되어야 할 때 이 플래그를 해제하는 것이다. 이 옵션을 설정하려면 추적자가 CAP_SYS_ADMIN 역량을 가져야 하며, 어떤 seccomp 보호도 설치되어 있지 않아야 하고, 자기 자신에게 PTRACE_O_SUSPEND_SECCOMP가 설정되어 있지 않아야 한다.
+- **PTRACE_O_EXITKILL (리눅스 3.8부터)**
+추적자가 종료되면 피추적자에게 SIGKILL 신호를 보낸다. 이 옵션은 피추적자가 추적자의 제어를 절대 벗어나지 못하도록 보장하려는 ptrace 감옥(jailer)들에게 유용하다.
+- **PTRACE_O_TRACECLONE (리눅스 2.5.46부터)**
+다음 clone(2)에서 피추적자를 정지시키고 새로 복제된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_CLONE<<8))`
+새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다. 이 옵션은 모든 경우에 clone(2) 호출을 포착하지 못할 수도 있다. 피추적자가 CLONE_VFORK 플래그와 함께 clone(2)을 호출하면, PTRACE_O_TRACEVFORK가 설정된 경우 대신 PTRACE_EVENT_VFORK가 전달될 것이다; 그렇지 않고 피추적자가 종료 신호가 SIGCHLD로 설정된 clone(2)을 호출하면, PTRACE_O_TRACEFORK가 설정된 경우 PTRACE_EVENT_FORK가 전달될 것이다.
+- **PTRACE_O_TRACEEXEC (리눅스 2.5.46부터)**
+다음 execve(2)에서 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_EXEC<<8))`
+exec를 수행하는 스레드가 스레드 그룹 리더가 아닌 경우, 이 정지 이전에 스레드 ID가 스레드 그룹 리더의 ID로 재설정된다. 리눅스 3.0부터, 이전 스레드 ID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
+- **PTRACE_O_TRACEEXIT (리눅스 2.5.60부터)**
+종료 시 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_EXIT<<8))`
+피추적자의 종료 상태는 PTRACE_GETEVENTMSG로 가져올 수 있다. 피추적자는 프로세스 종료 중 레지스터가 여전히 사용 가능한 초기에 정지되므로, 추적자가 종료가 발생한 위치를 볼 수 있게 해준다. 반면 일반적인 종료 통지는 프로세스가 종료를 마친 후에 이루어진다. 문맥(context)이 가용함에도 불구하고, 추적자는 이 시점에서 종료가 일어나는 것을 막을 수 없다.
+- **PTRACE_O_TRACEFORK (리눅스 2.5.46부터)**
+다음 fork(2)에서 피추적자를 정지시키고 새로 포크된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_FORK<<8))`
+새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
+- **PTRACE_O_TRACESYSGOOD (리눅스 2.4.6부터)**
+시스템 호출 트랩(trap)을 전달할 때, 신호 번호의 7번 비트를 설정한다 (즉, SIGTRAP|0x80을 전달함). 이는 추적자가 일반 트랩과 시스템 호출에 의해 유발된 트랩을 쉽게 구별할 수 있게 해준다.
+- **PTRACE_O_TRACEVFORK (리눅스 2.5.46부터)**
+다음 vfork(2)에서 피추적자를 정지시키고 새로 vfork된 프로세스를 자동으로 추적하기 시작하며, 새 프로세스는 SIGSTOP 또는 (PTRACE_SEIZE가 사용된 경우) PTRACE_EVENT_STOP으로 시작할 것이다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_VFORK<<8))`
+새 프로세스의 PID는 PTRACE_GETEVENTMSG로 가져올 수 있다.
+- **PTRACE_O_TRACEVFORKDONE (리눅스 2.5.60부터)**
+다음 vfork(2)의 완료 시 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_VFORK_DONE<<8))`
+새 프로세스의 PID는 (리눅스 2.6.18부터) PTRACE_GETEVENTMSG로 가져올 수 있다.
+- **PTRACE_O_TRACESECCOMP (리눅스 3.5부터)**
+seccomp(2) SECCOMP_RET_TRACE 규칙이 트리거될 때 피추적자를 정지시킨다. 추적자에 의한 waitpid(2)는 다음과 같은 상태 값을 반환할 것이다:
+`status>>8 == (SIGTRAP | (PTRACE_EVENT_SECCOMP<<8))`
+이것은 PTRACE_EVENT 정지를 트리거하지만, syscall-enter-stop과 유사하다. 자세한 내용은 아래 PTRACE_EVENT_SECCOMP에 관한 노트를 참조하라. seccomp 이벤트 메시지 데이터(seccomp 필터 규칙의 SECCOMP_RET_DATA 부분으로부터)는 PTRACE_GETEVENTMSG로 가져올 수 있다.
+- **PTRACE_O_SUSPEND_SECCOMP (리눅스 4.3부터)**
+피추적자의 seccomp 보호를 중단(suspend)시킨다. 이는 모드에 관계없이 적용되며, 피추적자가 아직 seccomp 필터를 설치하지 않았을 때 사용될 수 있다. 즉, 유효한 사용 사례는 피추적자가 필터를 설치하기 전에 피추적자의 seccomp 보호를 중단하고, 피추적자가 필터를 설치하게 한 다음, 필터가 재개되어야 할 때 이 플래그를 해제하는 것이다. 이 옵션을 설정하려면 추적자가 CAP_SYS_ADMIN 역량을 가져야 하며, 어떤 seccomp 보호도 설치되어 있지 않아야 하고, 자기 자신에게 PTRACE_O_SUSPEND_SECCOMP가 설정되어 있지 않아야 한다.
 
 **PTRACE_GETEVENTMSG (리눅스 2.5.46부터)**
 방금 발생한 ptrace 이벤트에 관한 메시지를 (unsigned long으로) 가져와 추적자의 주소 data에 배치한다. PTRACE_EVENT_EXIT의 경우, 이는 피추적자의 종료 상태이다. PTRACE_EVENT_FORK, PTRACE_EVENT_VFORK, PTRACE_EVENT_VFORK_DONE, PTRACE_EVENT_CLONE의 경우, 이는 새 프로세스의 PID이다. PTRACE_EVENT_SECCOMP의 경우, 이는 트리거된 규칙과 관련된 seccomp(2) 필터의 SECCOMP_RET_DATA이다. (addr은 무시된다.) 
@@ -188,20 +189,21 @@ struct ptrace_syscall_info {
         } seccomp;
     };
 };
-``` 
+```
 
 op, arch, instruction_pointer, stack_pointer 필드는 모든 종류의 ptrace 시스템 호출 정지에 대해 정의된다. 구조체의 나머지는 공용체(union)이다; op 필드에 의해 지정된 시스템 호출 정지 종류에 의미 있는 필드들만 읽어야 한다 . op 필드는 어떤 유형의 정지가 발생했고 공용체의 어느 부분이 채워졌는지를 나타내는 다음 값 중 하나(<linux/ptrace.h>에 정의됨)를 가진다: 
 
-* **PTRACE_SYSCALL_INFO_ENTRY**
-  공용체의 entry 구성요소가 시스템 호출 진입 정지와 관련된 정보를 포함한다.
-* **PTRACE_SYSCALL_INFO_EXIT**
-  공용체의 exit 구성요소가 시스템 호출 진출 정지와 관련된 정보를 포함한다.
-* **PTRACE_SYSCALL_INFO_SECCOMP**
-  공용체의 seccomp 구성요소가 PTRACE_EVENT_SECCOMP 정지와 관련된 정보를 포함한다.
-* **PTRACE_SYSCALL_INFO_NONE**
-  공용체의 어떤 구성요소도 관련 정보를 포함하지 않는다.
+- **PTRACE_SYSCALL_INFO_ENTRY**
+공용체의 entry 구성요소가 시스템 호출 진입 정지와 관련된 정보를 포함한다.
+- **PTRACE_SYSCALL_INFO_EXIT**
+공용체의 exit 구성요소가 시스템 호출 진출 정지와 관련된 정보를 포함한다.
+- **PTRACE_SYSCALL_INFO_SECCOMP**
+공용체의 seccomp 구성요소가 PTRACE_EVENT_SECCOMP 정지와 관련된 정보를 포함한다.
+- **PTRACE_SYSCALL_INFO_NONE**
+공용체의 어떤 구성요소도 관련 정보를 포함하지 않는다.
 
 #### Ptrace 하에서의 죽음 (Death under ptrace)
+
 (다중 스레드일 수 있는) 프로세스가 살해 신호(처분이 SIG_DFL로 설정되어 있고 기본 동작이 프로세스를 죽이는 신호)를 받으면, 모든 스레드가 종료된다. 피추적자들은 자신의 죽음을 추적자(들)에게 보고한다. 이 이벤트의 통지는 waitpid(2)를 통해 전달된다.
 
 살해 신호는 먼저 (단 하나의 피추적자에게만) signal-delivery-stop을 유발할 것이며, 추적자에 의해 주입된 후에야 (또는 추적되지 않는 스레드에 파견된 후에야) 다중 스레드 프로세스 내의 모든 피추적자에게 신호에 의한 죽음이 일어날 것임에 유의하라. ("signal-delivery-stop"이라는 용어는 아래에서 설명된다.) 
@@ -215,6 +217,7 @@ SIGKILL은 signal-delivery-stop을 생성하지 않으며 따라서 추적자는
 추적자는 피추적자가 항상 WIFEXITED(status) 또는 WIFSIGNALED(status)를 보고하며 생을 마감한다고 가정할 수 없다; 이것이 발생하지 않는 경우가 있다. 예를 들어, 스레드 그룹 리더가 아닌 스레드가 execve(2)를 수행하면, 그 스레드는 사라진다; 그 PID는 다시는 보이지 않을 것이며, 이후의 모든 ptrace 정지는 스레드 그룹 리더의 PID 하에 보고될 것이다.
 
 #### 정지 상태 (Stopped states)
+
 피추적자는 두 가지 상태에 있을 수 있다: 실행 중(running) 또는 정지됨(stopped) . ptrace의 목적상, 시스템 호출(read(2), pause(2) 등)에서 차단된 피추적자는 비록 피추적자가 오랜 시간 차단되어 있더라도 실행 중인 것으로 간주된다. PTRACE_LISTEN 이후의 피추적자 상태는 다소 회색 영역이다: 어떤 ptrace-정지 상태도 아니며(ptrace 명령이 작동하지 않고, waitpid(2) 통지를 전달함), 명령을 실행하지 않고(스케줄링되지 않음) PTRACE_LISTEN 이전에 그룹 정지 상태였다면 SIGCONT를 받을 때까지 신호에 응답하지 않으므로 "정지된" 것으로 간주될 수도 있다.
 
 피추적자가 정지되었을 때의 상태에는 많은 종류가 있으며, ptrace 논의에서 그것들은 종종 혼동된다. 그러므로 정확한 용어를 사용하는 것이 중요하다.
@@ -228,6 +231,7 @@ SIGKILL은 signal-delivery-stop을 생성하지 않으며 따라서 추적자는
 ptrace-정지된 피추적자들은 pid가 0보다 크고 WIFSTOPPED(status)가 참인 반환으로 보고된다. __WALL 플래그는 WSTOPPED 및 WEXITED 플래그를 포함하지 않지만, 그 기능을 암시한다 . waitpid(2)를 호출할 때 WCONTINUED 플래그를 설정하는 것은 권장되지 않는다: "계속된(continued)" 상태는 프로세스별이며 이를 소비하는 것은 피추적자의 실제 부모를 혼란스럽게 할 수 있다. WNOHANG 플래그의 사용은 추적자가 통지가 있어야 함을 알고 있더라도 waitpid(2)가 0("아직 대기 결과가 없음")을 반환하게 할 수 있다.
 
 예시: 
+
 ```c
 errno = 0;
 ptrace(PTRACE_CONT, pid, 0L, 0L);
@@ -236,7 +240,7 @@ if (errno == ESRCH) {
     r = waitpid(tracee, &status, __WALL | WNOHANG);
     /* 여기서 r은 여전히 0일 수 있음! */
 }
-``` 
+```
 
 다음과 같은 종류의 ptrace-정지가 존재한다: signal-delivery-stops, group-stops, PTRACE_EVENT stops, syscall-stops. 그것들은 모두 WIFSTOPPED(status)가 참인 waitpid(2)에 의해 보고된다. 그것들은 status>>8 값을 조사함으로써, 그리고 그 값에 모호함이 있다면 PTRACE_GETSIGINFO를 쿼리함으로써 구별될 수 있다. (참고: WSTOPSIG(status) 매크로는 (status>>8) & 0xff 값을 반환하므로 이 조사에 사용될 수 없다.) 
 
@@ -276,25 +280,25 @@ SIGCONT 신호는 그룹 정지된 프로세스의 (모든 스레드를) 깨우�
 
 다음과 같은 이벤트들이 존재한다: 
 
-* **PTRACE_EVENT_VFORK**
-  vfork(2) 또는 CLONE_VFORK 플래그를 가진 clone(2)으로부터 반환되기 전에 정지한다. 피추적자가 이 정지 후 계속되면, 실행을 계속하기 전에 자식이 종료/exec하기를 기다릴 것이다 (다시 말해, vfork(2)에서의 평상시 동작).
-* **PTRACE_EVENT_FORK**
-  fork(2) 또는 종료 신호가 SIGCHLD로 설정된 clone(2)으로부터 반환되기 전에 정지한다.
-* **PTRACE_EVENT_CLONE**
-  clone(2)으로부터 반환되기 전에 정지한다.
-* **PTRACE_EVENT_VFORK_DONE**
-  vfork(2) 또는 CLONE_VFORK 플래그를 가진 clone(2)으로부터 반환되기 전이되, 자식이 종료 또는 exec함으로써 이 피추적자의 차단을 해제한 후에 정지한다.
+- **PTRACE_EVENT_VFORK**
+vfork(2) 또는 CLONE_VFORK 플래그를 가진 clone(2)으로부터 반환되기 전에 정지한다. 피추적자가 이 정지 후 계속되면, 실행을 계속하기 전에 자식이 종료/exec하기를 기다릴 것이다 (다시 말해, vfork(2)에서의 평상시 동작).
+- **PTRACE_EVENT_FORK**
+fork(2) 또는 종료 신호가 SIGCHLD로 설정된 clone(2)으로부터 반환되기 전에 정지한다.
+- **PTRACE_EVENT_CLONE**
+clone(2)으로부터 반환되기 전에 정지한다.
+- **PTRACE_EVENT_VFORK_DONE**
+vfork(2) 또는 CLONE_VFORK 플래그를 가진 clone(2)으로부터 반환되기 전이되, 자식이 종료 또는 exec함으로써 이 피추적자의 차단을 해제한 후에 정지한다.
 
 위에서 설명된 네 가지 정지 모두에 대해, 정지는 새로 생성된 스레드가 아니라 부모(즉, 피추적자)에서 발생한다. PTRACE_GETEVENTMSG를 사용하여 새 스레드의 ID를 가져올 수 있다.
 
-* **PTRACE_EVENT_EXEC**
-  execve(2)로부터 반환되기 전에 정지한다. 리눅스 3.0부터 PTRACE_GETEVENTMSG는 이전 스레드 ID를 반환한다.
-* **PTRACE_EVENT_EXIT**
-  종료(exit_group(2)에 의한 죽음 포함), 신호에 의한 죽음, 또는 다중 스레드 프로세스에서 execve(2)에 의해 유발된 종료 이전에 정지한다. PTRACE_GETEVENTMSG는 종료 상태를 반환한다. ("진짜" 종료가 일어날 때와 달리) 레지스터를 조사할 수 있다. 피추적자는 여전히 살아있다; 종료를 마치려면 PTRACE_CONT 또는 PTRACE_DETACH되어야 한다.
-* **PTRACE_EVENT_STOP**
-  PTRACE_INTERRUPT 명령에 의해 유도된 정지, 또는 그룹 정지, 또는 새로운 자식이 부착될 때의 초기 ptrace-정지(PTRACE_SEIZE를 사용하여 부착된 경우에만)이다.
-* **PTRACE_EVENT_SECCOMP**
-  추적자에 의해 PTRACE_O_TRACESECCOMP가 설정되었을 때 피추적자의 시스템 호출 진입 시 seccomp(2) 규칙에 의해 트리거된 정지이다 . seccomp 이벤트 메시지 데이터(seccomp 필터 규칙의 SECCOMP_RET_DATA 부분으로부터)는 PTRACE_GETEVENTMSG로 가져올 수 있다. 이 정지의 의미론(semantics)은 아래 별도 섹션에서 자세히 설명된다.
+- **PTRACE_EVENT_EXEC**
+execve(2)로부터 반환되기 전에 정지한다. 리눅스 3.0부터 PTRACE_GETEVENTMSG는 이전 스레드 ID를 반환한다.
+- **PTRACE_EVENT_EXIT**
+종료(exit_group(2)에 의한 죽음 포함), 신호에 의한 죽음, 또는 다중 스레드 프로세스에서 execve(2)에 의해 유발된 종료 이전에 정지한다. PTRACE_GETEVENTMSG는 종료 상태를 반환한다. ("진짜" 종료가 일어날 때와 달리) 레지스터를 조사할 수 있다. 피추적자는 여전히 살아있다; 종료를 마치려면 PTRACE_CONT 또는 PTRACE_DETACH되어야 한다.
+- **PTRACE_EVENT_STOP**
+PTRACE_INTERRUPT 명령에 의해 유도된 정지, 또는 그룹 정지, 또는 새로운 자식이 부착될 때의 초기 ptrace-정지(PTRACE_SEIZE를 사용하여 부착된 경우에만)이다.
+- **PTRACE_EVENT_SECCOMP**
+추적자에 의해 PTRACE_O_TRACESECCOMP가 설정되었을 때 피추적자의 시스템 호출 진입 시 seccomp(2) 규칙에 의해 트리거된 정지이다 . seccomp 이벤트 메시지 데이터(seccomp 필터 규칙의 SECCOMP_RET_DATA 부분으로부터)는 PTRACE_GETEVENTMSG로 가져올 수 있다. 이 정지의 의미론(semantics)은 아래 별도 섹션에서 자세히 설명된다.
 
 PTRACE_EVENT 정지에서의 PTRACE_GETSIGINFO는 si_signo에 SIGTRAP을 반환하며, si_code는 (event<<8) | SIGTRAP으로 설정된다.
 
@@ -307,12 +311,12 @@ syscall-enter-stop 및 syscall-exit-stop은 추적자에 의해 WIFSTOPPED(statu
 
 syscall-stop은 다음 경우들에 대해 PTRACE_GETSIGINFO를 쿼리함으로써 SIGTRAP을 동반한 signal-delivery-stop과 구별될 수 있다: 
 
-* **si_code <= 0**
-  사용자 공간 동작의 결과로 SIGTRAP이 전달되었다. 예를 들어, 시스템 호출(tgkill(2), kill(2), sigqueue(3) 등), POSIX 타이머의 만료, POSIX 메시지 큐의 상태 변경, 또는 비동기 I/O 요청의 완료 등이다.
-* **si_code == SI_KERNEL (0x80)**
-  SIGTRAP이 커널에 의해 전송되었다.
-* **si_code == SIGTRAP 또는 si_code == (SIGTRAP|0x80)**
-  이것은 syscall-stop이다.
+- **si_code <= 0**
+사용자 공간 동작의 결과로 SIGTRAP이 전달되었다. 예를 들어, 시스템 호출(tgkill(2), kill(2), sigqueue(3) 등), POSIX 타이머의 만료, POSIX 메시지 큐의 상태 변경, 또는 비동기 I/O 요청의 완료 등이다.
+- **si_code == SI_KERNEL (0x80)**
+SIGTRAP이 커널에 의해 전송되었다.
+- **si_code == SIGTRAP 또는 si_code == (SIGTRAP|0x80)**
+이것은 syscall-stop이다.
 
 그러나 syscall-stop은 매우 자주 발생하며(시스템 호출당 두 번), 모든 syscall-stop에 대해 PTRACE_GETSIGINFO를 수행하는 것은 다소 비용이 많이 들 수 있다. 일부 아키텍처는 레지스터를 조사함으로써 이 경우들을 구별할 수 있게 해준다. 예를 들어 x86에서, syscall-enter-stop일 때 rax == -ENOSYS이다. SIGTRAP(다른 신호와 마찬가지로)은 항상 syscall-exit-stop 이후에 발생하고, 이 시점에서 rax는 거의 절대 -ENOSYS를 포함하지 않으므로, SIGTRAP은 "syscall-enter-stop이 아닌 syscall-stop"처럼 보인다; 다시 말해, 그것은 "길 잃은(stray) syscall-exit-stop"처럼 보이며 이런 방식으로 감지될 수 있다. 하지만 그러한 탐지는 취약하며 피하는 것이 최선이다.
 
@@ -345,7 +349,7 @@ ptrace(PTRACE_GETSIGINFO, pid, 0, &siginfo);
 ptrace(PTRACE_SETSIGINFO, pid, 0, &siginfo);
 ptrace(PTRACE_GETEVENTMSG, pid, 0, &long_var);
 ptrace(PTRACE_SETOPTIONS, pid, 0, PTRACE_O_flags);
-``` 
+```
 
 일부 오류는 보고되지 않음에 유의하라. 예를 들어, 신호 정보(siginfo)를 설정하는 것이 일부 ptrace-정지에서는 아무런 효과가 없을 수 있지만, 호출은 성공할 수 있다(0을 반환하고 errno를 설정하지 않음); 현재 ptrace-정지가 의미 있는 이벤트 메시지를 반환하는 것으로 문서화되어 있지 않더라도 PTRACE_GETEVENTMSG를 쿼리하는 것이 성공하고 어떤 임의의 값을 반환할 수 있다.
 
@@ -385,11 +389,11 @@ PTRACE_DETACH는 재시작 작업이다; 그러므로 피추적자가 ptrace-정
 **ptrace 하에서의 execve(2) (execve(2) under ptrace)**
 다중 스레드 프로세스의 한 스레드가 execve(2)를 호출하면, 커널은 프로세스 내의 다른 모든 스레드를 파괴하고, exec를 수행하는 스레드의 스레드 ID를 스레드 그룹 ID(프로세스 ID)로 재설정한다. (또는 사물을 다르게 표현하자면, 다중 스레드 프로세스가 execve(2)를 할 때, 호출 완료 시점에 어느 스레드가 execve(2)를 했는지에 관계없이 execve(2)가 스레드 그룹 리더에서 발생한 것처럼 보인다.) 이러한 스레드 ID의 재설정은 추적자들에게 매우 혼란스럽게 보인다: 
 
-* PTRACE_O_TRACEEXIT 옵션이 켜져 있었다면, 다른 모든 스레드는 PTRACE_EVENT_EXIT 정지에서 멈춘다. 그 후 스레드 그룹 리더를 제외한 다른 모든 스레드는 마치 종료 코드 0으로 _exit(2)를 통해 종료한 것처럼 죽음을 보고한다.
-* exec를 수행하는 피추적자는 execve(2) 중에 자신의 스레드 ID를 변경한다. (ptrace 하에서 waitpid(2)로부터 반환되거나 ptrace 호출에 공급되는 "pid"는 피추적자의 스레드 ID임을 기억하라.) 즉, 피추적자의 스레드 ID는 자신의 프로세스 ID와 동일하게 재설정되며, 이는 스레드 그룹 리더의 스레드 ID와 동일하다.
-* 그 후 PTRACE_O_TRACEEXEC 옵션이 켜져 있었다면 PTRACE_EVENT_EXEC 정지가 발생한다.
-* 만약 스레드 그룹 리더가 이 시점까지 자신의 PTRACE_EVENT_EXIT 정지를 보고했다면, 추적자에게는 죽은 스레드 리더가 "난데없이 다시 나타나는" 것처럼 보인다. (참고: 스레드 그룹 리더는 적어도 하나의 다른 살아있는 스레드가 있을 때까지 WIFEXITED(status)를 통한 죽음을 보고하지 않는다. 이는 추적자가 그것이 죽는 것을 본 후 다시 나타나는 것을 볼 가능성을 제거한다.) 스레드 그룹 리더가 여전히 살아있었다면, 추적자에게 이는 스레드 그룹 리더가 진입했던 것과 다른 시스템 호출로부터 반환하거나, 심지어 "어떤 시스템 호출 상태도 아니었음에도 시스템 호출로부터 반환한" 것처럼 보일 수 있다.
-* 스레드 그룹 리더가 추적되지 않았거나(또는 다른 추적자에 의해 추적되었다면), execve(2) 중에 그것은 exec를 수행하는 피추적자의 추적자의 피추적자가 된 것처럼 보일 것이다.
+- PTRACE_O_TRACEEXIT 옵션이 켜져 있었다면, 다른 모든 스레드는 PTRACE_EVENT_EXIT 정지에서 멈춘다. 그 후 스레드 그룹 리더를 제외한 다른 모든 스레드는 마치 종료 코드 0으로 _exit(2)를 통해 종료한 것처럼 죽음을 보고한다.
+- exec를 수행하는 피추적자는 execve(2) 중에 자신의 스레드 ID를 변경한다. (ptrace 하에서 waitpid(2)로부터 반환되거나 ptrace 호출에 공급되는 "pid"는 피추적자의 스레드 ID임을 기억하라.) 즉, 피추적자의 스레드 ID는 자신의 프로세스 ID와 동일하게 재설정되며, 이는 스레드 그룹 리더의 스레드 ID와 동일하다.
+- 그 후 PTRACE_O_TRACEEXEC 옵션이 켜져 있었다면 PTRACE_EVENT_EXEC 정지가 발생한다.
+- 만약 스레드 그룹 리더가 이 시점까지 자신의 PTRACE_EVENT_EXIT 정지를 보고했다면, 추적자에게는 죽은 스레드 리더가 "난데없이 다시 나타나는" 것처럼 보인다. (참고: 스레드 그룹 리더는 적어도 하나의 다른 살아있는 스레드가 있을 때까지 WIFEXITED(status)를 통한 죽음을 보고하지 않는다. 이는 추적자가 그것이 죽는 것을 본 후 다시 나타나는 것을 볼 가능성을 제거한다.) 스레드 그룹 리더가 여전히 살아있었다면, 추적자에게 이는 스레드 그룹 리더가 진입했던 것과 다른 시스템 호출로부터 반환하거나, 심지어 "어떤 시스템 호출 상태도 아니었음에도 시스템 호출로부터 반환한" 것처럼 보일 수 있다.
+- 스레드 그룹 리더가 추적되지 않았거나(또는 다른 추적자에 의해 추적되었다면), execve(2) 중에 그것은 exec를 수행하는 피추적자의 추적자의 피추적자가 된 것처럼 보일 것이다.
 
 위의 모든 효과들은 피추적자의 스레드 ID 변경으로 인한 가공물(artifacts)이다. PTRACE_O_TRACEEXEC 옵션은 이 상황을 처리하기 위해 권장되는 도구이다. 첫째, 이는 execve(2)가 반환되기 전에 발생하는 PTRACE_EVENT_EXEC 정지를 가능하게 한다. 이 정지에서 추적자는 PTRACE_GETEVENTMSG를 사용하여 피추적자의 이전 스레드 ID를 가져올 수 있다. (이 기능은 리눅스 3.0에서 도입되었다.) 둘째, PTRACE_O_TRACEEXEC 옵션은 execve(2)에서의 레거시 SIGTRAP 생성을 비활성화한다.
 
@@ -418,23 +422,27 @@ ptrace API는 waitpid(2)를 통한 표준 UNIX 부모/자식 신호 전달을 �
 
 리눅스 2.6.38 현재, 다음은 올바르게 작동하는 것으로 믿어진다: 
 
-* 신호에 의한 종료/죽음은 먼저 추적자에게 보고되고, 그 후 추적자가 waitpid(2) 결과를 소비했을 때 실제 부모에게 보고된다 (다중 스레드 프로세스 전체가 종료될 때만 실제 부모에게 보고됨). 추적자와 실제 부모가 동일한 프로세스라면, 보고는 단 한 번만 전송된다.
+- 신호에 의한 종료/죽음은 먼저 추적자에게 보고되고, 그 후 추적자가 waitpid(2) 결과를 소비했을 때 실제 부모에게 보고된다 (다중 스레드 프로세스 전체가 종료될 때만 실제 부모에게 보고됨). 추적자와 실제 부모가 동일한 프로세스라면, 보고는 단 한 번만 전송된다.
 
 ### 반환 값 (RETURN VALUE)
+
 성공 시, PTRACE_PEEK* 요청은 요청된 데이터를 반환하고(하지만 비고(NOTES) 참조), PTRACE_SECCOMP_GET_FILTER 요청은 BPF 프로그램의 명령어 수를 반환하며, 다른 요청들은 0을 반환한다. 오류 시, 모든 요청은 -1을 반환하고 errno가 적절히 설정된다. 성공적인 PTRACE_PEEK* 요청에 의해 반환된 값이 -1일 수 있으므로, 호출자는 호출 전에 errno를 지워야 하며, 그 후 오류가 발생했는지 여부를 확인하기 위해 이를 검사해야 한다.
 
 ### 오류 (ERRORS)
-* **EBUSY** (i386 전용) 디버그 레지스터를 할당하거나 해제하는 데 오류가 있었다.
-* **EFAULT** 추적자 또는 피추적자의 메모리 내 잘못된 영역을 읽거나 쓰려는 시도가 있었다. 아마도 해당 영역이 매핑되지 않았거나 접근 가능하지 않았기 때문일 것이다. 불행히도 리눅스 하에서, 이 결함의 다른 변형들은 다소 임의적으로 EIO 또는 EFAULT를 반환할 것이다.
-* **EINVAL** 잘못된 옵션을 설정하려는 시도가 있었다.
-* **EIO** 요청이 유효하지 않거나, 추적자 또는 피추적자의 메모리 내 잘못된 영역을 읽거나 쓰려는 시도가 있었거나, 워드 정렬 위반이 있었거나, 재시작 요청 중에 잘못된 신호가 지정되었다.
-* **EPERM** 지정된 프로세스를 추적할 수 없다. 이는 추적자가 불충분한 특권(필요한 역량은 CAP_SYS_PTRACE임)을 가졌기 때문일 수 있다; 명백한 이유로, 특권이 없는 프로세스는 자신이 신호를 보낼 수 없는 프로세스나 set-user-ID/set-group-ID 프로그램을 실행 중인 프로세스를 추적할 수 없다. 대안적으로, 프로세스가 이미 추적되고 있거나, (2.6.26 이전 커널에서) init(1)(PID 1)일 수 있다.
-* **ESRCH** 지정된 프로세스가 존재하지 않거나, 호출자에 의해 현재 추적되고 있지 않거나, 정지되어 있지 않다(정지된 피추적자를 요구하는 요청의 경우).
+
+- **EBUSY** (i386 전용) 디버그 레지스터를 할당하거나 해제하는 데 오류가 있었다.
+- **EFAULT** 추적자 또는 피추적자의 메모리 내 잘못된 영역을 읽거나 쓰려는 시도가 있었다. 아마도 해당 영역이 매핑되지 않았거나 접근 가능하지 않았기 때문일 것이다. 불행히도 리눅스 하에서, 이 결함의 다른 변형들은 다소 임의적으로 EIO 또는 EFAULT를 반환할 것이다.
+- **EINVAL** 잘못된 옵션을 설정하려는 시도가 있었다.
+- **EIO** 요청이 유효하지 않거나, 추적자 또는 피추적자의 메모리 내 잘못된 영역을 읽거나 쓰려는 시도가 있었거나, 워드 정렬 위반이 있었거나, 재시작 요청 중에 잘못된 신호가 지정되었다.
+- **EPERM** 지정된 프로세스를 추적할 수 없다. 이는 추적자가 불충분한 특권(필요한 역량은 CAP_SYS_PTRACE임)을 가졌기 때문일 수 있다; 명백한 이유로, 특권이 없는 프로세스는 자신이 신호를 보낼 수 없는 프로세스나 set-user-ID/set-group-ID 프로그램을 실행 중인 프로세스를 추적할 수 없다. 대안적으로, 프로세스가 이미 추적되고 있거나, (2.6.26 이전 커널에서) init(1)(PID 1)일 수 있다.
+- **ESRCH** 지정된 프로세스가 존재하지 않거나, 호출자에 의해 현재 추적되고 있지 않거나, 정지되어 있지 않다(정지된 피추적자를 요구하는 요청의 경우).
 
 ### 준수 (CONFORMING TO)
+
 SVr4, 4.3BSD.
 
 ### 비고 (NOTES)
+
 ptrace()의 인수들이 주어진 프로토타입에 따라 해석되지만, glibc는 현재 ptrace()를 요청(request) 인수만 고정된 가변 인수 함수로 선언한다. 요청된 작업이 그것들을 사용하지 않더라도 항상 네 개의 인수를 공급하고, 사용되지 않거나 무시되는 인수는 0L 또는 (void *) 0으로 설정하는 것이 권장된다.
 
 리눅스 2.6.26 이전 커널에서, PID 1인 프로세스인 init(1)은 추적되지 않을 수 있다. 피추적자의 부모는 해당 추적자가 execve(2)를 호출하더라도 계속해서 추적자이다.
@@ -448,29 +456,29 @@ ptrace()의 인수들이 주어진 프로토타입에 따라 해석되지만, gl
 
 리눅스 2.6.27 이전에는 모든 액세스 검사가 단일 유형이었다. 리눅스 2.6.27부터 두 가지 액세스 모드 수준이 구별된다: 
 
-* **PTRACE_MODE_READ**
-  "읽기" 작업 또는 덜 위험한 기타 작업들. 예: get_robust_list(2), kcmp(2), /proc/[pid]/auxv, /proc/[pid]/environ, /proc/[pid]/stat 읽기, 또는 /proc/[pid]/ns/* 파일의 readlink(2).
-* **PTRACE_MODE_ATTACH**
-  "쓰기" 작업 또는 더 위험한 기타 작업들. 예: 다른 프로세스에 ptrace 부착(PTRACE_ATTACH) 또는 process_vm_writev(2) 호출. (PTRACE_MODE_ATTACH는 사실상 리눅스 2.6.27 이전의 기본값이었음) 
+- **PTRACE_MODE_READ**
+"읽기" 작업 또는 덜 위험한 기타 작업들. 예: get_robust_list(2), kcmp(2), /proc/[pid]/auxv, /proc/[pid]/environ, /proc/[pid]/stat 읽기, 또는 /proc/[pid]/ns/* 파일의 readlink(2).
+- **PTRACE_MODE_ATTACH**
+"쓰기" 작업 또는 더 위험한 기타 작업들. 예: 다른 프로세스에 ptrace 부착(PTRACE_ATTACH) 또는 process_vm_writev(2) 호출. (PTRACE_MODE_ATTACH는 사실상 리눅스 2.6.27 이전의 기본값이었음)
 
 리눅스 4.5부터 위의 액세스 모드 검사는 다음 수정자 중 하나와 결합(OR)된다: 
 
-* **PTRACE_MODE_FSCREDS**
-  LSM 검사를 위해 호출자의 파일 시스템 UID 및 GID(credentials(7) 참조) 또는 실효 역량(effective capabilities)을 사용한다.
-* **PTRACE_MODE_REALCREDS**
-  LSM 검사를 위해 호출자의 실제(real) UID 및 GID 또는 허용된 역량(permitted capabilities)을 사용한다. 이것은 사실상 리눅스 4.5 이전의 기본값이다.
+- **PTRACE_MODE_FSCREDS**
+LSM 검사를 위해 호출자의 파일 시스템 UID 및 GID(credentials(7) 참조) 또는 실효 역량(effective capabilities)을 사용한다.
+- **PTRACE_MODE_REALCREDS**
+LSM 검사를 위해 호출자의 실제(real) UID 및 GID 또는 허용된 역량(permitted capabilities)을 사용한다. 이것은 사실상 리눅스 4.5 이전의 기본값이다.
 
 자격 증명 수정자 중 하나를 앞서 언급한 액세스 모드 중 하나와 결합하는 것이 일반적이므로, 커널 소스에는 조합을 위한 몇 가지 매크로가 정의되어 있다: 
 
-* **PTRACE_MODE_READ_FSCREDS**: PTRACE_MODE_READ | PTRACE_MODE_FSCREDS로 정의됨.
-* **PTRACE_MODE_READ_REALCREDS**: PTRACE_MODE_READ | PTRACE_MODE_REALCREDS로 정의됨.
-* **PTRACE_MODE_ATTACH_FSCREDS**: PTRACE_MODE_ATTACH | PTRACE_MODE_FSCREDS로 정의됨.
-* **PTRACE_MODE_ATTACH_REALCREDS**: PTRACE_MODE_ATTACH | PTRACE_MODE_REALCREDS로 정의됨.
+- **PTRACE_MODE_READ_FSCREDS**: PTRACE_MODE_READ | PTRACE_MODE_FSCREDS로 정의됨.
+- **PTRACE_MODE_READ_REALCREDS**: PTRACE_MODE_READ | PTRACE_MODE_REALCREDS로 정의됨.
+- **PTRACE_MODE_ATTACH_FSCREDS**: PTRACE_MODE_ATTACH | PTRACE_MODE_FSCREDS로 정의됨.
+- **PTRACE_MODE_ATTACH_REALCREDS**: PTRACE_MODE_ATTACH | PTRACE_MODE_REALCREDS로 정의됨.
 
 한 가지 추가 수정자가 액세스 모드와 OR될 수 있다: 
 
-* **PTRACE_MODE_NOAUDIT (리눅스 3.3부터)**
-  이 액세스 모드 검사를 감사(audit)하지 마라. 이 수정자는 호출자에게 오류가 반환되게 하기보다 단순히 출력이 필터링되거나 위생화되게 하는 ptrace 액세스 모드 검사(예: /proc/[pid]/stat을 읽을 때의 검사)에 고용된다. 이러한 경우 파일에 접근하는 것은 보안 위반이 아니며 보안 감사 기록을 생성할 이유가 없다. 이 수정자는 특정 액세스 검사에 대한 그러한 감사 기록의 생성을 억제한다.
+- **PTRACE_MODE_NOAUDIT (리눅스 3.3부터)**
+이 액세스 모드 검사를 감사(audit)하지 마라. 이 수정자는 호출자에게 오류가 반환되게 하기보다 단순히 출력이 필터링되거나 위생화되게 하는 ptrace 액세스 모드 검사(예: /proc/[pid]/stat을 읽을 때의 검사)에 고용된다. 이러한 경우 파일에 접근하는 것은 보안 위반이 아니며 보안 감사 기록을 생성할 이유가 없다. 이 수정자는 특정 액세스 검사에 대한 그러한 감사 기록의 생성을 억제한다.
 
 이 소절에서 설명된 모든 PTRACE_MODE_* 상수는 커널 내부용이며 사용자 공간에는 보이지 않음에 유의하라. 상수 이름들은 다양한 시스템 호출 및 다양한 의사 파일(예: /proc 하의 파일)에 대한 접근 시 수행되는 다양한 종류의 ptrace 액세스 모드 검사를 라벨링하기 위해 여기서 언급된다. 이 이름들은 다른 매뉴얼 페이지에서 서로 다른 커널 검사를 라벨링하기 위한 간단한 약어로 사용된다.
 
@@ -479,11 +487,11 @@ ptrace 액세스 모드 검사에 사용되는 알고리즘은 호출 프로세�
 1. 호출 스레드와 대상 스레드가 동일한 스레드 그룹에 있다면, 액세스는 항상 허용된다.
 2. 액세스 모드가 PTRACE_MODE_FSCREDS를 지정하면, 다음 단계의 검사를 위해 호출자의 파일 시스템 UID 및 GID를 고용한다. (credentials(7)에서 언급된 바와 같이, 파일 시스템 UID 및 GID는 거의 항상 해당 실효 ID와 동일한 값을 가짐). 그렇지 않으면 액세스 모드는 PTRACE_MODE_REALCREDS를 지정하므로, 다음 단계의 검사를 위해 호출자의 실제 UID 및 GID를 사용한다. (호출자의 UID 및 GID를 확인하는 대부분의 API는 실효 ID를 사용함. 역사적인 이유로 PTRACE_MODE_REALCREDS 검사는 대신 실제 ID를 사용함) .
 3. 다음 중 어느 것도 참이 아니면 액세스를 거부한다:
-   * 대상의 실제, 실효, 저장된 설정 사용자 ID가 호출자의 사용자 ID와 일치하고, 대상의 실제, 실효, 저장된 설정 그룹 ID가 호출자의 그룹 ID와 일치함.
-   * 호출자가 대상의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가짐.
+  - 대상의 실제, 실효, 저장된 설정 사용자 ID가 호출자의 사용자 ID와 일치하고, 대상의 실제, 실효, 저장된 설정 그룹 ID가 호출자의 그룹 ID와 일치함.
+  - 호출자가 대상의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가짐.
 4. 대상 프로세스의 "dumpable" 속성이 1(SUID_DUMP_USER; prctl(2)의 PR_SET_DUMPABLE 논의 참조) 이외의 값을 가지고, 호출자가 대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가지지 않는다면 액세스를 거부한다.
-5. 커널 LSM security_ptrace_access_check() 인터페이스가 호출되어 ptrace 액세스가 허용되는지 확인한다. 결과는 LSM(들)에 따라 다르다. commoncap LSM에서의 이 인터페이스 구현은 다음 단계들을 수행한다: 
-   a) 액세스 모드에 PTRACE_MODE_FSCREDS가 포함되면 다음 검사에서 호출자의 실효 역량 세트를 사용한다; 그렇지 않으면 (액세스 모드가 PTRACE_MODE_REALCREDS를 지정하므로) 호출자의 허용된 역량 세트를 사용한다.
+5. 커널 LSM security_ptrace_access_check() 인터페이스가 호출되어 ptrace 액세스가 허용되는지 확인한다. 결과는 LSM(들)에 따라 다르다. commoncap LSM에서의 이 인터페이스 구현은 다음 단계들을 수행한다:
+  a) 액세스 모드에 PTRACE_MODE_FSCREDS가 포함되면 다음 검사에서 호출자의 실효 역량 세트를 사용한다; 그렇지 않으면 (액세스 모드가 PTRACE_MODE_REALCREDS를 지정하므로) 호출자의 허용된 역량 세트를 사용한다.
    b) 다음 중 어느 것도 참이 아니면 액세스를 거부한다:
       * 호출자와 대상 프로세스가 동일한 사용자 네임스페이스에 있고, 호출자의 역량이 대상 프로세스의 허용된 역량의 슈퍼셋임.
       * 호출자가 대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가짐.
@@ -493,19 +501,19 @@ ptrace 액세스 모드 검사에 사용되는 알고리즘은 호출 프로세�
 **/proc/sys/kernel/yama/ptrace_scope**
 Yama 리눅스 보안 모듈(LSM)이 설치된 시스템에서(즉, 커널이 CONFIG_SECURITY_YAMA와 함께 구성됨), /proc/sys/kernel/yama/ptrace_scope 파일(리눅스 3.4부터 사용 가능)은 ptrace()로 프로세스를 추적하는 능력(따라서 strace(1) 및 gdb(1)와 같은 도구를 사용하는 능력)을 제한하는 데 사용될 수 있다. 그러한 제한의 목적은 손상된 프로세스가 메모리에 존재할 수 있는 추가 자격 증명을 얻어 공격 범위를 확장하기 위해 사용자가 소유한 다른 민감한 프로세스(예: GPG 에이전트 또는 SSH 세션)에 ptrace-attach할 수 있는 공격 단계 상승을 방지하는 것이다. 더 정확하게는, Yama LSM은 두 가지 유형의 작업을 제한한다: 
 
-* ptrace 액세스 모드 PTRACE_MODE_ATTACH 검사를 수행하는 모든 작업—예를 들어 ptrace() PTRACE_ATTACH. (위의 "Ptrace 액세스 모드 검사" 논의 참조) .
-* ptrace() PTRACE_TRACEME.
+- ptrace 액세스 모드 PTRACE_MODE_ATTACH 검사를 수행하는 모든 작업—예를 들어 ptrace() PTRACE_ATTACH. (위의 "Ptrace 액세스 모드 검사" 논의 참조) .
+- ptrace() PTRACE_TRACEME.
 
 CAP_SYS_PTRACE 역량을 가진 프로세스는 /proc/sys/kernel/yama/ptrace_scope 파일을 다음 값 중 하나로 업데이트할 수 있다: 
 
-* **0 ("클래식 ptrace 권한")**
-  PTRACE_MODE_ATTACH 검사를 수행하는 작업에 대한 추가적인 제한 없음 (commoncap 및 기타 LSM에 의해 부과된 제한 이상은 없음). PTRACE_TRACEME의 사용은 변경되지 않음.
-* **1 ("제한된 ptrace") [기본값]**
-  PTRACE_MODE_ATTACH 검사를 요구하는 작업을 수행할 때, 호출 프로세스는 대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가졌거나 대상 프로세스와 미리 정의된 관계를 가져야 한다. 기본적으로 미리 정의된 관계는 대상 프로세스가 호출자의 자손이어야 한다는 것이다. 대상 프로세스는 대상에 대해 PTRACE_MODE_ATTACH 작업을 수행하도록 허용된 추가적인 PID를 선언하기 위해 prctl(2) PR_SET_PTRACER 작업을 고용할 수 있다. 자세한 내용은 커널 소스 파일 Documentation/admin-guide/LSM/Yama.rst (또는 리눅스 4.13 이전의 Documentation/security/Yama.txt)를 참조하라. PTRACE_TRACEME의 사용은 변경되지 않음.
-* **2 ("관리자 전용 부착")**
-  대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가진 프로세스만이 PTRACE_MODE_ATTACH 작업을 수행하거나 PTRACE_TRACEME를 사용하는 자식을 추적할 수 있다.
-* **3 ("부착 불가")**
-  어떤 프로세스도 PTRACE_MODE_ATTACH 작업을 수행하거나 PTRACE_TRACEME를 사용하는 자식을 추적할 수 없다. 이 값이 파일에 한 번 쓰여지면 변경할 수 없다.
+- **0 ("클래식 ptrace 권한")**
+PTRACE_MODE_ATTACH 검사를 수행하는 작업에 대한 추가적인 제한 없음 (commoncap 및 기타 LSM에 의해 부과된 제한 이상은 없음). PTRACE_TRACEME의 사용은 변경되지 않음.
+- **1 ("제한된 ptrace") [기본값]**
+PTRACE_MODE_ATTACH 검사를 요구하는 작업을 수행할 때, 호출 프로세스는 대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가졌거나 대상 프로세스와 미리 정의된 관계를 가져야 한다. 기본적으로 미리 정의된 관계는 대상 프로세스가 호출자의 자손이어야 한다는 것이다. 대상 프로세스는 대상에 대해 PTRACE_MODE_ATTACH 작업을 수행하도록 허용된 추가적인 PID를 선언하기 위해 prctl(2) PR_SET_PTRACER 작업을 고용할 수 있다. 자세한 내용은 커널 소스 파일 Documentation/admin-guide/LSM/Yama.rst (또는 리눅스 4.13 이전의 Documentation/security/Yama.txt)를 참조하라. PTRACE_TRACEME의 사용은 변경되지 않음.
+- **2 ("관리자 전용 부착")**
+대상 프로세스의 사용자 네임스페이스에서 CAP_SYS_PTRACE 역량을 가진 프로세스만이 PTRACE_MODE_ATTACH 작업을 수행하거나 PTRACE_TRACEME를 사용하는 자식을 추적할 수 있다.
+- **3 ("부착 불가")**
+어떤 프로세스도 PTRACE_MODE_ATTACH 작업을 수행하거나 PTRACE_TRACEME를 사용하는 자식을 추적할 수 없다. 이 값이 파일에 한 번 쓰여지면 변경할 수 없다.
 
 값 1과 2에 관하여, 새로운 사용자 네임스페이스를 생성하는 것이 Yama가 제공하는 보호를 사실상 제거함에 유의하라. 이는 자식 네임스페이스 생성자의 UID와 실효 UID가 일치하는 부모 사용자 네임스페이스의 프로세스가 자식 사용자 네임스페이스(및 해당 네임스페이스의 더 먼 자손) 내에서 작업을 수행할 때 모든 역량(CAP_SYS_PTRACE 포함)을 갖기 때문이다. 결과적으로 프로세스가 자신을 샌드박스화하기 위해 사용자 네임스페이스를 사용하려고 시도할 때, 의도치 않게 Yama LSM이 제공하는 보호를 약화시킨다.
 
@@ -513,6 +521,7 @@ CAP_SYS_PTRACE 역량을 가진 프로세스는 /proc/sys/kernel/yama/ptrace_sco
 시스템 호출 수준에서 PTRACE_PEEKTEXT, PTRACE_PEEKDATA, PTRACE_PEEKUSER 요청은 다른 API를 가진다: 그것들은 data 매개변수에 의해 지정된 주소에 결과를 저장하고, 반환 값은 오류 플래그이다 . glibc 래퍼 함수는 위의 설명(DESCRIPTION)에 주어진 API를 제공하며, 결과는 함수의 반환 값을 통해 반환된다.
 
 ### 결함 (BUGS)
+
 2.6 커널 헤더가 있는 호스트에서 PTRACE_SETOPTIONS는 2.4용과는 다른 값으로 선언되어 있다. 이는 2.6 커널 헤더로 컴파일된 애플리케이션들이 2.4 커널에서 실행될 때 실패하게 만든다. 이는 PTRACE_SETOPTIONS를 PTRACE_OLDSETOPTIONS(정의되어 있다면)로 재정의함으로써 해결될 수 있다.
 
 그룹 정지 통지는 추적자에게 전송되지만 실제 부모에게는 전송되지 않는다. 2.6.38.6에서 마지막으로 확인됨.
@@ -529,25 +538,28 @@ SIGKILL 신호는 실제 신호 죽음 이전에 여전히 PTRACE_EVENT_EXIT 정
 
 그러면 다음과 같은 일반적이고 기대되는 한 줄 출력 대신: 
 
-`restart_syscall(<... 중단된 호출 재개 중 ...>_`
+`restart_syscall(<... 중단된 호출 재개 중 ...>`_
 또는
 `select(6, [5], NULL, [5], NULL_`
 
 ('_'는 커서 위치를 나타냄), 당신은 한 줄 이상의 출력을 관찰하게 된다. 예: 
 
 `clock_gettime(CLOCK_MONOTONIC, {15370, 690928118}) = 0`
-`epoll_wait(4,_`
+`epoll_wait(4,`_
 
 여기서 보이지 않는 것은 strace(1)이 부착하기 전에 프로세스가 epoll_wait(2)에서 차단되어 있었다는 점이다. 부착은 epoll_wait(2)가 오류 EINTR과 함께 사용자 공간으로 반환되게 했다. 이 특정한 사례에서, 프로그램은 현재 시간을 확인한 후 다시 epoll_wait(2)를 실행함으로써 EINTR에 반응했다. (그러한 "길 잃은" EINTR 오류를 예상하지 않는 프로그램들은 strace(1) 부착 시 의도치 않은 방식으로 동작할 수 있다.) 
 
 정상적인 규칙과 달리, ptrace()를 위한 glibc 래퍼는 errno를 0으로 설정할 수 있다.
 
 ### 참고 (SEE ALSO)
+
 gdb(1), ltrace(1), strace(1), clone(2), execve(2), fork(2), gettid(2), prctl(2), seccomp(2), sigaction(2), tgkill(2), vfork(2), waitpid(2), exec(3), capabilities(7), signal(7)
 
 ### 대조 정보 (COLOPHON)
+
 이 페이지는 리눅스 man-pages 프로젝트의 5.10 릴리스 일부이다. 프로젝트에 대한 설명, 버그 보고에 관한 정보, 그리고 이 페이지의 최신 버전은 [https://www.kernel.org/doc/man-pages/](https://www.kernel.org/doc/man-pages/) 에서 찾을 수 있다.
 
 리눅스 2020-06-09 PTRACE(2) 
 
 ---
+
