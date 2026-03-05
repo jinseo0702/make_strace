@@ -35,14 +35,14 @@ int main(int argc, char *argv[]){
 			ptrace(PTRACE_GETREGS, child, NULL, &regs);
 
 			if (!in_syscall) {
-				printf("syscall (%lld, 0x%llx, 0x%llx, 0x%llx)",
+				fprintf(stderr, "syscall (%lld, 0x%llx, 0x%llx, 0x%llx)",
 					(long long)regs.orig_rax,
 					(long long)regs.rdi,
 					(long long)regs.rsi,
 					(long long)regs.rdx);
 				in_syscall = 1;
 			} else {
-				printf(" = %lld\n", (long long)regs.rax);
+				fprintf(stderr, " = %lld\n", (long long)regs.rax);
 				in_syscall = 0;
 			}
 		}

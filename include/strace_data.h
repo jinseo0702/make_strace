@@ -842,13 +842,19 @@ typedef struct S_SYS32_TABLE {
 	int		argType[6];
 } t_SYS32_TABLE;
 
+typedef struct S_SYS_TABLE {
+	const char	*name;
+	int		argCount;
+	int		argType[6];
+} t_SYS_TABLE;
+
 static const t_SYS64_TABLE get_SYS64_TABLE[] = {
 	#define X64(id, number, count, str, a0, a1, a2, a3, a4, a5) [id] = {str, count, {a0, a1, a2, a3, a4, a5}},
 	SYS64_LIST
 	#undef X64
 };
 
-static const t_SYS64_TABLE get_SYS32_TABLE[] = {
+static const t_SYS32_TABLE get_SYS32_TABLE[] = {
 	#define X32(id, number, count, str, a0, a1, a2, a3, a4, a5) [id] = {str, count, {a0, a1, a2, a3, a4, a5}},
 	SYS32_LIST
 	#undef X32
