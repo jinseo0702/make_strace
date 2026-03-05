@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -D_GNU_SOURCE
 RM = rm -f
-NAME = playground
-SRC = ex02.c
+NAME = ft_strace
+SRC = ft_strace.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
@@ -17,7 +17,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) playground
+	$(RM) $(NAME)
 
 re: 
 	$(MAKE) fclean

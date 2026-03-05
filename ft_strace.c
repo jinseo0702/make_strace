@@ -1,6 +1,6 @@
 // step3_regs.c
-#include "../../include/strace_data.h"
-#include "../../include/user.h"
+#include "./include/strace_data.h"
+#include "./include/user.h"
 #include <ctype.h>
 #include <sys/wait.h>
 #include <stddef.h>
@@ -22,7 +22,7 @@
 
 int pid_temp = 0;
 
-void handler(int sig) {
+static void handler(int sig) {
     (void)sig;
     if (pid_temp > 0) {
         kill(pid_temp, SIGKILL);
@@ -32,7 +32,7 @@ void handler(int sig) {
     _exit(1);
 }
 
-void handler_term(int sig) {
+static void handler_term(int sig) {
     (void)sig;
     if (pid_temp > 0) {
         kill(pid_temp, SIGKILL);
@@ -43,7 +43,7 @@ void handler_term(int sig) {
     _exit(1);
 }
 
-void fmt_int(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_int(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	(void)i;
 	(void)args;
 	(void)type;
@@ -51,7 +51,7 @@ void fmt_int(unsigned long long v, char *out, const int *type, int *offset, int 
 	*offset += sprintf(out + *offset, "%d", temp);
 }
 
-void fmt_long(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_long(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	(void)i;
 	(void)args;
 	(void)type;
@@ -59,7 +59,7 @@ void fmt_long(unsigned long long v, char *out, const int *type, int *offset, int
 	*offset += sprintf(out + *offset, "%lld", temp);
 }
 
-void fmt_uint(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_uint(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	(void)i;
 	(void)args;
 	(void)type;
@@ -67,31 +67,32 @@ void fmt_uint(unsigned long long v, char *out, const int *type, int *offset, int
 	*offset += sprintf(out + *offset, "%u", temp);
 }
 
-void fmt_ulong(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_ulong(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	(void)i;
 	(void)args;
 	(void)type;
 	*offset += sprintf(out + *offset, "0x%llx", v);
 };
 
-void fmt_ptr(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_ptr(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	(void)i;
 	(void)args;
 	(void)type;
 	*offset += sprintf(out + *offset, "0x%llx", v);
 };
 
-void fmt_str(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_str(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
 	unsigned long long temp = 0;
-	char buf[4095];
+	char buf[4096];
 	memset(buf, 0, sizeof(buf));
 	struct iovec local[1];
 	struct iovec remote[1];
 	local[0].iov_base = buf;
-	local[0].iov_len = sizeof(buf);
+	local[0].iov_len = sizeof(buf) - 1;
 	remote[0].iov_base = (void *)v;
-	remote[0].iov_len = 4095;
+	remote[0].iov_len = sizeof(buf) - 1;
 	process_vm_readv(pid_temp, local, 1, remote, 1, 0);
+	buf[sizeof(buf) - 1] = '\0';
 	switch (i + 1) {
 		case 0:
 			temp = args.a0;
@@ -113,8 +114,9 @@ void fmt_str(unsigned long long v, char *out, const int *type, int *offset, int 
 		break;
 	}
 	if (type[i + 1] == ARG_SIZE) {
-		char buf2[9190];
+		char buf2[9192];
 		memset(buf2, 0, sizeof(buf2));
+		buf2[sizeof(buf2) - 1] = '\0';
 		int count_len = 0;
 		for (size_t i = 0; i < temp; i++) {
 			if (isprint(buf[i])) {
@@ -135,12 +137,12 @@ void fmt_str(unsigned long long v, char *out, const int *type, int *offset, int 
 	}
 };
 
-void fmt_vstr(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
+static void fmt_vstr(unsigned long long v, char *out, const int *type, int *offset, int i, t_syscall_args args){
     (void)i;
     (void)args;
     (void)type;
 
-    char buf[4095];
+    char buf[4096];
     uintptr_t elem = 0;              // argv[idx] 값 (char* 주소)
     uintptr_t argv_base = (uintptr_t)v;
     int first = 1;
@@ -239,7 +241,7 @@ int main(int argc, char *argv[]){
 	}
 	static int flag = 0;
 	signal(SIGINT,  handler);
-	signal(SIGTERM, handler);
+	signal(SIGTERM, handler_term);
 	signal(SIGHUP,  handler);
 	int status;
 	waitpid(child, &status,  WUNTRACED);
@@ -254,6 +256,7 @@ int main(int argc, char *argv[]){
 		if (WIFEXITED(status) || WIFSIGNALED(status)) break;
 
 		if (WIFSTOPPED(status) && WSTOPSIG(status) == (SIGTRAP | 0x80)) {
+			//(SIGTRAP | 0x80) -> PTRACE_O_TRACESYSGOOD add mask 0x80 to signal haha
 			u_user_regs_struct regs;
 			struct iovec iov;
 			iov.iov_base = &regs;
@@ -282,16 +285,23 @@ int main(int argc, char *argv[]){
 				args.orig_ax = regs.regs32.orig_eax;
 				args.rax = regs.regs32.eax;
 			}
-			//rdi , rsi , rdx , r10 , r8 , r9
 
 			if (!in_syscall) {
+				// entry syscall
 				int offset = 0;
 				char buf[4095];
 				memset(buf, 0, sizeof(buf));
 				const t_SYS_TABLE *temp = (flag == 0)
 				? (const t_SYS_TABLE *)&get_SYS64_TABLE[args.orig_ax]
 				: (const t_SYS_TABLE *)&get_SYS32_TABLE[args.orig_ax];
-				offset += sprintf(buf, "%s(", temp->name);
+				size_t table_size = (flag == 0) ? SYS64_TABLE_SIZE : SYS32_TABLE_SIZE;
+				if (args.orig_ax > table_size || temp->name == NULL) {
+					//check syscall table range
+					fprintf(stderr, "syscall_%llu(", args.orig_ax);
+				}
+				else {
+					offset += sprintf(buf, "%s(", temp->name);
+				}
 				for (int i = 0; i < temp->argCount; i++) {
 					arg_fmt_fn fn = g_fmt[temp->argType[i]];
 					switch (i) {
@@ -322,6 +332,7 @@ int main(int argc, char *argv[]){
 				fprintf(stderr, "%s", buf);
 				in_syscall = 1;
 			} else {
+				// exit syscall
 				if ((long long)args.rax < 0 && (long long)args.rax > -4096){
 					int err = (int)(-(long long)args.rax);
 					fprintf(stderr, " = -1 %s\n", strerror(err));
@@ -335,6 +346,7 @@ int main(int argc, char *argv[]){
 				fprintf(stderr, "[ Process PID=%d runs in 32 bit mode. ]\n", child);
 			}
 		} else if (WIFSTOPPED(status)) {
+			//handle signal
 			siginfo_t siginfo;
 			int sig = WSTOPSIG(status);
 			if (status  >> 16 != 0){
@@ -346,44 +358,13 @@ int main(int argc, char *argv[]){
 		}
 	}
 	if (WIFEXITED(status)) {
+		// exited with status
 		if (in_syscall) fprintf(stderr, " = ?\n");
 		fprintf(stderr, "+++ exited with %d +++\n", WEXITSTATUS(status));
 	} else if (WIFSIGNALED(status)) {
+		// killed by signal
 		if (in_syscall) fprintf(stderr, " = ?\n");
 		fprintf(stderr, "+++ killed by SIG%s +++\n", sigabbrev_np(WTERMSIG(status)));
 	}
 	return 0;
 }
-
-/*void fmt_vstr(unsigned long long v, char *out, const int *type, int *offset, int i, struct user_regs_struct regs){
-	(void)i;
-	(void)regs;
-	(void)type;
-	char buf[4095];
-	void *temp = 0;
-	*offset += sprintf(out + *offset, "[");
-	memset(buf, 0, sizeof(buf));
-	struct iovec local[1];
-	struct iovec remote[1];
-	local[0].iov_base = &temp;
-	local[0].iov_len = sizeof(void *);
-	remote[0].iov_base = (void *)v;
-	remote[0].iov_len = sizeof(void *);
-	process_vm_readv(pid_temp, local, 1, remote, 1, 0);
-	while (temp != NULL) {
-		memset(buf, 0, sizeof(buf));
-		struct iovec local2[1];
-		struct iovec remote2[1];
-		local2[0].iov_base = buf;
-		local2[0].iov_len = sizeof(buf);
-		remote2[0].iov_base = temp;
-		remote2[0].iov_len = 8;
-		process_vm_readv(pid_temp, local2, 1, remote2, 1, 0);
-		*offset += sprintf(out + *offset, "\"%s\"", buf);
-		temp++;
-		if (temp != NULL) {
-			*offset += sprintf(out + *offset, ", ");
-		}
-	}
-	*offset += sprintf(out + *offset, "]");
-};*/
