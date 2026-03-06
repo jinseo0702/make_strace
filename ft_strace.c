@@ -1,4 +1,3 @@
-// step3_regs.c
 #include "./include/strace_data.h"
 #include "./include/user.h"
 #include <ctype.h>
@@ -12,7 +11,7 @@
 #include <sys/ptrace.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys/user.h>   // struct user_regs_struct
+#include <sys/user.h>
 #include <unistd.h>
 #include <sys/uio.h>
 #include <fcntl.h>
@@ -289,48 +288,56 @@ int main(int argc, char *argv[]){
 			if (!in_syscall) {
 				// entry syscall
 				int offset = 0;
-				char buf[4095];
+				char buf[4096];
 				memset(buf, 0, sizeof(buf));
-				const t_SYS_TABLE *temp = (flag == 0)
-				? (const t_SYS_TABLE *)&get_SYS64_TABLE[args.orig_ax]
-				: (const t_SYS_TABLE *)&get_SYS32_TABLE[args.orig_ax];
 				size_t table_size = (flag == 0) ? SYS64_TABLE_SIZE : SYS32_TABLE_SIZE;
-				if (args.orig_ax > table_size || temp->name == NULL) {
-					//check syscall table range
-					fprintf(stderr, "syscall_%llu(", args.orig_ax);
+				const t_SYS_TABLE *temp = NULL;
+				
+				if (args.orig_ax < table_size) {
+					temp = (flag == 0)
+						? (const t_SYS_TABLE *)&get_SYS64_TABLE[args.orig_ax]
+						: (const t_SYS_TABLE *)&get_SYS32_TABLE[args.orig_ax];
+				
+					if (temp->name == NULL)
+						temp = NULL;
+				}
+				
+				if (temp == NULL) {
+					fprintf(stderr, "syscall_%llu(/* unknown */)", args.orig_ax);
+					in_syscall = 1;
 				}
 				else {
 					offset += sprintf(buf, "%s(", temp->name);
-				}
-				for (int i = 0; i < temp->argCount; i++) {
-					arg_fmt_fn fn = g_fmt[temp->argType[i]];
-					switch (i) {
-						case 0:
-							fn(args.a0, buf, temp->argType, &offset, i, args);
-						break;
-						case 1:
-							fn(args.a1, buf, temp->argType, &offset, i, args);
-						break;
-						case 2:
-							fn(args.a2, buf, temp->argType, &offset, i, args);
-						break;
-						case 3:
-							fn(args.a3, buf, temp->argType, &offset, i, args);
-						break;
-						case 4:
-							fn(args.a4, buf, temp->argType, &offset, i, args);
-						break;
-						case 5:
-							fn(args.a5, buf, temp->argType, &offset, i, args);
-						break;
+					for (int i = 0; i < temp->argCount; i++) {
+						arg_fmt_fn fn = g_fmt[temp->argType[i]];
+						switch (i) {
+							case 0:
+								fn(args.a0, buf, temp->argType, &offset, i, args);
+							break;
+							case 1:
+								fn(args.a1, buf, temp->argType, &offset, i, args);
+							break;
+							case 2:
+								fn(args.a2, buf, temp->argType, &offset, i, args);
+							break;
+							case 3:
+								fn(args.a3, buf, temp->argType, &offset, i, args);
+							break;
+							case 4:
+								fn(args.a4, buf, temp->argType, &offset, i, args);
+							break;
+							case 5:
+								fn(args.a5, buf, temp->argType, &offset, i, args);
+							break;
+						}
+						if ((i + 1) < temp->argCount) {
+							offset += sprintf(buf + offset, ", ");
+						}
 					}
-					if ((i + 1) < temp->argCount) {
-						offset += sprintf(buf + offset, ", ");
-					}
+					sprintf(buf + offset, ")");
+					fprintf(stderr, "%s", buf);
+					in_syscall = 1;
 				}
-				sprintf(buf + offset, ")");
-				fprintf(stderr, "%s", buf);
-				in_syscall = 1;
 			} else {
 				// exit syscall
 				if ((long long)args.rax < 0 && (long long)args.rax > -4096){
