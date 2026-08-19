@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "gcc",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O0",
+    "-g",
+    "portfolio_audit/tests/t01_write_binary.c",
+    "-o",
+    "portfolio_audit/bin/t01_write_binary"
+  ],
+  "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t01_write_binary.c -o portfolio_audit/bin/t01_write_binary",
+  "completed_at_utc": "2026-08-18T01:41:36.054045Z",
+  "context": {
+    "output": "portfolio_audit/bin/t01_write_binary",
+    "role": "case",
+    "source": "portfolio_audit/tests/t01_write_binary.c",
+    "stage": "test_compile"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.030309164,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.023641Z",
+  "stderr_bytes": 0,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 30.0
+}

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "as",
+    "--32",
+    "portfolio_audit/tests/t15_i386_smoke.S",
+    "-o",
+    "portfolio_audit/bin/t15_i386_smoke.o"
+  ],
+  "command": "as --32 portfolio_audit/tests/t15_i386_smoke.S -o portfolio_audit/bin/t15_i386_smoke.o",
+  "completed_at_utc": "2026-08-18T01:45:25.935928Z",
+  "context": {
+    "stage": "i386_assemble"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.00408413,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "i386-20260818T014525.931589Z",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:45:25.931729Z",
+  "stderr_bytes": 0,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 30
+}

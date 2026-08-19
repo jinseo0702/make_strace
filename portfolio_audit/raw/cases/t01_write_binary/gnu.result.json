@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "strace",
+    "portfolio_audit/bin/t01_write_binary"
+  ],
+  "command": "strace portfolio_audit/bin/t01_write_binary",
+  "completed_at_utc": "2026-08-18T01:41:36.485952Z",
+  "context": {
+    "case_id": "t01_write_binary",
+    "engine": "gnu",
+    "engine_prefix_argv": [
+      "strace"
+    ],
+    "stage": "baseline_case",
+    "target_argv": [
+      "portfolio_audit/bin/t01_write_binary"
+    ]
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.002909371,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.483010Z",
+  "stderr_bytes": 2288,
+  "stdout_bytes": 4,
+  "timed_out": false,
+  "timeout_seconds": 5.0
+}

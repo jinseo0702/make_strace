@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "gcc",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O0",
+    "-g",
+    "portfolio_audit/tests/t03_read_pipe.c",
+    "-o",
+    "portfolio_audit/bin/t03_read_pipe"
+  ],
+  "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t03_read_pipe.c -o portfolio_audit/bin/t03_read_pipe",
+  "completed_at_utc": "2026-08-18T01:41:36.119199Z",
+  "context": {
+    "output": "portfolio_audit/bin/t03_read_pipe",
+    "role": "case",
+    "source": "portfolio_audit/tests/t03_read_pipe.c",
+    "stage": "test_compile"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.029464375,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.089640Z",
+  "stderr_bytes": 0,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 30.0
+}

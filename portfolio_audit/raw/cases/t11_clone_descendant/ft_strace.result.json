@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "./ft_strace",
+    "portfolio_audit/bin/t11_clone_descendant"
+  ],
+  "command": "./ft_strace portfolio_audit/bin/t11_clone_descendant",
+  "completed_at_utc": "2026-08-18T01:41:36.584405Z",
+  "context": {
+    "case_id": "t11_clone_descendant",
+    "engine": "ft_strace",
+    "engine_prefix_argv": [
+      "./ft_strace"
+    ],
+    "stage": "baseline_case",
+    "target_argv": [
+      "portfolio_audit/bin/t11_clone_descendant"
+    ]
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.001627193,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.582742Z",
+  "stderr_bytes": 1827,
+  "stdout_bytes": 12,
+  "timed_out": false,
+  "timeout_seconds": 5.0
+}

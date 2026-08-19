@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "gcc",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O0",
+    "-g",
+    "portfolio_audit/tests/t08_getpid.c",
+    "-o",
+    "portfolio_audit/bin/t08_getpid"
+  ],
+  "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t08_getpid.c -o portfolio_audit/bin/t08_getpid",
+  "context": {
+    "output": "portfolio_audit/bin/t08_getpid",
+    "role": "case",
+    "source": "portfolio_audit/tests/t08_getpid.c",
+    "stage": "test_compile"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "environment_overrides": {
+    "LANG": "C",
+    "LC_ALL": "C"
+  },
+  "run_id": "20260818T014136.002211Z-24035",
+  "stdin": "DEVNULL",
+  "timeout_seconds": 30.0
+}

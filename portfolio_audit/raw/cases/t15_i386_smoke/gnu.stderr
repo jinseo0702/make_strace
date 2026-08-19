@@ -1,0 +1,6 @@
+execve("portfolio_audit/bin/t15_i386_smoke", ["portfolio_audit/bin/t15_i386_smo"...], 0x7ffce4487130 /* 82 vars */) = 0
+[ Process PID=26832 runs in 32 bit mode. ]
+getpid()                                = 26832
+write(1, 0x1, 16)                       = -1 EFAULT (Bad address)
+exit(0)                                 = ?
++++ exited with 0 +++

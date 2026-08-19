@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "gcc",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O0",
+    "-g",
+    "portfolio_audit/tests/t06_newfstatat.c",
+    "-o",
+    "portfolio_audit/bin/t06_newfstatat"
+  ],
+  "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t06_newfstatat.c -o portfolio_audit/bin/t06_newfstatat",
+  "completed_at_utc": "2026-08-18T01:41:36.215931Z",
+  "context": {
+    "output": "portfolio_audit/bin/t06_newfstatat",
+    "role": "case",
+    "source": "portfolio_audit/tests/t06_newfstatat.c",
+    "stage": "test_compile"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.031425401,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.184399Z",
+  "stderr_bytes": 0,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 30.0
+}

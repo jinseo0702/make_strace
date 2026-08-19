@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "./ft_strace",
+    "portfolio_audit/bin/t03_read_pipe"
+  ],
+  "command": "./ft_strace portfolio_audit/bin/t03_read_pipe",
+  "completed_at_utc": "2026-08-18T01:41:36.501336Z",
+  "context": {
+    "case_id": "t03_read_pipe",
+    "engine": "ft_strace",
+    "engine_prefix_argv": [
+      "./ft_strace"
+    ],
+    "stage": "baseline_case",
+    "target_argv": [
+      "portfolio_audit/bin/t03_read_pipe"
+    ]
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.001541563,
+  "exit_status": 0,
+  "returncode": 0,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.499767Z",
+  "stderr_bytes": 1769,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 5.0
+}

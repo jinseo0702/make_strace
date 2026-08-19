@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "./ft_strace",
+    "portfolio_audit/bin/t05_lseek64"
+  ],
+  "command": "./ft_strace portfolio_audit/bin/t05_lseek64",
+  "context": {
+    "case_id": "t05_lseek64",
+    "engine": "ft_strace",
+    "engine_prefix_argv": [
+      "./ft_strace"
+    ],
+    "stage": "baseline_case",
+    "target_argv": [
+      "portfolio_audit/bin/t05_lseek64"
+    ]
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "environment_overrides": {
+    "LANG": "C",
+    "LC_ALL": "C"
+  },
+  "run_id": "20260818T014136.002211Z-24035",
+  "stdin": "DEVNULL",
+  "timeout_seconds": 5.0
+}

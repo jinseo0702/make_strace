@@ -1,0 +1,6 @@
+execve("portfolio_audit/bin/t15_i386_smoke", ["portfolio_audit/bin/t15_i386_smoke"], 0x7fffa96bc4b0) = 0x0
+[ Process PID=26829 runs in 32 bit mode. ]
+getpid() = 0x68cd
+write(1, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 16) = 0xfffffff2
+exit(0) = ?
++++ exited with 0 +++

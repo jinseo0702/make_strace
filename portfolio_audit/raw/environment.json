@@ -1,0 +1,155 @@
+{
+  "audit_root": "/home/jinseo/duo/make_strace/portfolio_audit",
+  "command_paths": {
+    "gcc": "/usr/bin/gcc",
+    "git": "/usr/bin/git",
+    "make": "/usr/bin/make",
+    "strace": "/usr/bin/strace"
+  },
+  "compiler_version": {
+    "argv": [
+      "gcc",
+      "--version"
+    ],
+    "command": "gcc --version",
+    "duration_seconds": 0.001031859,
+    "exit_status": 0,
+    "returncode": 0,
+    "signal": null,
+    "spawn_error": null,
+    "stderr": "",
+    "stdout": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "timed_out": false
+  },
+  "git": {
+    "branch": {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "command": "git branch --show-current",
+      "duration_seconds": 0.001151573,
+      "exit_status": 0,
+      "returncode": 0,
+      "signal": null,
+      "spawn_error": null,
+      "stderr": "",
+      "stdout": "main\n",
+      "timed_out": false
+    },
+    "commit": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "command": "git rev-parse HEAD",
+      "duration_seconds": 0.001863364,
+      "exit_status": 0,
+      "returncode": 0,
+      "signal": null,
+      "spawn_error": null,
+      "stderr": "",
+      "stdout": "5a59c386c69332bd2dacc5824bf2a8958c9d9037\n",
+      "timed_out": false
+    },
+    "dirty": true,
+    "status_porcelain": {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "duration_seconds": 0.006637651,
+      "exit_status": 0,
+      "returncode": 0,
+      "signal": null,
+      "spawn_error": null,
+      "stderr": "",
+      "stdout": "?? ft_strace\n?? ft_strace.o\n?? portfolio_audit/architecture.md\n?? portfolio_audit/bin/exec_target\n?? portfolio_audit/bin/t01_write_binary\n?? portfolio_audit/bin/t02_write_efault\n?? portfolio_audit/bin/t03_read_pipe\n?? portfolio_audit/bin/t04_open_close\n?? portfolio_audit/bin/t05_lseek64\n?? portfolio_audit/bin/t06_newfstatat\n?? portfolio_audit/bin/t07_memory\n?? portfolio_audit/bin/t08_getpid\n?? portfolio_audit/bin/t09_execve\n?? portfolio_audit/bin/t10_signal\n?? portfolio_audit/bin/t11_clone_descendant\n?? portfolio_audit/bin/t12_socketpair\n?? portfolio_audit/bin/t13_unknown\n?? portfolio_audit/bin/t14_exit_status\n?? portfolio_audit/feature_inventory.md\n?? portfolio_audit/raw/build/make.command.json\n?? portfolio_audit/raw/build/make.result.json\n?? portfolio_audit/raw/build/make.stderr\n?? portfolio_audit/raw/build/make.stdout\n?? portfolio_audit/raw/cases/t01_write_binary/ft_strace.command.json\n?? portfolio_audit/raw/cases/t01_write_binary/ft_strace.result.json\n?? portfolio_audit/raw/cases/t01_write_binary/ft_strace.stderr\n?? portfolio_audit/raw/cases/t01_write_binary/ft_strace.stdout\n?? portfolio_audit/raw/cases/t01_write_binary/gnu.command.json\n?? portfolio_audit/raw/cases/t01_write_binary/gnu.result.json\n?? portfolio_audit/raw/cases/t01_write_binary/gnu.stderr\n?? portfolio_audit/raw/cases/t01_write_binary/gnu.stdout\n?? portfolio_audit/raw/cases/t02_write_efault/ft_strace.command.json\n?? portfolio_audit/raw/cases/t02_write_efault/ft_strace.result.json\n?? portfolio_audit/raw/cases/t02_write_efault/ft_strace.stderr\n?? portfolio_audit/raw/cases/t02_write_efault/ft_strace.stdout\n?? portfolio_audit/raw/cases/t02_write_efault/gnu.command.json\n?? portfolio_audit/raw/cases/t02_write_efault/gnu.result.json\n?? portfolio_audit/raw/cases/t02_write_efault/gnu.stderr\n?? portfolio_audit/raw/cases/t02_write_efault/gnu.stdout\n?? portfolio_audit/raw/cases/t03_read_pipe/ft_strace.command.json\n?? portfolio_audit/raw/cases/t03_read_pipe/ft_strace.result.json\n?? portfolio_audit/raw/cases/t03_read_pipe/ft_strace.stderr\n?? portfolio_audit/raw/cases/t03_read_pipe/ft_strace.stdout\n?? portfolio_audit/raw/cases/t03_read_pipe/gnu.command.json\n?? portfolio_audit/raw/cases/t03_read_pipe/gnu.result.json\n?? portfolio_audit/raw/cases/t03_read_pipe/gnu.stderr\n?? portfolio_audit/raw/cases/t03_read_pipe/gnu.stdout\n?? portfolio_audit/raw/cases/t04_open_close/ft_strace.command.json\n?? portfolio_audit/raw/cases/t04_open_close/ft_strace.result.json\n?? portfolio_audit/raw/cases/t04_open_close/ft_strace.stderr\n?? portfolio_audit/raw/cases/t04_open_close/ft_strace.stdout\n?? portfolio_audit/raw/cases/t04_open_close/gnu.command.json\n?? portfolio_audit/raw/cases/t04_open_close/gnu.result.json\n?? portfolio_audit/raw/cases/t04_open_close/gnu.stderr\n?? portfolio_audit/raw/cases/t04_open_close/gnu.stdout\n?? portfolio_audit/raw/cases/t05_lseek64/ft_strace.command.json\n?? portfolio_audit/raw/cases/t05_lseek64/ft_strace.result.json\n?? portfolio_audit/raw/cases/t05_lseek64/ft_strace.stderr\n?? portfolio_audit/raw/cases/t05_lseek64/ft_strace.stdout\n?? portfolio_audit/raw/cases/t05_lseek64/gnu.command.json\n?? portfolio_audit/raw/cases/t05_lseek64/gnu.result.json\n?? portfolio_audit/raw/cases/t05_lseek64/gnu.stderr\n?? portfolio_audit/raw/cases/t05_lseek64/gnu.stdout\n?? portfolio_audit/raw/cases/t06_newfstatat/ft_strace.command.json\n?? portfolio_audit/raw/cases/t06_newfstatat/ft_strace.result.json\n?? portfolio_audit/raw/cases/t06_newfstatat/ft_strace.stderr\n?? portfolio_audit/raw/cases/t06_newfstatat/ft_strace.stdout\n?? portfolio_audit/raw/cases/t06_newfstatat/gnu.command.json\n?? portfolio_audit/raw/cases/t06_newfstatat/gnu.result.json\n?? portfolio_audit/raw/cases/t06_newfstatat/gnu.stderr\n?? portfolio_audit/raw/cases/t06_newfstatat/gnu.stdout\n?? portfolio_audit/raw/cases/t07_memory/ft_strace.command.json\n?? portfolio_audit/raw/cases/t07_memory/ft_strace.result.json\n?? portfolio_audit/raw/cases/t07_memory/ft_strace.stderr\n?? portfolio_audit/raw/cases/t07_memory/ft_strace.stdout\n?? portfolio_audit/raw/cases/t07_memory/gnu.command.json\n?? portfolio_audit/raw/cases/t07_memory/gnu.result.json\n?? portfolio_audit/raw/cases/t07_memory/gnu.stderr\n?? portfolio_audit/raw/cases/t07_memory/gnu.stdout\n?? portfolio_audit/raw/cases/t08_getpid/ft_strace.command.json\n?? portfolio_audit/raw/cases/t08_getpid/ft_strace.result.json\n?? portfolio_audit/raw/cases/t08_getpid/ft_strace.stderr\n?? portfolio_audit/raw/cases/t08_getpid/ft_strace.stdout\n?? portfolio_audit/raw/cases/t08_getpid/gnu.command.json\n?? portfolio_audit/raw/cases/t08_getpid/gnu.result.json\n?? portfolio_audit/raw/cases/t08_getpid/gnu.stderr\n?? portfolio_audit/raw/cases/t08_getpid/gnu.stdout\n?? portfolio_audit/raw/cases/t09_execve/ft_strace.command.json\n?? portfolio_audit/raw/cases/t09_execve/ft_strace.result.json\n?? portfolio_audit/raw/cases/t09_execve/ft_strace.stderr\n?? portfolio_audit/raw/cases/t09_execve/ft_strace.stdout\n?? portfolio_audit/raw/cases/t09_execve/gnu.command.json\n?? portfolio_audit/raw/cases/t09_execve/gnu.result.json\n?? portfolio_audit/raw/cases/t09_execve/gnu.stderr\n?? portfolio_audit/raw/cases/t09_execve/gnu.stdout\n?? portfolio_audit/raw/cases/t10_signal/ft_strace.command.json\n?? portfolio_audit/raw/cases/t10_signal/ft_strace.result.json\n?? portfolio_audit/raw/cases/t10_signal/ft_strace.stderr\n?? portfolio_audit/raw/cases/t10_signal/ft_strace.stdout\n?? portfolio_audit/raw/cases/t10_signal/gnu.command.json\n?? portfolio_audit/raw/cases/t10_signal/gnu.result.json\n?? portfolio_audit/raw/cases/t10_signal/gnu.stderr\n?? portfolio_audit/raw/cases/t10_signal/gnu.stdout\n?? portfolio_audit/raw/cases/t11_clone_descendant/ft_strace.command.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/ft_strace.result.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/ft_strace.stderr\n?? portfolio_audit/raw/cases/t11_clone_descendant/ft_strace.stdout\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu.command.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu.result.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu.stderr\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu.stdout\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu_follow.command.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu_follow.result.json\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu_follow.stderr\n?? portfolio_audit/raw/cases/t11_clone_descendant/gnu_follow.stdout\n?? portfolio_audit/raw/cases/t12_socketpair/ft_strace.command.json\n?? portfolio_audit/raw/cases/t12_socketpair/ft_strace.result.json\n?? portfolio_audit/raw/cases/t12_socketpair/ft_strace.stderr\n?? portfolio_audit/raw/cases/t12_socketpair/ft_strace.stdout\n?? portfolio_audit/raw/cases/t12_socketpair/gnu.command.json\n?? portfolio_audit/raw/cases/t12_socketpair/gnu.result.json\n?? portfolio_audit/raw/cases/t12_socketpair/gnu.stderr\n?? portfolio_audit/raw/cases/t12_socketpair/gnu.stdout\n?? portfolio_audit/raw/cases/t13_unknown/ft_strace.command.json\n?? portfolio_audit/raw/cases/t13_unknown/ft_strace.result.json\n?? portfolio_audit/raw/cases/t13_unknown/ft_strace.stderr\n?? portfolio_audit/raw/cases/t13_unknown/ft_strace.stdout\n?? portfolio_audit/raw/cases/t13_unknown/gnu.command.json\n?? portfolio_audit/raw/cases/t13_unknown/gnu.result.json\n?? portfolio_audit/raw/cases/t13_unknown/gnu.stderr\n?? portfolio_audit/raw/cases/t13_unknown/gnu.stdout\n?? portfolio_audit/raw/cases/t14_exit_status/ft_strace.command.json\n?? portfolio_audit/raw/cases/t14_exit_status/ft_strace.result.json\n?? portfolio_audit/raw/cases/t14_exit_status/ft_strace.stderr\n?? portfolio_audit/raw/cases/t14_exit_status/ft_strace.stdout\n?? portfolio_audit/raw/cases/t14_exit_status/gnu.command.json\n?? portfolio_audit/raw/cases/t14_exit_status/gnu.result.json\n?? portfolio_audit/raw/cases/t14_exit_status/gnu.stderr\n?? portfolio_audit/raw/cases/t14_exit_status/gnu.stdout\n?? portfolio_audit/raw/compile/exec_target.command.json\n?? portfolio_audit/raw/compile/exec_target.result.json\n?? portfolio_audit/raw/compile/exec_target.stderr\n?? portfolio_audit/raw/compile/exec_target.stdout\n?? portfolio_audit/raw/compile/t01_write_binary.command.json\n?? portfolio_audit/raw/compile/t01_write_binary.result.json\n?? portfolio_audit/raw/compile/t01_write_binary.stderr\n?? portfolio_audit/raw/compile/t01_write_binary.stdout\n?? portfolio_audit/raw/compile/t02_write_efault.command.json\n?? portfolio_audit/raw/compile/t02_write_efault.result.json\n?? portfolio_audit/raw/compile/t02_write_efault.stderr\n?? portfolio_audit/raw/compile/t02_write_efault.stdout\n?? portfolio_audit/raw/compile/t03_read_pipe.command.json\n?? portfolio_audit/raw/compile/t03_read_pipe.result.json\n?? portfolio_audit/raw/compile/t03_read_pipe.stderr\n?? portfolio_audit/raw/compile/t03_read_pipe.stdout\n?? portfolio_audit/raw/compile/t04_open_close.command.json\n?? portfolio_audit/raw/compile/t04_open_close.result.json\n?? portfolio_audit/raw/compile/t04_open_close.stderr\n?? portfolio_audit/raw/compile/t04_open_close.stdout\n?? portfolio_audit/raw/compile/t05_lseek64.command.json\n?? portfolio_audit/raw/compile/t05_lseek64.result.json\n?? portfolio_audit/raw/compile/t05_lseek64.stderr\n?? portfolio_audit/raw/compile/t05_lseek64.stdout\n?? portfolio_audit/raw/compile/t06_newfstatat.command.json\n?? portfolio_audit/raw/compile/t06_newfstatat.result.json\n?? portfolio_audit/raw/compile/t06_newfstatat.stderr\n?? portfolio_audit/raw/compile/t06_newfstatat.stdout\n?? portfolio_audit/raw/compile/t07_memory.command.json\n?? portfolio_audit/raw/compile/t07_memory.result.json\n?? portfolio_audit/raw/compile/t07_memory.stderr\n?? portfolio_audit/raw/compile/t07_memory.stdout\n?? portfolio_audit/raw/compile/t08_getpid.command.json\n?? portfolio_audit/raw/compile/t08_getpid.result.json\n?? portfolio_audit/raw/compile/t08_getpid.stderr\n?? portfolio_audit/raw/compile/t08_getpid.stdout\n?? portfolio_audit/raw/compile/t09_execve.command.json\n?? portfolio_audit/raw/compile/t09_execve.result.json\n?? portfolio_audit/raw/compile/t09_execve.stderr\n?? portfolio_audit/raw/compile/t09_execve.stdout\n?? portfolio_audit/raw/compile/t10_signal.command.json\n?? portfolio_audit/raw/compile/t10_signal.result.json\n?? portfolio_audit/raw/compile/t10_signal.stderr\n?? portfolio_audit/raw/compile/t10_signal.stdout\n?? portfolio_audit/raw/compile/t11_clone_descendant.command.json\n?? portfolio_audit/raw/compile/t11_clone_descendant.result.json\n?? portfolio_audit/raw/compile/t11_clone_descendant.stderr\n?? portfolio_audit/raw/compile/t11_clone_descendant.stdout\n?? portfolio_audit/raw/compile/t12_socketpair.command.json\n?? portfolio_audit/raw/compile/t12_socketpair.result.json\n?? portfolio_audit/raw/compile/t12_socketpair.stderr\n?? portfolio_audit/raw/compile/t12_socketpair.stdout\n?? portfolio_audit/raw/compile/t13_unknown.command.json\n?? portfolio_audit/raw/compile/t13_unknown.result.json\n?? portfolio_audit/raw/compile/t13_unknown.stderr\n?? portfolio_audit/raw/compile/t13_unknown.stdout\n?? portfolio_audit/raw/compile/t14_exit_status.command.json\n?? portfolio_audit/raw/compile/t14_exit_status.result.json\n?? portfolio_audit/raw/compile/t14_exit_status.stderr\n?? portfolio_audit/raw/compile/t14_exit_status.stdout\n?? portfolio_audit/raw/environment.json\n?? portfolio_audit/raw/run_index.json\n?? portfolio_audit/syscall_matrix.md\n?? portfolio_audit/test_manifest.json\n?? portfolio_audit/test_plan.md\n?? portfolio_audit/tests/README.md\n?? portfolio_audit/tests/exec_target.c\n?? portfolio_audit/tests/t01_write_binary.c\n?? portfolio_audit/tests/t02_write_efault.c\n?? portfolio_audit/tests/t03_read_pipe.c\n?? portfolio_audit/tests/t04_open_close.c\n?? portfolio_audit/tests/t05_lseek64.c\n?? portfolio_audit/tests/t06_newfstatat.c\n?? portfolio_audit/tests/t07_memory.c\n?? portfolio_audit/tests/t08_getpid.c\n?? portfolio_audit/tests/t09_execve.c\n?? portfolio_audit/tests/t10_signal.c\n?? portfolio_audit/tests/t11_clone_descendant.c\n?? portfolio_audit/tests/t12_socketpair.c\n?? portfolio_audit/tests/t13_unknown.c\n?? portfolio_audit/tests/t14_exit_status.c\n?? portfolio_audit/tools/generate_syscall_matrix.py\n?? portfolio_audit/tools/run_baseline.py\n",
+      "timed_out": false
+    }
+  },
+  "gnu_strace_version": {
+    "argv": [
+      "strace",
+      "--version"
+    ],
+    "command": "strace --version",
+    "duration_seconds": 0.000995722,
+    "exit_status": 0,
+    "returncode": 0,
+    "signal": null,
+    "spawn_error": null,
+    "stderr": "",
+    "stdout": "strace -- version 6.19\nCopyright (c) 1991-2026 The strace developers <https://strace.io>.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nOptional features enabled: stack-trace=libunwind stack-demangle m32-mpers mx32-mpers\n",
+    "timed_out": false
+  },
+  "locale_overrides": {
+    "LANG": "C",
+    "LC_ALL": "C"
+  },
+  "make_version": {
+    "argv": [
+      "make",
+      "--version"
+    ],
+    "command": "make --version",
+    "duration_seconds": 0.00060949,
+    "exit_status": 0,
+    "returncode": 0,
+    "signal": null,
+    "spawn_error": null,
+    "stderr": "",
+    "stdout": "GNU Make 4.4.1\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+    "timed_out": false
+  },
+  "manifest": {
+    "path": "/home/jinseo/duo/make_strace/portfolio_audit/test_manifest.json",
+    "sha256": "cf8fe9e423a3aed9348c328d84fa7ffe2dafbe71dcb6c9944b520c2a613df3a7"
+  },
+  "os_release": {
+    "available": true,
+    "fields": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "resolute",
+      "VERSION": "26.04 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "VERSION_ID": "26.04"
+    },
+    "path": "/etc/os-release",
+    "raw": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n"
+  },
+  "platform": {
+    "kernel_release": "7.0.0-29-generic",
+    "kernel_version": "#29-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 17 20:52:35 UTC 2026",
+    "machine": "x86_64",
+    "node": "jinseo-IdeaPad-Slim-5-16AKP10",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "processor": "",
+    "system": "Linux"
+  },
+  "python": {
+    "executable": "/usr/bin/python3",
+    "implementation": "CPython",
+    "version": "3.14.4"
+  },
+  "recorded_at_utc": "2026-08-18T01:41:36.012389Z",
+  "repo_root": "/home/jinseo/duo/make_strace",
+  "run_id": "20260818T014136.002211Z-24035",
+  "script": {
+    "path": "/home/jinseo/duo/make_strace/portfolio_audit/tools/run_baseline.py",
+    "sha256": "22b008b9ca5d64475a3946a724f0a7efbee887cb9f7c1f261f9e347f0216efbf"
+  }
+}

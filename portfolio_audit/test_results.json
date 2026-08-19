@@ -1,0 +1,751 @@
+{
+  "builds": {
+    "default_make_returncode": 0,
+    "gcc_case_binaries": 14,
+    "gcc_compile_records": 15,
+    "gcc_helper_binaries": 1,
+    "i386_assemble_returncode": 0,
+    "i386_link_returncode": 0
+  },
+  "classification_policy": "test_plan.md",
+  "commit": "5a59c386c69332bd2dacc5824bf2a8958c9d9037",
+  "generated_at_utc": "2026-08-18T02:25:28.100768Z",
+  "raw_runs": {
+    "i386": "i386-20260818T014525.931589Z",
+    "x86_64": "20260818T014136.002211Z-24035"
+  },
+  "schema_version": 1,
+  "selected_syscalls": [
+    "clone",
+    "close",
+    "execve",
+    "getpid",
+    "kill",
+    "lseek",
+    "mmap",
+    "mprotect",
+    "munmap",
+    "newfstatat",
+    "openat",
+    "read",
+    "rt_sigaction",
+    "socketpair",
+    "write"
+  ],
+  "source_inventory": {
+    "fully_decoded_entire_table": null,
+    "fully_decoded_note": "확인 불가: 15 focused cases do not prove semantic completeness for all populated table rows.",
+    "i386_recognized_rows": 426,
+    "table_slots_per_abi": 470,
+    "total_abi_rows": 791,
+    "unique_printed_names": 421,
+    "x86_64_recognized_rows": 365
+  },
+  "summary": {
+    "CRASH": 0,
+    "FAIL": 7,
+    "PARTIAL": 3,
+    "PASS": 5,
+    "selected_syscall_names": 15,
+    "tests": 15
+  },
+  "tests": [
+    {
+      "actual": "The same four bytes and return value are recoverable; ft_strace uses decimal backslash escapes (`\\0`, `\\10`).",
+      "category": "File I/O",
+      "classification": "PASS",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "write(1, \"A\\0B\\10\", 4) = 0x4"
+          ],
+          "result_path": "raw/cases/t01_write_binary/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t01_write_binary/ft_strace.stderr",
+          "stdout_path": "raw/cases/t01_write_binary/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "write(1, \"A\\0B\\n\", 4)                   = 4"
+          ],
+          "result_path": "raw/cases/t01_write_binary/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t01_write_binary/gnu.stderr",
+          "stdout_path": "raw/cases/t01_write_binary/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "write fd 1 with bytes 41 00 42 0a, length 4, return 4",
+      "id": "t01_write_binary",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The byte payload, length, return, tracee stdout, and sequence match after the documented escape normalization.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "write"
+      ],
+      "title": "binary write escaping",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "ft_strace displays a fabricated 16-byte zero buffer, then reports Bad address.",
+      "category": "File I/O / error",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "write(1, \"\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\", 16) = -1 Bad address"
+          ],
+          "result_path": "raw/cases/t02_write_efault/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t02_write_efault/ft_strace.stderr",
+          "stdout_path": "raw/cases/t02_write_efault/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "write(1, 0x1, 16)                       = -1 EFAULT (Bad address)"
+          ],
+          "result_path": "raw/cases/t02_write_efault/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t02_write_efault/gnu.stderr",
+          "stdout_path": "raw/cases/t02_write_efault/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "display pointer 0x1 and return EFAULT",
+      "id": "t02_write_efault",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "Ignoring the failed process_vm_readv changes a core argument from pointer 0x1 to data that was never read.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "write"
+      ],
+      "title": "invalid write pointer",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "ft_strace prints the pre-syscall sentinel `XXXX` instead of the returned bytes `READ`.",
+      "category": "File I/O",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "read(3, \"XXXX\", 4) = 0x4"
+          ],
+          "result_path": "raw/cases/t03_read_pipe/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t03_read_pipe/ft_strace.stderr",
+          "stdout_path": "raw/cases/t03_read_pipe/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "read(3, \"READ\", 4)                      = 4"
+          ],
+          "result_path": "raw/cases/t03_read_pipe/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t03_read_pipe/gnu.stderr",
+          "stdout_path": "raw/cases/t03_read_pipe/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "read(fd, \"READ\", 4) = 4 after the kernel fills the buffer",
+      "id": "t03_read_pipe",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "A core output argument is wrong because all arguments are formatted at syscall entry.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "read",
+        "write"
+      ],
+      "title": "read output buffer timing",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "Names, numeric dirfd/flags, paths, fd, success returns, and errno meaning match; only symbolic formatting differs.",
+      "category": "Filesystem",
+      "classification": "PASS",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "openat(-100, \"/dev/null\", 0x0, 0) = 0x3",
+            "close(3) = 0x0",
+            "openat(-100, \"/proc/self/fd/2147483647\", 0x0, 0) = -1 No such file or directory"
+          ],
+          "result_path": "raw/cases/t04_open_close/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t04_open_close/ft_strace.stderr",
+          "stdout_path": "raw/cases/t04_open_close/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "openat(AT_FDCWD, \"/dev/null\", O_RDONLY) = 3",
+            "close(3)                                = 0",
+            "openat(AT_FDCWD, \"/proc/self/fd/2147483647\", O_RDONLY) = -1 ENOENT (No such file or directory)"
+          ],
+          "result_path": "raw/cases/t04_open_close/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t04_open_close/gnu.stderr",
+          "stdout_path": "raw/cases/t04_open_close/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "open /dev/null, close fd 3, then receive ENOENT for a nonexistent path",
+      "id": "t04_open_close",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "AT_FDCWD=-100, O_RDONLY=0, hexadecimal success values, and strerror text are semantically equivalent.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "openat",
+        "close"
+      ],
+      "title": "openat/close success and ENOENT",
+      "verified_assertions": 11
+    },
+    {
+      "actual": "ft_strace prints the argument as 2 while the kernel returns 0x100000002.",
+      "category": "File I/O",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "lseek(3, 2, 0) = 0x100000002"
+          ],
+          "result_path": "raw/cases/t05_lseek64/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t05_lseek64/ft_strace.stderr",
+          "stdout_path": "raw/cases/t05_lseek64/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "lseek(3, 4294967298, SEEK_SET)          = 4294967298"
+          ],
+          "result_path": "raw/cases/t05_lseek64/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t05_lseek64/gnu.stderr",
+          "stdout_path": "raw/cases/t05_lseek64/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "lseek offset 4294967298 with the same return value",
+      "id": "t05_lseek64",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The high 32 bits of a core argument are lost by the int formatter.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "lseek"
+      ],
+      "title": "64-bit lseek offset",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "ft_strace recognizes the syscall/path and return 0 but prints only the structure address.",
+      "category": "Filesystem",
+      "classification": "PARTIAL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "newfstatat(-100, \"/dev/null\", 0x7ffe5de503f0, 0x0) = 0x0"
+          ],
+          "result_path": "raw/cases/t06_newfstatat/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t06_newfstatat/ft_strace.stderr",
+          "stdout_path": "raw/cases/t06_newfstatat/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "newfstatat(AT_FDCWD, \"/dev/null\", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}, 0) = 0"
+          ],
+          "result_path": "raw/cases/t06_newfstatat/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t06_newfstatat/gnu.stderr",
+          "stdout_path": "raw/cases/t06_newfstatat/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "path and successful stat result including the kernel-produced stat structure",
+      "id": "t06_newfstatat",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The syscall is traced correctly while a significant output structure is omitted rather than misreported.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "newfstatat"
+      ],
+      "title": "newfstatat output structure",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "All numeric arguments, success returns, and sequence match after address and symbolic-flag normalization.",
+      "category": "Memory",
+      "classification": "PASS",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "mmap(0x0, 0x1000, 0x3, 0x22, -1, 0x0) = 0x7880991f9000",
+            "mprotect(0x7880991f9000, 4096, 0x1) = 0x0",
+            "munmap(0x7880991f9000, 4096) = 0x0"
+          ],
+          "result_path": "raw/cases/t07_memory/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t07_memory/ft_strace.stderr",
+          "stdout_path": "raw/cases/t07_memory/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x784aca7dc000",
+            "mprotect(0x784aca7dc000, 4096, PROT_READ) = 0",
+            "munmap(0x784aca7dc000, 4096)            = 0"
+          ],
+          "result_path": "raw/cases/t07_memory/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t07_memory/gnu.stderr",
+          "stdout_path": "raw/cases/t07_memory/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "map one 4096-byte RW anonymous page, protect it read-only, then unmap it",
+      "id": "t07_memory",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "Raw numeric protection/map flags retain the same semantic values as GNU's symbolic rendering.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "mmap",
+        "mprotect",
+        "munmap"
+      ],
+      "title": "mmap/mprotect/munmap sequence",
+      "verified_assertions": 11
+    },
+    {
+      "actual": "ft_strace reports a positive hexadecimal PID; GNU reports a different positive decimal PID from its separate run.",
+      "category": "Process",
+      "classification": "PASS",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "getpid() = 0x5e62"
+          ],
+          "result_path": "raw/cases/t08_getpid/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t08_getpid/ft_strace.stderr",
+          "stdout_path": "raw/cases/t08_getpid/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "getpid()                                = 24165"
+          ],
+          "result_path": "raw/cases/t08_getpid/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t08_getpid/gnu.stderr",
+          "stdout_path": "raw/cases/t08_getpid/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "getpid() with a positive PID return",
+      "id": "t08_getpid",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "PID is a documented dynamic value and the syscall name, arity, and return semantics match.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "getpid"
+      ],
+      "title": "zero-argument getpid",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "The exec path, argv, continued tracing after process-image replacement, and `exited with 23` line are correct, but ft_strace itself returns 0 while GNU strace returns 23.",
+      "category": "Process",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "execve(\"portfolio_audit/bin/exec_target\", [\"portfolio_audit/bin/exec_target\", \"alpha\", \"beta\"], 0x7fff5e1e8108) = 0x0",
+            "+++ exited with 23 +++"
+          ],
+          "result_path": "raw/cases/t09_execve/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t09_execve/ft_strace.stderr",
+          "stdout_path": "raw/cases/t09_execve/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "execve(\"portfolio_audit/bin/exec_target\", [\"portfolio_audit/bin/exec_target\", \"alpha\", \"beta\"], 0x7fff1114d108 /* 0 vars */) = 0",
+            "+++ exited with 23 +++"
+          ],
+          "result_path": "raw/cases/t09_execve/gnu.result.json",
+          "returncode": 23,
+          "signal": null,
+          "stderr_path": "raw/cases/t09_execve/gnu.stderr",
+          "stdout_path": "raw/cases/t09_execve/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "decode helper path/argv, continue after exec, report exit 23, and return status 23 from the tracer",
+      "id": "t09_execve",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "Tracee exit-status propagation is declared core behavior for this case and is wrong.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "execve"
+      ],
+      "title": "execve process-image replacement and exit status",
+      "verified_assertions": 9
+    },
+    {
+      "actual": "ft_strace preserves delivery and execution but prints numeric/raw action fields and abbreviated siginfo.",
+      "category": "Signal",
+      "classification": "PARTIAL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "rt_sigaction(0xa, 0x7ffd677227c0, 0x0, 8) = 0x0",
+            "kill(24172, 0xa) = 0x0",
+            "--- USR1 {si_signo=USR1, si_code=0, si_pid=24172, si_uid=1000} ---"
+          ],
+          "result_path": "raw/cases/t10_signal/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t10_signal/ft_strace.stderr",
+          "stdout_path": "raw/cases/t10_signal/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "rt_sigaction(SIGUSR1, {sa_handler=0x5cb2337861c9, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x76688ac45cb0}, NULL, 8) = 0",
+            "kill(24175, SIGUSR1)                    = 0",
+            "--- SIGUSR1 {si_signo=SIGUSR1, si_code=SI_USER, si_pid=24175, si_uid=1000} ---"
+          ],
+          "result_path": "raw/cases/t10_signal/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t10_signal/gnu.stderr",
+          "stdout_path": "raw/cases/t10_signal/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "install SIGUSR1 handler, send SIGUSR1 to self, deliver it, and exit 0",
+      "id": "t10_signal",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "Core signal behavior works; symbolic signal/action structure detail is omitted.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "rt_sigaction",
+        "kill"
+      ],
+      "title": "signal installation and reinjection",
+      "verified_assertions": 11
+    },
+    {
+      "actual": "ft_strace observes parent clone/wait and the program succeeds, but no child syscall appears in its trace.",
+      "category": "Process",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "clone(0x11, 0x0, 0x0, 0x0, 0x0) = 0x5e72"
+          ],
+          "result_path": "raw/cases/t11_clone_descendant/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t11_clone_descendant/ft_strace.stderr",
+          "stdout_path": "raw/cases/t11_clone_descendant/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu_follow": {
+          "evidence_lines": [
+            "clone(child_stack=NULL, flags=SIGCHLDstrace: Process 24186 attached",
+            "[pid 24186] write(1, \"clone-child\\n\", 12) = 12",
+            "[pid 24186] +++ exited with 42 +++"
+          ],
+          "result_path": "raw/cases/t11_clone_descendant/gnu_follow.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t11_clone_descendant/gnu_follow.stderr",
+          "stdout_path": "raw/cases/t11_clone_descendant/gnu_follow.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "observe clone plus the child's write and exit when measured against GNU strace -f",
+      "id": "t11_clone_descendant",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "A central descendant-tracing behavior is absent; GNU's follow run records the child write and exit.",
+      "reference_engine": "gnu_follow",
+      "target_syscalls": [
+        "clone"
+      ],
+      "title": "clone descendant tracing",
+      "verified_assertions": 9
+    },
+    {
+      "actual": "ft_strace records numeric domain/type/protocol and success but leaves the fd array as an address.",
+      "category": "Network",
+      "classification": "PARTIAL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "socketpair(1, 1, 0, 0x7fff01dbe190) = 0x0"
+          ],
+          "result_path": "raw/cases/t12_socketpair/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t12_socketpair/ft_strace.stderr",
+          "stdout_path": "raw/cases/t12_socketpair/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "socketpair(AF_UNIX, SOCK_STREAM, 0, [3, 4]) = 0"
+          ],
+          "result_path": "raw/cases/t12_socketpair/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t12_socketpair/gnu.stderr",
+          "stdout_path": "raw/cases/t12_socketpair/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "AF_UNIX/SOCK_STREAM success with returned descriptors [3, 4]",
+      "id": "t12_socketpair",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The syscall completes correctly while kernel-produced output detail is omitted.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "socketpair"
+      ],
+      "title": "socketpair output descriptors",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "ft_strace prints decimal 999 with `Function not implemented`; GNU prints hexadecimal 0x3e7 with ENOSYS.",
+      "category": "Control",
+      "classification": "PASS",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "syscall_999(/* unknown */) = -1 Function not implemented"
+          ],
+          "result_path": "raw/cases/t13_unknown/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t13_unknown/ft_strace.stderr",
+          "stdout_path": "raw/cases/t13_unknown/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "syscall_0x3e7(0x7fff77560ef8, 0x7fff77560f08, 0x5ab249f0adb8, 0x71ccab412680, 0x71ccab413fa0, 0) = -1 ENOSYS (Function not implemented)"
+          ],
+          "result_path": "raw/cases/t13_unknown/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t13_unknown/gnu.stderr",
+          "stdout_path": "raw/cases/t13_unknown/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "identify syscall number 999 as unknown and report ENOSYS",
+      "id": "t13_unknown",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The syscall number and errno meaning match after numeric and errno-text normalization.",
+      "reference_engine": "gnu",
+      "target_syscalls": [],
+      "title": "unknown syscall fallback",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "ft_strace reports `exited with 7` but returns 0; GNU strace returns 7.",
+      "category": "Control",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "+++ exited with 7 +++"
+          ],
+          "result_path": "raw/cases/t14_exit_status/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t14_exit_status/ft_strace.stderr",
+          "stdout_path": "raw/cases/t14_exit_status/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "+++ exited with 7 +++"
+          ],
+          "result_path": "raw/cases/t14_exit_status/gnu.result.json",
+          "returncode": 7,
+          "signal": null,
+          "stderr_path": "raw/cases/t14_exit_status/gnu.stderr",
+          "stdout_path": "raw/cases/t14_exit_status/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "report tracee exit 7 and return 7 from the tracer",
+      "id": "t14_exit_status",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "The observable wrapper exit status is wrong.",
+      "reference_engine": "gnu",
+      "target_syscalls": [],
+      "title": "tracee exit-status propagation",
+      "verified_assertions": 7
+    },
+    {
+      "actual": "32-bit mode and getpid work, but ft_strace prints a zero-filled buffer and treats -14 as successful hex `0xfffffff2`.",
+      "category": "ABI compatibility",
+      "classification": "FAIL",
+      "engine_results": {
+        "ft_strace": {
+          "evidence_lines": [
+            "[ Process PID=26829 runs in 32 bit mode. ]",
+            "getpid() = 0x68cd",
+            "write(1, \"\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\", 16) = 0xfffffff2"
+          ],
+          "result_path": "raw/cases/t15_i386_smoke/ft_strace.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t15_i386_smoke/ft_strace.stderr",
+          "stdout_path": "raw/cases/t15_i386_smoke/ft_strace.stdout",
+          "timed_out": false
+        },
+        "gnu": {
+          "evidence_lines": [
+            "[ Process PID=26832 runs in 32 bit mode. ]",
+            "getpid()                                = 26832",
+            "write(1, 0x1, 16)                       = -1 EFAULT (Bad address)"
+          ],
+          "result_path": "raw/cases/t15_i386_smoke/gnu.result.json",
+          "returncode": 0,
+          "signal": null,
+          "stderr_path": "raw/cases/t15_i386_smoke/gnu.stderr",
+          "stdout_path": "raw/cases/t15_i386_smoke/gnu.stdout",
+          "timed_out": false
+        }
+      },
+      "expected": "recognize 32-bit mode, getpid, and render write(0x1,16) as -1 EFAULT",
+      "id": "t15_i386_smoke",
+      "normalization_applied": [
+        "dynamic PID/address values",
+        "equivalent decimal/hex integers",
+        "equivalent errno symbol/text",
+        "documented equivalent byte escaping",
+        "numeric versus symbolic flags with the same value"
+      ],
+      "reason": "Unsigned i386 eax handling loses negative errno semantics, and failed memory reading also changes the argument.",
+      "reference_engine": "gnu",
+      "target_syscalls": [
+        "getpid",
+        "write"
+      ],
+      "title": "i386 errno compatibility",
+      "verified_assertions": 11
+    }
+  ]
+}

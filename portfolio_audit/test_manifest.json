@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "repository_build": {
+    "argv": [
+      "make"
+    ],
+    "timeout_seconds": 120
+  },
+  "test_compiler": {
+    "argv0": "gcc",
+    "flags": [
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g"
+    ],
+    "timeout_seconds": 30
+  },
+  "case_timeout_seconds": 5,
+  "engines": {
+    "ft_strace": {
+      "prefix_argv": [
+        "./ft_strace"
+      ]
+    },
+    "gnu": {
+      "prefix_argv": [
+        "strace"
+      ]
+    },
+    "gnu_follow": {
+      "prefix_argv": [
+        "strace",
+        "-f"
+      ]
+    }
+  },
+  "compile_targets": [
+    {
+      "source": "portfolio_audit/tests/t01_write_binary.c",
+      "output": "portfolio_audit/bin/t01_write_binary",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t02_write_efault.c",
+      "output": "portfolio_audit/bin/t02_write_efault",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t03_read_pipe.c",
+      "output": "portfolio_audit/bin/t03_read_pipe",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t04_open_close.c",
+      "output": "portfolio_audit/bin/t04_open_close",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t05_lseek64.c",
+      "output": "portfolio_audit/bin/t05_lseek64",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t06_newfstatat.c",
+      "output": "portfolio_audit/bin/t06_newfstatat",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t07_memory.c",
+      "output": "portfolio_audit/bin/t07_memory",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t08_getpid.c",
+      "output": "portfolio_audit/bin/t08_getpid",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t09_execve.c",
+      "output": "portfolio_audit/bin/t09_execve",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/exec_target.c",
+      "output": "portfolio_audit/bin/exec_target",
+      "role": "helper"
+    },
+    {
+      "source": "portfolio_audit/tests/t10_signal.c",
+      "output": "portfolio_audit/bin/t10_signal",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t11_clone_descendant.c",
+      "output": "portfolio_audit/bin/t11_clone_descendant",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t12_socketpair.c",
+      "output": "portfolio_audit/bin/t12_socketpair",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t13_unknown.c",
+      "output": "portfolio_audit/bin/t13_unknown",
+      "role": "case"
+    },
+    {
+      "source": "portfolio_audit/tests/t14_exit_status.c",
+      "output": "portfolio_audit/bin/t14_exit_status",
+      "role": "case"
+    }
+  ],
+  "cases": [
+    {
+      "id": "t01_write_binary",
+      "target_argv": [
+        "portfolio_audit/bin/t01_write_binary"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t02_write_efault",
+      "target_argv": [
+        "portfolio_audit/bin/t02_write_efault"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t03_read_pipe",
+      "target_argv": [
+        "portfolio_audit/bin/t03_read_pipe"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t04_open_close",
+      "target_argv": [
+        "portfolio_audit/bin/t04_open_close"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t05_lseek64",
+      "target_argv": [
+        "portfolio_audit/bin/t05_lseek64"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t06_newfstatat",
+      "target_argv": [
+        "portfolio_audit/bin/t06_newfstatat"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t07_memory",
+      "target_argv": [
+        "portfolio_audit/bin/t07_memory"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t08_getpid",
+      "target_argv": [
+        "portfolio_audit/bin/t08_getpid"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t09_execve",
+      "target_argv": [
+        "portfolio_audit/bin/t09_execve",
+        "portfolio_audit/bin/exec_target"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t10_signal",
+      "target_argv": [
+        "portfolio_audit/bin/t10_signal"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t11_clone_descendant",
+      "target_argv": [
+        "portfolio_audit/bin/t11_clone_descendant"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu",
+        "gnu_follow"
+      ]
+    },
+    {
+      "id": "t12_socketpair",
+      "target_argv": [
+        "portfolio_audit/bin/t12_socketpair"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t13_unknown",
+      "target_argv": [
+        "portfolio_audit/bin/t13_unknown"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    },
+    {
+      "id": "t14_exit_status",
+      "target_argv": [
+        "portfolio_audit/bin/t14_exit_status"
+      ],
+      "engines": [
+        "ft_strace",
+        "gnu"
+      ]
+    }
+  ]
+}

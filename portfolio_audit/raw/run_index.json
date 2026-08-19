@@ -1,0 +1,1895 @@
+{
+  "build": {
+    "command_path": "raw/build/make.command.json",
+    "record_prefix": "raw/build/make",
+    "result": {
+      "argv": [
+        "make"
+      ],
+      "command": "make",
+      "completed_at_utc": "2026-08-18T01:41:36.021322Z",
+      "context": {
+        "stage": "repository_build"
+      },
+      "cwd": "/home/jinseo/duo/make_strace",
+      "duration_seconds": 0.001286856,
+      "exit_status": 0,
+      "returncode": 0,
+      "run_id": "20260818T014136.002211Z-24035",
+      "signal": null,
+      "spawn_error": null,
+      "started_at_utc": "2026-08-18T01:41:36.019996Z",
+      "stderr_bytes": 0,
+      "stdout_bytes": 36,
+      "timed_out": false,
+      "timeout_seconds": 120.0
+    },
+    "result_path": "raw/build/make.result.json",
+    "stderr_path": "raw/build/make.stderr",
+    "stdout_path": "raw/build/make.stdout"
+  },
+  "case_timeout_seconds": 5.0,
+  "cases": [
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t01_write_binary/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t01_write_binary/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t01_write_binary"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t01_write_binary",
+            "completed_at_utc": "2026-08-18T01:41:36.480646Z",
+            "context": {
+              "case_id": "t01_write_binary",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t01_write_binary"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001719385,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.478874Z",
+            "stderr_bytes": 1694,
+            "stdout_bytes": 4,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t01_write_binary/ft_strace.result.json",
+          "stderr_path": "raw/cases/t01_write_binary/ft_strace.stderr",
+          "stdout_path": "raw/cases/t01_write_binary/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t01_write_binary/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t01_write_binary/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t01_write_binary"
+            ],
+            "command": "strace portfolio_audit/bin/t01_write_binary",
+            "completed_at_utc": "2026-08-18T01:41:36.485952Z",
+            "context": {
+              "case_id": "t01_write_binary",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t01_write_binary"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002909371,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.483010Z",
+            "stderr_bytes": 2288,
+            "stdout_bytes": 4,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t01_write_binary/gnu.result.json",
+          "stderr_path": "raw/cases/t01_write_binary/gnu.stderr",
+          "stdout_path": "raw/cases/t01_write_binary/gnu.stdout"
+        }
+      ],
+      "id": "t01_write_binary",
+      "target_argv": [
+        "portfolio_audit/bin/t01_write_binary"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t02_write_efault/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t02_write_efault/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t02_write_efault"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t02_write_efault",
+            "completed_at_utc": "2026-08-18T01:41:36.490813Z",
+            "context": {
+              "case_id": "t02_write_efault",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t02_write_efault"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001575115,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.489180Z",
+            "stderr_bytes": 1731,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t02_write_efault/ft_strace.result.json",
+          "stderr_path": "raw/cases/t02_write_efault/ft_strace.stderr",
+          "stdout_path": "raw/cases/t02_write_efault/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t02_write_efault/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t02_write_efault/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t02_write_efault"
+            ],
+            "command": "strace portfolio_audit/bin/t02_write_efault",
+            "completed_at_utc": "2026-08-18T01:41:36.496894Z",
+            "context": {
+              "case_id": "t02_write_efault",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t02_write_efault"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003650936,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.493214Z",
+            "stderr_bytes": 2310,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t02_write_efault/gnu.result.json",
+          "stderr_path": "raw/cases/t02_write_efault/gnu.stderr",
+          "stdout_path": "raw/cases/t02_write_efault/gnu.stdout"
+        }
+      ],
+      "id": "t02_write_efault",
+      "target_argv": [
+        "portfolio_audit/bin/t02_write_efault"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t03_read_pipe/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t03_read_pipe/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t03_read_pipe"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t03_read_pipe",
+            "completed_at_utc": "2026-08-18T01:41:36.501336Z",
+            "context": {
+              "case_id": "t03_read_pipe",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t03_read_pipe"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001541563,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.499767Z",
+            "stderr_bytes": 1769,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t03_read_pipe/ft_strace.result.json",
+          "stderr_path": "raw/cases/t03_read_pipe/ft_strace.stderr",
+          "stdout_path": "raw/cases/t03_read_pipe/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t03_read_pipe/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t03_read_pipe/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t03_read_pipe"
+            ],
+            "command": "strace portfolio_audit/bin/t03_read_pipe",
+            "completed_at_utc": "2026-08-18T01:41:36.506733Z",
+            "context": {
+              "case_id": "t03_read_pipe",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t03_read_pipe"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002991013,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.503674Z",
+            "stderr_bytes": 2461,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t03_read_pipe/gnu.result.json",
+          "stderr_path": "raw/cases/t03_read_pipe/gnu.stderr",
+          "stdout_path": "raw/cases/t03_read_pipe/gnu.stdout"
+        }
+      ],
+      "id": "t03_read_pipe",
+      "target_argv": [
+        "portfolio_audit/bin/t03_read_pipe"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t04_open_close/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t04_open_close/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t04_open_close"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t04_open_close",
+            "completed_at_utc": "2026-08-18T01:41:36.511595Z",
+            "context": {
+              "case_id": "t04_open_close",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t04_open_close"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001448909,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.510110Z",
+            "stderr_bytes": 1796,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t04_open_close/ft_strace.result.json",
+          "stderr_path": "raw/cases/t04_open_close/ft_strace.stderr",
+          "stdout_path": "raw/cases/t04_open_close/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t04_open_close/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t04_open_close/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t04_open_close"
+            ],
+            "command": "strace portfolio_audit/bin/t04_open_close",
+            "completed_at_utc": "2026-08-18T01:41:36.516402Z",
+            "context": {
+              "case_id": "t04_open_close",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t04_open_close"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002453678,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.513914Z",
+            "stderr_bytes": 2425,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t04_open_close/gnu.result.json",
+          "stderr_path": "raw/cases/t04_open_close/gnu.stderr",
+          "stdout_path": "raw/cases/t04_open_close/gnu.stdout"
+        }
+      ],
+      "id": "t04_open_close",
+      "target_argv": [
+        "portfolio_audit/bin/t04_open_close"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t05_lseek64/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t05_lseek64/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t05_lseek64"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t05_lseek64",
+            "completed_at_utc": "2026-08-18T01:41:36.521081Z",
+            "context": {
+              "case_id": "t05_lseek64",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t05_lseek64"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001726909,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.519290Z",
+            "stderr_bytes": 1744,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t05_lseek64/ft_strace.result.json",
+          "stderr_path": "raw/cases/t05_lseek64/ft_strace.stderr",
+          "stdout_path": "raw/cases/t05_lseek64/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t05_lseek64/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t05_lseek64/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t05_lseek64"
+            ],
+            "command": "strace portfolio_audit/bin/t05_lseek64",
+            "completed_at_utc": "2026-08-18T01:41:36.527338Z",
+            "context": {
+              "case_id": "t05_lseek64",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t05_lseek64"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003092873,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.524200Z",
+            "stderr_bytes": 2376,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t05_lseek64/gnu.result.json",
+          "stderr_path": "raw/cases/t05_lseek64/gnu.stderr",
+          "stdout_path": "raw/cases/t05_lseek64/gnu.stdout"
+        }
+      ],
+      "id": "t05_lseek64",
+      "target_argv": [
+        "portfolio_audit/bin/t05_lseek64"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t06_newfstatat/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t06_newfstatat/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t06_newfstatat"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t06_newfstatat",
+            "completed_at_utc": "2026-08-18T01:41:36.532059Z",
+            "context": {
+              "case_id": "t06_newfstatat",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t06_newfstatat"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001544698,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.530481Z",
+            "stderr_bytes": 1718,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t06_newfstatat/ft_strace.result.json",
+          "stderr_path": "raw/cases/t06_newfstatat/ft_strace.stderr",
+          "stdout_path": "raw/cases/t06_newfstatat/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t06_newfstatat/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t06_newfstatat/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t06_newfstatat"
+            ],
+            "command": "strace portfolio_audit/bin/t06_newfstatat",
+            "completed_at_utc": "2026-08-18T01:41:36.536918Z",
+            "context": {
+              "case_id": "t06_newfstatat",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t06_newfstatat"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002512328,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.534373Z",
+            "stderr_bytes": 2339,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t06_newfstatat/gnu.result.json",
+          "stderr_path": "raw/cases/t06_newfstatat/gnu.stderr",
+          "stdout_path": "raw/cases/t06_newfstatat/gnu.stdout"
+        }
+      ],
+      "id": "t06_newfstatat",
+      "target_argv": [
+        "portfolio_audit/bin/t06_newfstatat"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t07_memory/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t07_memory/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t07_memory"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t07_memory",
+            "completed_at_utc": "2026-08-18T01:41:36.541664Z",
+            "context": {
+              "case_id": "t07_memory",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t07_memory"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001562883,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.540037Z",
+            "stderr_bytes": 1785,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t07_memory/ft_strace.result.json",
+          "stderr_path": "raw/cases/t07_memory/ft_strace.stderr",
+          "stdout_path": "raw/cases/t07_memory/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t07_memory/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t07_memory/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t07_memory"
+            ],
+            "command": "strace portfolio_audit/bin/t07_memory",
+            "completed_at_utc": "2026-08-18T01:41:36.547016Z",
+            "context": {
+              "case_id": "t07_memory",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t07_memory"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002483133,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.544488Z",
+            "stderr_bytes": 2413,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t07_memory/gnu.result.json",
+          "stderr_path": "raw/cases/t07_memory/gnu.stderr",
+          "stdout_path": "raw/cases/t07_memory/gnu.stdout"
+        }
+      ],
+      "id": "t07_memory",
+      "target_argv": [
+        "portfolio_audit/bin/t07_memory"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t08_getpid/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t08_getpid/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t08_getpid"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t08_getpid",
+            "completed_at_utc": "2026-08-18T01:41:36.551978Z",
+            "context": {
+              "case_id": "t08_getpid",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t08_getpid"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001589081,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.550357Z",
+            "stderr_bytes": 1671,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t08_getpid/ft_strace.result.json",
+          "stderr_path": "raw/cases/t08_getpid/ft_strace.stderr",
+          "stdout_path": "raw/cases/t08_getpid/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t08_getpid/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t08_getpid/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t08_getpid"
+            ],
+            "command": "strace portfolio_audit/bin/t08_getpid",
+            "completed_at_utc": "2026-08-18T01:41:36.557009Z",
+            "context": {
+              "case_id": "t08_getpid",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t08_getpid"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.00259372,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.554366Z",
+            "stderr_bytes": 2281,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t08_getpid/gnu.result.json",
+          "stderr_path": "raw/cases/t08_getpid/gnu.stderr",
+          "stdout_path": "raw/cases/t08_getpid/gnu.stdout"
+        }
+      ],
+      "id": "t08_getpid",
+      "target_argv": [
+        "portfolio_audit/bin/t08_getpid"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t09_execve/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t09_execve/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t09_execve",
+              "portfolio_audit/bin/exec_target"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t09_execve portfolio_audit/bin/exec_target",
+            "completed_at_utc": "2026-08-18T01:41:36.562489Z",
+            "context": {
+              "case_id": "t09_execve",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t09_execve",
+                "portfolio_audit/bin/exec_target"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002266217,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.560189Z",
+            "stderr_bytes": 3322,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t09_execve/ft_strace.result.json",
+          "stderr_path": "raw/cases/t09_execve/ft_strace.stderr",
+          "stdout_path": "raw/cases/t09_execve/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t09_execve/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t09_execve/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t09_execve",
+              "portfolio_audit/bin/exec_target"
+            ],
+            "command": "strace portfolio_audit/bin/t09_execve portfolio_audit/bin/exec_target",
+            "completed_at_utc": "2026-08-18T01:41:36.568041Z",
+            "context": {
+              "case_id": "t09_execve",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t09_execve",
+                "portfolio_audit/bin/exec_target"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003094807,
+            "exit_status": 23,
+            "returncode": 23,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.564890Z",
+            "stderr_bytes": 4454,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t09_execve/gnu.result.json",
+          "stderr_path": "raw/cases/t09_execve/gnu.stderr",
+          "stdout_path": "raw/cases/t09_execve/gnu.stdout"
+        }
+      ],
+      "id": "t09_execve",
+      "target_argv": [
+        "portfolio_audit/bin/t09_execve",
+        "portfolio_audit/bin/exec_target"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t10_signal/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t10_signal/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t10_signal"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t10_signal",
+            "completed_at_utc": "2026-08-18T01:41:36.573808Z",
+            "context": {
+              "case_id": "t10_signal",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t10_signal"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.00164688,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.572106Z",
+            "stderr_bytes": 1830,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t10_signal/ft_strace.result.json",
+          "stderr_path": "raw/cases/t10_signal/ft_strace.stderr",
+          "stdout_path": "raw/cases/t10_signal/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t10_signal/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t10_signal/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t10_signal"
+            ],
+            "command": "strace portfolio_audit/bin/t10_signal",
+            "completed_at_utc": "2026-08-18T01:41:36.579154Z",
+            "context": {
+              "case_id": "t10_signal",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t10_signal"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002484285,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.576625Z",
+            "stderr_bytes": 2574,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t10_signal/gnu.result.json",
+          "stderr_path": "raw/cases/t10_signal/gnu.stderr",
+          "stdout_path": "raw/cases/t10_signal/gnu.stdout"
+        }
+      ],
+      "id": "t10_signal",
+      "target_argv": [
+        "portfolio_audit/bin/t10_signal"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t11_clone_descendant/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t11_clone_descendant/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t11_clone_descendant"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t11_clone_descendant",
+            "completed_at_utc": "2026-08-18T01:41:36.584405Z",
+            "context": {
+              "case_id": "t11_clone_descendant",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t11_clone_descendant"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001627193,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.582742Z",
+            "stderr_bytes": 1827,
+            "stdout_bytes": 12,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t11_clone_descendant/ft_strace.result.json",
+          "stderr_path": "raw/cases/t11_clone_descendant/ft_strace.stderr",
+          "stdout_path": "raw/cases/t11_clone_descendant/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t11_clone_descendant/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t11_clone_descendant/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t11_clone_descendant"
+            ],
+            "command": "strace portfolio_audit/bin/t11_clone_descendant",
+            "completed_at_utc": "2026-08-18T01:41:36.596554Z",
+            "context": {
+              "case_id": "t11_clone_descendant",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t11_clone_descendant"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003910432,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.592594Z",
+            "stderr_bytes": 2488,
+            "stdout_bytes": 12,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t11_clone_descendant/gnu.result.json",
+          "stderr_path": "raw/cases/t11_clone_descendant/gnu.stderr",
+          "stdout_path": "raw/cases/t11_clone_descendant/gnu.stdout"
+        },
+        {
+          "command_path": "raw/cases/t11_clone_descendant/gnu_follow.command.json",
+          "name": "gnu_follow",
+          "record_prefix": "raw/cases/t11_clone_descendant/gnu_follow",
+          "result": {
+            "argv": [
+              "strace",
+              "-f",
+              "portfolio_audit/bin/t11_clone_descendant"
+            ],
+            "command": "strace -f portfolio_audit/bin/t11_clone_descendant",
+            "completed_at_utc": "2026-08-18T01:41:36.602664Z",
+            "context": {
+              "case_id": "t11_clone_descendant",
+              "engine": "gnu_follow",
+              "engine_prefix_argv": [
+                "strace",
+                "-f"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t11_clone_descendant"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003533297,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.599097Z",
+            "stderr_bytes": 2694,
+            "stdout_bytes": 12,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t11_clone_descendant/gnu_follow.result.json",
+          "stderr_path": "raw/cases/t11_clone_descendant/gnu_follow.stderr",
+          "stdout_path": "raw/cases/t11_clone_descendant/gnu_follow.stdout"
+        }
+      ],
+      "id": "t11_clone_descendant",
+      "target_argv": [
+        "portfolio_audit/bin/t11_clone_descendant"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t12_socketpair/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t12_socketpair/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t12_socketpair"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t12_socketpair",
+            "completed_at_utc": "2026-08-18T01:41:36.607766Z",
+            "context": {
+              "case_id": "t12_socketpair",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t12_socketpair"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001717813,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.605977Z",
+            "stderr_bytes": 1733,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t12_socketpair/ft_strace.result.json",
+          "stderr_path": "raw/cases/t12_socketpair/ft_strace.stderr",
+          "stdout_path": "raw/cases/t12_socketpair/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t12_socketpair/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t12_socketpair/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t12_socketpair"
+            ],
+            "command": "strace portfolio_audit/bin/t12_socketpair",
+            "completed_at_utc": "2026-08-18T01:41:36.613227Z",
+            "context": {
+              "case_id": "t12_socketpair",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t12_socketpair"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002381683,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.610799Z",
+            "stderr_bytes": 2378,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t12_socketpair/gnu.result.json",
+          "stderr_path": "raw/cases/t12_socketpair/gnu.stderr",
+          "stdout_path": "raw/cases/t12_socketpair/gnu.stdout"
+        }
+      ],
+      "id": "t12_socketpair",
+      "target_argv": [
+        "portfolio_audit/bin/t12_socketpair"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t13_unknown/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t13_unknown/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t13_unknown"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t13_unknown",
+            "completed_at_utc": "2026-08-18T01:41:36.618526Z",
+            "context": {
+              "case_id": "t13_unknown",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t13_unknown"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001469307,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.617020Z",
+            "stderr_bytes": 1712,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t13_unknown/ft_strace.result.json",
+          "stderr_path": "raw/cases/t13_unknown/ft_strace.stderr",
+          "stdout_path": "raw/cases/t13_unknown/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t13_unknown/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t13_unknown/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t13_unknown"
+            ],
+            "command": "strace portfolio_audit/bin/t13_unknown",
+            "completed_at_utc": "2026-08-18T01:41:36.624378Z",
+            "context": {
+              "case_id": "t13_unknown",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t13_unknown"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.003428942,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.620913Z",
+            "stderr_bytes": 2371,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t13_unknown/gnu.result.json",
+          "stderr_path": "raw/cases/t13_unknown/gnu.stderr",
+          "stdout_path": "raw/cases/t13_unknown/gnu.stdout"
+        }
+      ],
+      "id": "t13_unknown",
+      "target_argv": [
+        "portfolio_audit/bin/t13_unknown"
+      ]
+    },
+    {
+      "engines": [
+        {
+          "command_path": "raw/cases/t14_exit_status/ft_strace.command.json",
+          "name": "ft_strace",
+          "record_prefix": "raw/cases/t14_exit_status/ft_strace",
+          "result": {
+            "argv": [
+              "./ft_strace",
+              "portfolio_audit/bin/t14_exit_status"
+            ],
+            "command": "./ft_strace portfolio_audit/bin/t14_exit_status",
+            "completed_at_utc": "2026-08-18T01:41:36.629273Z",
+            "context": {
+              "case_id": "t14_exit_status",
+              "engine": "ft_strace",
+              "engine_prefix_argv": [
+                "./ft_strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t14_exit_status"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.001323776,
+            "exit_status": 0,
+            "returncode": 0,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.627900Z",
+            "stderr_bytes": 1663,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t14_exit_status/ft_strace.result.json",
+          "stderr_path": "raw/cases/t14_exit_status/ft_strace.stderr",
+          "stdout_path": "raw/cases/t14_exit_status/ft_strace.stdout"
+        },
+        {
+          "command_path": "raw/cases/t14_exit_status/gnu.command.json",
+          "name": "gnu",
+          "record_prefix": "raw/cases/t14_exit_status/gnu",
+          "result": {
+            "argv": [
+              "strace",
+              "portfolio_audit/bin/t14_exit_status"
+            ],
+            "command": "strace portfolio_audit/bin/t14_exit_status",
+            "completed_at_utc": "2026-08-18T01:41:36.634482Z",
+            "context": {
+              "case_id": "t14_exit_status",
+              "engine": "gnu",
+              "engine_prefix_argv": [
+                "strace"
+              ],
+              "stage": "baseline_case",
+              "target_argv": [
+                "portfolio_audit/bin/t14_exit_status"
+              ]
+            },
+            "cwd": "/home/jinseo/duo/make_strace",
+            "duration_seconds": 0.002392323,
+            "exit_status": 7,
+            "returncode": 7,
+            "run_id": "20260818T014136.002211Z-24035",
+            "signal": null,
+            "spawn_error": null,
+            "started_at_utc": "2026-08-18T01:41:36.632049Z",
+            "stderr_bytes": 2243,
+            "stdout_bytes": 0,
+            "timed_out": false,
+            "timeout_seconds": 5.0
+          },
+          "result_path": "raw/cases/t14_exit_status/gnu.result.json",
+          "stderr_path": "raw/cases/t14_exit_status/gnu.stderr",
+          "stdout_path": "raw/cases/t14_exit_status/gnu.stdout"
+        }
+      ],
+      "id": "t14_exit_status",
+      "target_argv": [
+        "portfolio_audit/bin/t14_exit_status"
+      ]
+    }
+  ],
+  "compilations": [
+    {
+      "command_path": "raw/compile/t01_write_binary.command.json",
+      "record_prefix": "raw/compile/t01_write_binary",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t01_write_binary.c",
+          "-o",
+          "portfolio_audit/bin/t01_write_binary"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t01_write_binary.c -o portfolio_audit/bin/t01_write_binary",
+        "completed_at_utc": "2026-08-18T01:41:36.054045Z",
+        "context": {
+          "output": "portfolio_audit/bin/t01_write_binary",
+          "role": "case",
+          "source": "portfolio_audit/tests/t01_write_binary.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.030309164,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.023641Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t01_write_binary.result.json",
+      "stderr_path": "raw/compile/t01_write_binary.stderr",
+      "stdout_path": "raw/compile/t01_write_binary.stdout"
+    },
+    {
+      "command_path": "raw/compile/t02_write_efault.command.json",
+      "record_prefix": "raw/compile/t02_write_efault",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t02_write_efault.c",
+          "-o",
+          "portfolio_audit/bin/t02_write_efault"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t02_write_efault.c -o portfolio_audit/bin/t02_write_efault",
+        "completed_at_utc": "2026-08-18T01:41:36.086808Z",
+        "context": {
+          "output": "portfolio_audit/bin/t02_write_efault",
+          "role": "case",
+          "source": "portfolio_audit/tests/t02_write_efault.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.029815841,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.056890Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t02_write_efault.result.json",
+      "stderr_path": "raw/compile/t02_write_efault.stderr",
+      "stdout_path": "raw/compile/t02_write_efault.stdout"
+    },
+    {
+      "command_path": "raw/compile/t03_read_pipe.command.json",
+      "record_prefix": "raw/compile/t03_read_pipe",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t03_read_pipe.c",
+          "-o",
+          "portfolio_audit/bin/t03_read_pipe"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t03_read_pipe.c -o portfolio_audit/bin/t03_read_pipe",
+        "completed_at_utc": "2026-08-18T01:41:36.119199Z",
+        "context": {
+          "output": "portfolio_audit/bin/t03_read_pipe",
+          "role": "case",
+          "source": "portfolio_audit/tests/t03_read_pipe.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.029464375,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.089640Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t03_read_pipe.result.json",
+      "stderr_path": "raw/compile/t03_read_pipe.stderr",
+      "stdout_path": "raw/compile/t03_read_pipe.stdout"
+    },
+    {
+      "command_path": "raw/compile/t04_open_close.command.json",
+      "record_prefix": "raw/compile/t04_open_close",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t04_open_close.c",
+          "-o",
+          "portfolio_audit/bin/t04_open_close"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t04_open_close.c -o portfolio_audit/bin/t04_open_close",
+        "completed_at_utc": "2026-08-18T01:41:36.150858Z",
+        "context": {
+          "output": "portfolio_audit/bin/t04_open_close",
+          "role": "case",
+          "source": "portfolio_audit/tests/t04_open_close.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.028404803,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.122339Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t04_open_close.result.json",
+      "stderr_path": "raw/compile/t04_open_close.stderr",
+      "stdout_path": "raw/compile/t04_open_close.stdout"
+    },
+    {
+      "command_path": "raw/compile/t05_lseek64.command.json",
+      "record_prefix": "raw/compile/t05_lseek64",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t05_lseek64.c",
+          "-o",
+          "portfolio_audit/bin/t05_lseek64"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t05_lseek64.c -o portfolio_audit/bin/t05_lseek64",
+        "completed_at_utc": "2026-08-18T01:41:36.181540Z",
+        "context": {
+          "output": "portfolio_audit/bin/t05_lseek64",
+          "role": "case",
+          "source": "portfolio_audit/tests/t05_lseek64.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.027754918,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.153677Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t05_lseek64.result.json",
+      "stderr_path": "raw/compile/t05_lseek64.stderr",
+      "stdout_path": "raw/compile/t05_lseek64.stdout"
+    },
+    {
+      "command_path": "raw/compile/t06_newfstatat.command.json",
+      "record_prefix": "raw/compile/t06_newfstatat",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t06_newfstatat.c",
+          "-o",
+          "portfolio_audit/bin/t06_newfstatat"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t06_newfstatat.c -o portfolio_audit/bin/t06_newfstatat",
+        "completed_at_utc": "2026-08-18T01:41:36.215931Z",
+        "context": {
+          "output": "portfolio_audit/bin/t06_newfstatat",
+          "role": "case",
+          "source": "portfolio_audit/tests/t06_newfstatat.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.031425401,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.184399Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t06_newfstatat.result.json",
+      "stderr_path": "raw/compile/t06_newfstatat.stderr",
+      "stdout_path": "raw/compile/t06_newfstatat.stdout"
+    },
+    {
+      "command_path": "raw/compile/t07_memory.command.json",
+      "record_prefix": "raw/compile/t07_memory",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t07_memory.c",
+          "-o",
+          "portfolio_audit/bin/t07_memory"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t07_memory.c -o portfolio_audit/bin/t07_memory",
+        "completed_at_utc": "2026-08-18T01:41:36.248080Z",
+        "context": {
+          "output": "portfolio_audit/bin/t07_memory",
+          "role": "case",
+          "source": "portfolio_audit/tests/t07_memory.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.029040592,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.218954Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t07_memory.result.json",
+      "stderr_path": "raw/compile/t07_memory.stderr",
+      "stdout_path": "raw/compile/t07_memory.stdout"
+    },
+    {
+      "command_path": "raw/compile/t08_getpid.command.json",
+      "record_prefix": "raw/compile/t08_getpid",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t08_getpid.c",
+          "-o",
+          "portfolio_audit/bin/t08_getpid"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t08_getpid.c -o portfolio_audit/bin/t08_getpid",
+        "completed_at_utc": "2026-08-18T01:41:36.275633Z",
+        "context": {
+          "output": "portfolio_audit/bin/t08_getpid",
+          "role": "case",
+          "source": "portfolio_audit/tests/t08_getpid.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.024813378,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.250702Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t08_getpid.result.json",
+      "stderr_path": "raw/compile/t08_getpid.stderr",
+      "stdout_path": "raw/compile/t08_getpid.stdout"
+    },
+    {
+      "command_path": "raw/compile/t09_execve.command.json",
+      "record_prefix": "raw/compile/t09_execve",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t09_execve.c",
+          "-o",
+          "portfolio_audit/bin/t09_execve"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t09_execve.c -o portfolio_audit/bin/t09_execve",
+        "completed_at_utc": "2026-08-18T01:41:36.307667Z",
+        "context": {
+          "output": "portfolio_audit/bin/t09_execve",
+          "role": "case",
+          "source": "portfolio_audit/tests/t09_execve.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.029273758,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.278307Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t09_execve.result.json",
+      "stderr_path": "raw/compile/t09_execve.stderr",
+      "stdout_path": "raw/compile/t09_execve.stdout"
+    },
+    {
+      "command_path": "raw/compile/exec_target.command.json",
+      "record_prefix": "raw/compile/exec_target",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/exec_target.c",
+          "-o",
+          "portfolio_audit/bin/exec_target"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/exec_target.c -o portfolio_audit/bin/exec_target",
+        "completed_at_utc": "2026-08-18T01:41:36.333889Z",
+        "context": {
+          "output": "portfolio_audit/bin/exec_target",
+          "role": "helper",
+          "source": "portfolio_audit/tests/exec_target.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.02352576,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.310280Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/exec_target.result.json",
+      "stderr_path": "raw/compile/exec_target.stderr",
+      "stdout_path": "raw/compile/exec_target.stdout"
+    },
+    {
+      "command_path": "raw/compile/t10_signal.command.json",
+      "record_prefix": "raw/compile/t10_signal",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t10_signal.c",
+          "-o",
+          "portfolio_audit/bin/t10_signal"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t10_signal.c -o portfolio_audit/bin/t10_signal",
+        "completed_at_utc": "2026-08-18T01:41:36.364262Z",
+        "context": {
+          "output": "portfolio_audit/bin/t10_signal",
+          "role": "case",
+          "source": "portfolio_audit/tests/t10_signal.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.027327529,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.336850Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t10_signal.result.json",
+      "stderr_path": "raw/compile/t10_signal.stderr",
+      "stdout_path": "raw/compile/t10_signal.stdout"
+    },
+    {
+      "command_path": "raw/compile/t11_clone_descendant.command.json",
+      "record_prefix": "raw/compile/t11_clone_descendant",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t11_clone_descendant.c",
+          "-o",
+          "portfolio_audit/bin/t11_clone_descendant"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t11_clone_descendant.c -o portfolio_audit/bin/t11_clone_descendant",
+        "completed_at_utc": "2026-08-18T01:41:36.393874Z",
+        "context": {
+          "output": "portfolio_audit/bin/t11_clone_descendant",
+          "role": "case",
+          "source": "portfolio_audit/tests/t11_clone_descendant.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.026899148,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.366893Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t11_clone_descendant.result.json",
+      "stderr_path": "raw/compile/t11_clone_descendant.stderr",
+      "stdout_path": "raw/compile/t11_clone_descendant.stdout"
+    },
+    {
+      "command_path": "raw/compile/t12_socketpair.command.json",
+      "record_prefix": "raw/compile/t12_socketpair",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t12_socketpair.c",
+          "-o",
+          "portfolio_audit/bin/t12_socketpair"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t12_socketpair.c -o portfolio_audit/bin/t12_socketpair",
+        "completed_at_utc": "2026-08-18T01:41:36.423620Z",
+        "context": {
+          "output": "portfolio_audit/bin/t12_socketpair",
+          "role": "case",
+          "source": "portfolio_audit/tests/t12_socketpair.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.026513506,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.397013Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t12_socketpair.result.json",
+      "stderr_path": "raw/compile/t12_socketpair.stderr",
+      "stdout_path": "raw/compile/t12_socketpair.stdout"
+    },
+    {
+      "command_path": "raw/compile/t13_unknown.command.json",
+      "record_prefix": "raw/compile/t13_unknown",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t13_unknown.c",
+          "-o",
+          "portfolio_audit/bin/t13_unknown"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t13_unknown.c -o portfolio_audit/bin/t13_unknown",
+        "completed_at_utc": "2026-08-18T01:41:36.450828Z",
+        "context": {
+          "output": "portfolio_audit/bin/t13_unknown",
+          "role": "case",
+          "source": "portfolio_audit/tests/t13_unknown.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.024427366,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.426312Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t13_unknown.result.json",
+      "stderr_path": "raw/compile/t13_unknown.stderr",
+      "stdout_path": "raw/compile/t13_unknown.stdout"
+    },
+    {
+      "command_path": "raw/compile/t14_exit_status.command.json",
+      "record_prefix": "raw/compile/t14_exit_status",
+      "result": {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-O0",
+          "-g",
+          "portfolio_audit/tests/t14_exit_status.c",
+          "-o",
+          "portfolio_audit/bin/t14_exit_status"
+        ],
+        "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t14_exit_status.c -o portfolio_audit/bin/t14_exit_status",
+        "completed_at_utc": "2026-08-18T01:41:36.475727Z",
+        "context": {
+          "output": "portfolio_audit/bin/t14_exit_status",
+          "role": "case",
+          "source": "portfolio_audit/tests/t14_exit_status.c",
+          "stage": "test_compile"
+        },
+        "cwd": "/home/jinseo/duo/make_strace",
+        "duration_seconds": 0.021705196,
+        "exit_status": 0,
+        "returncode": 0,
+        "run_id": "20260818T014136.002211Z-24035",
+        "signal": null,
+        "spawn_error": null,
+        "started_at_utc": "2026-08-18T01:41:36.453936Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 0,
+        "timed_out": false,
+        "timeout_seconds": 30.0
+      },
+      "result_path": "raw/compile/t14_exit_status.result.json",
+      "stderr_path": "raw/compile/t14_exit_status.stderr",
+      "stdout_path": "raw/compile/t14_exit_status.stdout"
+    }
+  ],
+  "completed_at_utc": "2026-08-18T01:41:36.637258Z",
+  "environment_path": "raw/environment.json",
+  "manifest_path": "test_manifest.json",
+  "manifest_sha256": "cf8fe9e423a3aed9348c328d84fa7ffe2dafbe71dcb6c9944b520c2a613df3a7",
+  "repo_root": "/home/jinseo/duo/make_strace",
+  "run_id": "20260818T014136.002211Z-24035",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-18T01:41:36.019209Z",
+  "state": "complete"
+}

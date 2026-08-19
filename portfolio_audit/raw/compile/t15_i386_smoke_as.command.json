@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "as",
+    "--32",
+    "portfolio_audit/tests/t15_i386_smoke.S",
+    "-o",
+    "portfolio_audit/bin/t15_i386_smoke.o"
+  ],
+  "command": "as --32 portfolio_audit/tests/t15_i386_smoke.S -o portfolio_audit/bin/t15_i386_smoke.o",
+  "context": {
+    "stage": "i386_assemble"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "environment_overrides": {
+    "LANG": "C",
+    "LC_ALL": "C"
+  },
+  "run_id": "i386-20260818T014525.931589Z",
+  "stdin": "DEVNULL",
+  "timeout_seconds": 30
+}

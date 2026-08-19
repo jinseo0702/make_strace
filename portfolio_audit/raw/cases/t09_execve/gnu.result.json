@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "strace",
+    "portfolio_audit/bin/t09_execve",
+    "portfolio_audit/bin/exec_target"
+  ],
+  "command": "strace portfolio_audit/bin/t09_execve portfolio_audit/bin/exec_target",
+  "completed_at_utc": "2026-08-18T01:41:36.568041Z",
+  "context": {
+    "case_id": "t09_execve",
+    "engine": "gnu",
+    "engine_prefix_argv": [
+      "strace"
+    ],
+    "stage": "baseline_case",
+    "target_argv": [
+      "portfolio_audit/bin/t09_execve",
+      "portfolio_audit/bin/exec_target"
+    ]
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "duration_seconds": 0.003094807,
+  "exit_status": 23,
+  "returncode": 23,
+  "run_id": "20260818T014136.002211Z-24035",
+  "signal": null,
+  "spawn_error": null,
+  "started_at_utc": "2026-08-18T01:41:36.564890Z",
+  "stderr_bytes": 4454,
+  "stdout_bytes": 0,
+  "timed_out": false,
+  "timeout_seconds": 5.0
+}

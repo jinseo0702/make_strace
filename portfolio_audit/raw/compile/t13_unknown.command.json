@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "gcc",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O0",
+    "-g",
+    "portfolio_audit/tests/t13_unknown.c",
+    "-o",
+    "portfolio_audit/bin/t13_unknown"
+  ],
+  "command": "gcc -Wall -Wextra -Werror -O0 -g portfolio_audit/tests/t13_unknown.c -o portfolio_audit/bin/t13_unknown",
+  "context": {
+    "output": "portfolio_audit/bin/t13_unknown",
+    "role": "case",
+    "source": "portfolio_audit/tests/t13_unknown.c",
+    "stage": "test_compile"
+  },
+  "cwd": "/home/jinseo/duo/make_strace",
+  "environment_overrides": {
+    "LANG": "C",
+    "LC_ALL": "C"
+  },
+  "run_id": "20260818T014136.002211Z-24035",
+  "stdin": "DEVNULL",
+  "timeout_seconds": 30.0
+}
